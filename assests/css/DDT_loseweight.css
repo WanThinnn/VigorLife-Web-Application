@@ -249,8 +249,8 @@
     position: relative;
     width: 600px;
     height: 200px;
-    padding-left: 20%;
-    padding-right: 80px;
+    content: justify;
+    left: 8%;
 }
 
 .ddt_eating {
