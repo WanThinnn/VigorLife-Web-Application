@@ -40,20 +40,20 @@
     font-weight: 700;
     text-transform: uppercase;
     padding: 5px 0;
-    color: #e6b645;
+    color: #1d2547;
     margin: 0;
     margin-top: 1rem;
     text-align: center;
 }
 
 .info-title strong {
-    color: #e6b645;
+    color: #1d2547;
     font-weight: normal;
-    font-size: 90%
+    font-size: 140%
 }
 
 .info-title p {
-    font-size: 90%
+    font-size: 140%
 }
 
 .roww
@@ -87,7 +87,7 @@
 .label {
     font-size: 18px;
     font-weight: 700;
-    color: #e6b645;
+    color: #1d2547;
     display: block;
     margin-bottom: .5rem;
     margin-top: 1rem;
@@ -108,7 +108,7 @@
 {
     font-size: 18px;
     font-weight: 700;
-    color: #e6b645;
+    color: #1d2547;
     display: block;
     margin-bottom: 0.5rem;
     margin-top: 1rem;
@@ -135,24 +135,26 @@
 
 .btn-decor
 {   
-    color:#e6b645;
-    border: 1px solid #e6b645 !important;
+    color:#1d2547;
+    border: 1px solid #1d2547 !important;
 }
 
 .btn-group
 {   
     position: relative;
     display: inline-flex;
-    width:100%;
     text-align: center;
+    width:100%;
+    height: 33px;
+    
 }
 
-.form-control
+/* .form-control
 {
     text-align: left;
     padding: 0.25rem 0.5rem;
     border: 1px solid yellow;
-}
+} */
 
 .table 
 {
@@ -178,7 +180,7 @@
     color: #fff;
     /* text-transform: uppercase; */
     border-radius: .25rem;
-    padding: 3px 1.5rem;
+    padding: 13.5px 1.5rem;
     line-height: 1.5;
     display: inline-block;
     width: 95%;
@@ -193,8 +195,8 @@
 }
 
 .item.table-container table thead {
-    color: #e6b645;
-    background-color: #fdf2de;
+    color: #1d2547;
+    background-color: #f0f0f5;
     text-align: left;
     font-weight: 700;
     font-size: 18px;
@@ -203,7 +205,7 @@
 }
 
 .calo-box .input .item.table-container table tbody tr {
-    outline: 1px solid #cdaa6a;
+    outline: 1px solid #171d39;
     border-radius: .25rem;
     margin: 1rem 0;
     border: 0;
@@ -221,7 +223,7 @@
     font-size: 18px;
     text-align: center;
     font-weight: 700;
-    background-color: #e6b645;
+    background-color: #1d2547;
     color: #fff;
     text-transform: uppercase;
     border-radius: 0.25rem;
@@ -239,11 +241,17 @@
     
 }
 
+.btn:not(:disabled):not(.disabled).active, .btn:not(:disabled):not(.disabled):active {
+    background-image: none;
+    background: #1d2547;
+    color:#fff
+}
+
 .custom-control-input:checked~.custom-control-label::before 
 {
     color: #fff;
-    border-color: #e6b645;
-    background-color: #e6b645;
+    border-color: #1d2547;
+    background-color: #1d2547;
     border-radius: 50%;
 }
 
@@ -303,7 +311,7 @@
     font-weight: 700;
     font-family: Lato;
     padding: 5px 0;
-    color: #e6b645;
+    color: #1d2547;
     margin-bottom: 0;
 }
 
@@ -326,7 +334,7 @@
 
 .calo-box .output-recommended .standard 
 {
-    background-color: #e6b645;
+    background-color: #1d2547;
     padding: 0.25rem 0.5rem;
     color: #fff;
     text-transform: uppercase;
