@@ -292,3 +292,11 @@
     display: flex;
     text-align: center;
 }
+/* tesst */
+
+.about-us-section{
+    height: 80vh !important;
+}
+.about-project-section{
+    margin-bottom: -100px;
+}
