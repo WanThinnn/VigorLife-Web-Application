@@ -1,4 +1,3 @@
-
 /*Mai Nguyen Nam Phuong */
 .sample {
     width: 100%;
@@ -165,7 +164,7 @@
 }
 
 
-.np__lg {                 
+.np__lg {
     font-size: 3em;
     text-transform: uppercase;
     width: 40%;
@@ -180,6 +179,7 @@
     margin-bottom: 5em;
     border: 1px solid black;
 }
+
 .np__fsz {
     margin-top: 200px;
 }
@@ -191,8 +191,8 @@
     color: white;
     font-size: 1.3em;
 }
-.np__fsimg:hover
-{
+
+.np__fsimg:hover {
     filter: brightness(0.65);
 }
 
@@ -208,7 +208,6 @@
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-    margin-left: 0px;
     margin-bottom: 90px;
 }
 
@@ -217,4 +216,87 @@
     height: 150px;
     object-fit: cover;
     transition: all .7;
+}
+
+.np__border-btn {
+    border: 1px solid #FD8F5F;
+    color: #FD8F5F;
+    background: none;
+    border-radius: 0px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 17px 42px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    justify-content: center;
+    text-decoration: none;
+}
+
+
+
+.np__about-us-section {
+    margin-top: 10rem;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+}
+
+
+.np__about-us-section .np__about-container {
+    margin: 0 auto;
+    /* Để căn giữa */
+    margin-top: -3rem;
+}
+
+.np__about-us-section .np__about-us-section-tittle h2 {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 14px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.np__about-us-section .np__about-p-long {
+    text-align: left;
+    /* Đặt căn lề trái cho đoạn văn bản */
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 100%;
+    /* Đặt chiều rộng tối đa cho đoạn văn bản */
+    width: 800px;
+    text-align: center;
+    /* Căn giữa văn bản */
+    margin: 0 auto;
+    margin-bottom: 7rem;
+}
+
+.np__about-us-section {
+
+    margin-top: 10rem;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+}
+/* tesst */
+
+.about-us-section{
+    height: 80vh !important;
+}
+.about-project-section{
+    margin-bottom: -100px;
 }
