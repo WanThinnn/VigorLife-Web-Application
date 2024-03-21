@@ -21,7 +21,9 @@ _Lời ngỏ: Trang web vẫn đang trong quá trình xây dựng và phát tri�
 5. SQL Server: cơ sở dữ liệu được sử dụng để lưu trữ và quản lý dữ liệu của ứng dụng web.
 
 **IV. Một số tính năng (dự kiến):**
+
 **- Trang chủ: một số hình ảnh và tin tức nổi bật**
+
 **- Trang: Giới thiệu**
 + Về dự án
 + Về chúng tôi
