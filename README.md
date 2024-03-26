@@ -14,9 +14,13 @@ Trang web phối hợp giữa chăm sóc sức khoẻ và giảm cân
 
 ## III. Một số công nghệ (dự kiến) được sử dụng:
 **1. HTML (HyperText Markup Language):** Ngôn ngữ đánh dấu siêu văn bản được sử dụng để tạo cấu trúc và nội dung của trang web.
+
 **2. CSS (Cascading Style Sheets):** Ngôn ngữ dùng để mô tả cách trang web được hiển thị trên các thiết bị khác nhau, bằng cách xác định kiểu dáng, màu sắc, font chữ và bố cục của các phần tử HTML.
+
 **3. JavaScript:** Ngôn ngữ lập trình phía client được sử dụng để thêm các tính năng tương tác động vào trang web, như hành vi của người dùng, hiệu ứng, và giao tiếp với máy chủ.
+
 **4. Django:** framework phát triển ứng dụng web mạnh mẽ và linh hoạt được viết bằng Python. Dijango cung cấp các công cụ và tính năng giúp xây dựng các ứng dụng web phức tạp và hiệu quả.
+
 **5. SQL Server:** cơ sở dữ liệu được sử dụng để lưu trữ và quản lý dữ liệu của ứng dụng web.
 
 ## IV. Một số tính năng (dự kiến):
