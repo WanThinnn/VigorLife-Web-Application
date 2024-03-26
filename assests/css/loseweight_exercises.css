@@ -304,7 +304,7 @@
     top: 0;
     width: 101%;
     height: 101%;
-    background: #72b7db;
+    background: #1D2547;
     z-index: -1;
     transition: transform 0.5s;
     transition-timing-function: ease;
@@ -448,7 +448,7 @@
 
 
 .tailor-details .lqt__btn {
-    background: #83d6ff;
+    background: #FD8F5F;
     text-transform: uppercase;
     padding: 27px 44px;
     color: #fff;

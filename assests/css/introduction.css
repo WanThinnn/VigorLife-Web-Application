@@ -10,7 +10,7 @@
 
 .slider-row {
     margin-top: -200px;
-    margin-left: -200px;
+    margin-left: -280px;
 }
 
 .slider-area .slider-row-caption {
@@ -23,7 +23,7 @@
 
 .slider-area .slider-row-caption {
     padding: 39px 70px 56px 68px;
-    margin-left: -200px;
+    /* margin-left: -10px; */
     margin-right: 25px;
     position: relative;
     overflow: hidden;
