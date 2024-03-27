@@ -1,0 +1,302 @@
+/*Mai Nguyen Nam Phuong */
+.sample {
+    width: 100%;
+    height: 600px;
+}
+
+.sample h2 {
+    margin-top: 80px;
+}
+
+.sample__content {
+    font-size: 1.6rem;
+}
+
+.sample {
+    text-align: center;
+    font-size: 3rem;
+    left: 50%;
+    margin-top: 10px;
+}
+
+.sample p {
+    text-align: center;
+    /* font-weight: 100%; */
+    /* margin-top: 20px; */
+}
+
+.np__row {
+    margin-left: 11%;
+    margin-right: 10%;
+}
+
+.np__row figure {
+    float: left;
+    width: 31%;
+    border: 1px solid gray;
+    margin-top: 40px;
+    margin-left: 1%;
+}
+
+.np__row figure img {
+    display: block;
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+}
+
+.np__row figcaption {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.linkz {
+    text-decoration: none;
+    color: black;
+}
+
+.animalimg {
+    margin-bottom: -25px;
+}
+
+.animalimg:hover {
+    border-bottom: 2px solid black;
+}
+
+.np__prc {
+    font-size: 2rem;
+    font-weight: 400px;
+}
+
+.np__btn {
+    margin-top: 35px;
+    margin-bottom: 80px;
+    margin-left: 215px;
+
+
+}
+
+.np__btn a {
+    text-decoration: none;
+    margin-left: 450px;
+    margin-top: 0px;
+    font-size: 20px;
+    padding: 15px;
+    background-color: #fd8f5f;
+    color: white;
+    transition: all 0.3s;
+}
+
+
+.np__Discoverybtn {
+    text-transform: uppercase;
+    margin-right: 20px;
+
+}
+
+.np__Discoverybtn:hover,
+.np__Discoverybtn:active {
+    filter: brightness(90%);
+    transform: scale(110%);
+    border: 2px solid rgb(185, 114, 20);
+    text-decoration: none;
+}
+
+
+
+.ins {
+    width: 100%;
+    height: 500px;
+}
+
+.np__content {
+    margin-top: 80px;
+    float: left;
+    margin-left: 150px;
+    height: 500px;
+    width: 29%;
+    margin-right: 40px;
+}
+
+.btnz {
+    margin-top: 20px;
+}
+
+.btnz a {
+    text-decoration: none;
+    font-size: 20px;
+    padding: 15px;
+    background-color: #fd8f5f;
+    color: white;
+    transition: all 0.3s;
+}
+
+.np__contenta {
+    font-size: 1.5rem;
+    margin-top: -5px;
+}
+
+.imgz .anhz {
+    width: 24%;
+    height: 390px;
+    margin-top: 30px;
+    margin-left: 10px;
+    float: left;
+    position: relative;
+    object-fit: cover;
+
+
+}
+
+.imgz .anhz:hover,
+.imgz .anhz:active {
+    filter: brightness(80%);
+}
+
+.imgz {
+    position: relative;
+    object-fit: cover;
+}
+
+.np__fsz1 {
+    border: 2px solid black;
+    height: 580px;
+}
+
+
+.np__lg {
+    font-size: 3em;
+    text-transform: uppercase;
+    width: 40%;
+}
+
+.np__fcontent {
+    margin: 0.7em 4em 1.7em 4em;
+}
+
+.np__fsimg {
+    margin-left: 2.7em;
+    margin-bottom: 5em;
+    border: 1px solid black;
+}
+
+.np__fsz {
+    margin-top: 200px;
+}
+
+.np__fstool {
+    padding: 2em 4em;
+    text-align: center;
+    background-color: rgba(146, 222, 247, 1);
+    color: white;
+    font-size: 1.3em;
+}
+
+.np__fsimg:hover {
+    filter: brightness(0.65);
+}
+
+
+.about-picture {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+
+.np__row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    margin-bottom: 90px;
+}
+
+.np-about-picture img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    transition: all .7;
+}
+
+.np__border-btn {
+    border: 1px solid #FD8F5F;
+    color: #FD8F5F;
+    background: none;
+    border-radius: 0px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 17px 42px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    justify-content: center;
+    text-decoration: none;
+}
+
+
+
+.np__about-us-section {
+    margin-top: 10rem;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+}
+
+
+.np__about-us-section .np__about-container {
+    margin: 0 auto;
+    /* Để căn giữa */
+    margin-top: -3rem;
+}
+
+.np__about-us-section .np__about-us-section-tittle h2 {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 14px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.np__about-us-section .np__about-p-long {
+    text-align: left;
+    /* Đặt căn lề trái cho đoạn văn bản */
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 100%;
+    /* Đặt chiều rộng tối đa cho đoạn văn bản */
+    width: 800px;
+    text-align: center;
+    /* Căn giữa văn bản */
+    margin: 0 auto;
+    margin-bottom: 7rem;
+}
+
+.np__about-us-section {
+
+    margin-top: 10rem;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+}
+/* tesst */
+
+.about-us-section{
+    height: 80vh !important;
+}
+.about-project-section{
+    margin-bottom: -100px;
+}
