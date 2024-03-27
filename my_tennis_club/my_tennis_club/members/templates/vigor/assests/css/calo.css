@@ -1,0 +1,366 @@
+.calo-box
+{
+    text-align:center;
+    position:relative;
+    margin: 0.5rem 0;
+    width: 100%;
+}
+
+.calo-pos
+{   
+    position: relative;
+    width: 100%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 0.5rem;
+}
+
+.calo-pos2
+{   
+    position: relative;
+    width: 100%;
+    flex: 0 0 1000%;
+    max-width: 100%;
+    padding-right: 0.5rem;
+}
+
+/* .calo-poss
+{       
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    text-align: center;
+    justify-content: center;
+} */
+
+.info-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 5px 0;
+    color: #1d2547;
+    margin: 0;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.info-title strong {
+    color: #1d2547;
+    font-weight: normal;
+    font-size: 140%
+}
+
+.info-title p {
+    font-size: 140%
+}
+
+.roww
+{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.input
+{
+    margin: 0.5rem 0 0.5rem 0.5rem;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+.calo-box .input .item {
+    margin: .5rem 0
+}
+
+.calo-box .input .item .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1d2547;
+    display: block;
+    margin-bottom: .5rem;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.input-group
+{   
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+    text-align: center;
+}
+
+.calo-box .item .input-group .input-group-prepend .label
+{
+    font-size: 18px;
+    font-weight: 700;
+    color: #1d2547;
+    display: block;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.input-group-prepend
+{
+    display: flex;
+    position: relative;
+    margin-right: -1px;
+    padding: 0.375rem 0.75rem;
+}
+
+.btn
+{
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 15px;
+    height: 33px;
+    padding: 0.25rem 0.5rem;
+    
+}
+
+.btn-decor
+{   
+    color:#1d2547;
+    border: 1px solid #1d2547 !important;
+}
+
+.btn-group
+{   
+    position: relative;
+    display: inline-flex;
+    text-align: center;
+    width:100%;
+    height: 33px;
+    
+}
+
+/* .form-control
+{
+    text-align: left;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid yellow;
+} */
+
+.table 
+{
+    width: 100%;
+    color:#212529;
+}
+
+.list 
+{
+    display: table-row-group;
+}
+
+.item.table-container 
+{
+    margin-top: 1.5rem
+}
+
+.calo-box .input .item.table-container 
+{
+    font-size: 18px;
+    text-align: center;
+    /* font-weight: 700; */
+    color: #fff;
+    /* text-transform: uppercase; */
+    border-radius: .25rem;
+    padding: 13.5px 1.5rem;
+    line-height: 1.5;
+    display: inline-block;
+    width: 95%;
+}
+
+.item.table-container table {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    border-spacing: 0 .5rem;
+    border-collapse: separate;
+}
+
+.item.table-container table thead {
+    color: #1d2547;
+    background-color: #f0f0f5;
+    text-align: left;
+    font-weight: 700;
+    font-size: 18px;
+    border: 0;
+    padding: .25rem .5rem;
+}
+
+.calo-box .input .item.table-container table tbody tr {
+    outline: 1px solid #171d39;
+    border-radius: .25rem;
+    margin: 1rem 0;
+    border: 0;
+    padding: .25rem .5rem
+}
+
+.calo-box .input .item.table-container table tbody tr td {
+    margin: 1rem 0;
+    border: 0;
+    padding: .4rem .5rem;
+    font-size: 15px;
+}
+
+.item.table-container .caption {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 700;
+    background-color: #1d2547;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 0.25rem;
+    padding: 3px 1.5rem;
+    line-height: 1.5;
+    display: inline-block;
+}
+
+.custom-control-input {
+    /* position: absolute; */
+    left: 0;
+    width: 1rem;
+    height: 1.25rem;
+    opacity: 0;
+    
+}
+
+.btn:not(:disabled):not(.disabled).active, .btn:not(:disabled):not(.disabled):active {
+    background-image: none;
+    background: #1d2547;
+    color:#fff
+}
+
+.custom-control-input:checked~.custom-control-label::before 
+{
+    color: #fff;
+    border-color: #1d2547;
+    background-color: #1d2547;
+    border-radius: 50%;
+}
+
+.custom-control-input:focus~.custom-control-label::before 
+{
+    box-shadow: 0 0 0 .2rem rgba(0,123,255,.25)
+}
+
+.custom-control-input:not(:disabled):active~.custom-control-label::before 
+{
+    color: #fff;
+    background-color: #b3d7ff;
+    border-color: #b3d7ff
+}
+
+.custom-control-label 
+{
+    position: relative;
+    margin-bottom:0;
+}
+
+.custom-control-label::before 
+{
+    position: absolute;
+    top: .25rem;
+    left: -1.5rem;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+    content: "";
+    background-color: #fff;
+    border: #adb5bd solid 1px;
+    border-radius: 50%;
+}
+
+.custom-control-label::after 
+{
+    position: absolute;
+    top: .25rem;
+    left: -1.5rem;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    content: "";
+}
+
+.calo-box .output .item 
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.calo-box .output .item label 
+{
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: Lato;
+    padding: 5px 0;
+    color: #1d2547;
+    margin-bottom: 0;
+}
+
+.calo-box .output .item strong 
+{
+    font-size: 80px;
+    font-weight: 600;
+    color: red;
+    line-height: 1;
+    margin-top: 0.5rem;
+}
+
+.calo-box .output .item small 
+{
+    color: grey;
+    margin-bottom: 1rem;
+    display: block;
+    font-size: 25px;
+}
+
+.calo-box .output-recommended .standard 
+{
+    background-color: #1d2547;
+    padding: 0.25rem 0.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    font-size: 22px;
+    display: inline-flex;
+    margin-top: 2rem;
+}
+
+.calo-box .output-recommended .center-item
+{
+    align-items: center;
+    justify-content: center;
+}
+
+.text-nowrap {
+    white-space: nowrap!important
+}
+
+.calo-box .output-recommended .standard span.current-calories {
+    color: red;
+    padding: 0 .5rem;
+    border-radius: 5px;
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: 3px
+}
+
