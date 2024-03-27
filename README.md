@@ -21,7 +21,7 @@ Trang web phối hợp giữa chăm sóc sức khoẻ và giảm cân
 
 **4. Django:** framework phát triển ứng dụng web mạnh mẽ và linh hoạt được viết bằng Python. Dijango cung cấp các công cụ và tính năng giúp xây dựng các ứng dụng web phức tạp và hiệu quả.
 
-**5. SQL Server:** cơ sở dữ liệu được sử dụng để lưu trữ và quản lý dữ liệu của ứng dụng web.
+**5. MySQL:** cơ sở dữ liệu được sử dụng để lưu trữ và quản lý dữ liệu của ứng dụng web.
 
 ## IV. Một số tính năng (dự kiến):
 
