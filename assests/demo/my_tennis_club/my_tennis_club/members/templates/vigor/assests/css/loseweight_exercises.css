@@ -1,0 +1,481 @@
+/* Le Minh Quan */
+
+.ql__main {
+
+}
+
+.ql__header {
+
+}
+
+/* NAVBAR */
+.ql__navbar {
+    width: 100%;
+    height: 100px;
+    /* background-color: #efe2da; */
+    /* background-color: var(--blue_pastel-color); */
+    background-color: #1D2547;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.ql__navbar__left {
+    display: flex;
+}
+
+.ql__navbar__logo-img {
+    width: 108px;
+}
+
+.ql__navbar__category-list {
+    
+}
+
+.ql__navbar__list {
+    display: flex;
+    list-style: none;
+}
+
+.ql__navbar__item {
+    font-size: 1.8rem;
+    margin: 0 8px 0;
+}
+
+.ql__navbar__item-name:hover {
+    color: var(--blue_primary-color) !important;
+}
+
+.ql__navbar__item-name {
+    text-decoration: none;
+    color: var(--text_white-color);
+    text-align: center;
+    line-height: 10rem;
+}
+
+.ql__navbar__right {
+    display: flex;
+    align-items: center;
+}
+
+.ql__navbar__right .ql__navbar__form input {
+    width: 264px;
+    height: 36px;
+    background-color: transparent;
+    margin: 0 8px;
+    border-bottom: 1px solid #fff;
+}
+
+.ql__navbar__form {
+    position: relative;
+}
+
+.ql__navbar__form input::placeholder {
+    color: var(--text_white-color);
+    font-size: 1.4rem;
+}
+
+.ql__navbar__form input:focus {
+    outline: none;
+}
+
+.ql__navbar__form i {
+    display: block;
+    position: absolute;
+    margin: auto;
+    right: 20px;
+    font-size: 1.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text_white-color)
+}
+
+.ql__navbar__user i {
+    font-size: 1.4rem;
+    margin: auto;
+    color: var(--text_white-color);
+}
+
+.ql__navbar__user {
+    
+}
+
+.ql__navbar__user-acc {
+    text-decoration: none;
+    color: var(--text_white-color);
+    font-size: 1.4rem;
+    padding: 0 8px;
+}
+
+.ql__navbar__user-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.ql__navbar__user-container::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 28px;
+    background-color: transparent;
+    top: 11px;
+    right: 5px;
+}
+
+.ql__navbar__user-list {
+    position: absolute;
+    top: calc(100% + 16px);
+    right: 6px;
+    width: 136px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3.125rem rgba(0, 0, 0, 0.2);
+    margin-top: 2px;
+    z-index: 1;
+    background-color: var(--blue_pastel-color);
+    display: none;
+}
+
+.ql__navbar__user-list::before {
+    content: "";
+    border-style: solid;
+    border-width: 15px 26px;
+    border-color: transparent transparent var(--blue_pastel-color) transparent;
+    position: absolute;
+    top: -28px;
+    right: 1px;
+}
+
+.ql__navbar__user-container:hover .ql__navbar__user-list {
+    display: inline-block;
+}
+
+.ql__navbar__user-container:hover .ql__navbar__user-acc{
+    color: var(--blue_primary-color);
+}
+
+.ql__navbar__user-container:hover i {
+    color: var(--blue_primary-color);
+}
+
+.ql__navbar__user-item {
+    list-style: none;
+    border-bottom: 1px solid var(--text_white-color);
+    padding: 2px 8px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.ql__navbar__user-item-link {
+    width: 100%;
+    color: var(--text_white-color);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+/*Main*/
+
+#comp-kq0xz4sq {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+.SxM0TO, .c9GqVL {
+    word-wrap: break-word;
+    direction: var(--text-direction);
+    min-height: var(--min-height);
+    min-width: var(--min-width);
+    overflow-wrap: break-word;
+    pointer-events: none;
+    text-align: start;
+}
+
+/*First*/
+.first {
+    scroll-margin-bottom: -20px;
+    margin-bottom: 2px;;
+}
+
+.first h1 {
+    display: block;
+    color: #fff;
+    z-index: 1;
+    position:absolute;
+    top: 40%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-weight: bold;
+}   
+
+/* Paragraph */
+.content {
+    color: #fff;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 80%;
+    width: 600px;
+    height: 200px;
+    position: absolute;
+    left: 35%;
+    top: 60%;
+    margin-bottom: 10px;
+}
+
+.content .first_head {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: -10px;
+    text-align: left;
+}
+
+.content .first_text {
+    text-align: justify;
+    font-size: 20px;
+
+}
+
+
+/* Button */
+.ddt_button-container {
+    position: relative;
+    width: 600px;
+    height: 200px;
+    content: justify;
+    left: 8%;
+}
+
+.ddt_eating {
+    left: 20%;
+    margin-right: 100px;
+}
+
+.ddt_exercise {
+    position: absolute;
+    margin-left: 80px;
+}
+
+.ddt__border-btn {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 14px 20px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    letter-spacing: 1px;
+    position: absolute;
+    overflow: hidden;
+    text-decoration: none;
+    transform: translateX(-50%);
+    z-index: 3;
+    margin-top: 5px;
+}
+
+.ddt__border-btn i {
+    font-size: 16px;
+    margin-right: 10px;
+    color: #119de3;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    text-decoration: none;
+}
+
+
+.ddt__room-btn a:hover{
+    color: white;
+}
+
+.ddt__border-btn::before {
+    border: 1px solid transparent;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 101%;
+    height: 101%;
+    background: #1D2547;
+    z-index: -1;
+    transition: transform 0.5s;
+    transition-timing-function: ease;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+    /* transform: scaleY(0); */
+    border-radius: 0;
+    text-decoration: none;
+
+    
+}
+
+.ddt__border-btn:hover::before {
+    transform: scaleY(1);
+    border: 1px solid transparent;
+    color: #ffffff;
+    filter: brightness(85%);
+    text-decoration: none;
+}
+
+#comp-ltv57zi8 {
+    left: 0;
+    margin-left: 0;
+    width: 100%;
+    min-width: 0;
+}
+
+.Oqnisf {
+    overflow: visible;
+}
+
+/* Second */
+.second_header {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: -10px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.picking_option {
+    margin-bottom: 200px;
+    text-align: center;
+}
+
+.about-picture-2 {
+    position: relative;
+    margin-top: 50px;
+    display: inline-block; 
+    margin: 0 50px; 
+
+}
+
+.about-picture-2 img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    transition: all .7;
+}
+
+.picture-title-2 {
+    font-weight: 400;
+    font-size: 20px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    color: black;
+    transform: translate(-50%, 60%);
+    transition: all 0.5s;
+    margin-top: -10px;
+}
+
+.about-picture-group-2 .about-picture-2:hover img,
+.about-picture-group-2 .about-picture-2:active img {
+    filter: brightness(55%) blur(2px);
+    cursor: pointer;
+
+}
+
+.about-picture-group-2 .about-picture-2:hover .picture-title-2,
+.about-picture-group-2 .about-picture-2:active .picture-title-2 {
+    transform: translate(-55%, -500%);
+    opacity: 1;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+
+/* Third */
+.visit-tailor-area {
+    display: block;
+    margin-top: -60px;
+}
+
+.visit-tailor-area {
+    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    margin-bottom: -100px;
+}
+
+.fix {
+    overflow: hidden;
+}
+
+.visit-tailor-area .tailor-offers {
+    width: 100%;
+    height: 500px;
+}
+
+.visit-tailor-area .tailor-offers {
+    background-image: url(https://images.pexels.com/photos/40720/basil-herbs-green-mediterranean-40720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=22);
+    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 570px;
+    width: 55%;
+}
+
+.visit-tailor-area .tailor-details {
+    width: 40%;
+    padding: 20px 20px 20px 60px;
+}
+
+.visit-tailor-area .tailor-details h2 {
+    width: 300px;
+    font-size: 40px;
+    display: block;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.visit-tailor-area .tailor-details p {
+    color: #010A44;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+
+.tailor-details .lqt__btn {
+    background: #FD8F5F;
+    text-transform: uppercase;
+    padding: 27px 44px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-block;
+    line-height: 1;
+    -moz-user-select: none;
+    letter-spacing: 2px;
+    line-height: 0;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    z-index: 1;
+    border: 0;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 0px;
+    transition: all 0.3s;
+}
+
+.lqt__btn:hover,
+.lqt__btn:active {
+    filter: brightness(90%);
+    transform: scale(110%);
+    border: 2px solid rgb(104, 184, 255);
+    text-decoration: none;
+
+}
