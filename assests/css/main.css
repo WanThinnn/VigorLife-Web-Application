@@ -36,8 +36,9 @@
 }
 
 .ql__navbar__item {
-    font-size: 1.8rem;
-    margin: 0 8px 0;
+    font-size: 2rem;
+    margin: 0 16px 0;
+    font-weight: 400;
 }
 
 .ql__navbar__item-name:hover {
@@ -135,7 +136,7 @@
     content: "";
     border-style: solid;
     border-width: 15px 26px;
-    border-color: transparent transparent var(--blue_pastel-color) transparent;
+    border-color: transparent transparent #1D2547 transparent;
     position: absolute;
     top: -28px;
     right: 1px;
@@ -197,7 +198,7 @@
 }
 
 .ql__slider-content__content {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin: 10px;
     color: black;
     line-height: 2rem;
