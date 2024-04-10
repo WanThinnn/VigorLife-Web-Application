@@ -1,0 +1,169 @@
+{% extends 'site1/base.html' %}
+{%load static%}
+{%block introduction-content%}
+
+<section class="slider-area">
+    <div class="slider-area-photo"></div>
+    <div class="container">
+        <div class="slider-row">
+            <div class="col-xl-6 col-lg-8 col-md-8">
+                <div class="slider-row-caption">
+                    <h1>Về Chúng Tôi</h1>
+                    <nav aria-label="slider-nav">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html" tabindex="0">Trang Chủ</a></li>
+                            <li class="breadcrumb-item"> <a href="#" tabindex="0">Về Chúng Tôi</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="about-us-section">
+    <div class="about-container">
+        <div class="about-us-section-row">
+            <div class="about-us-section-tittle">
+                <h2>Chuyện Kể Rằng...</h2>
+                <p class="about-p-long">
+                    Website này bắt nguồn từ những trải nghiệm cá nhân và niềm đam mê chăm sóc sức khỏe của nhóm
+                    chúng mình. Một số thành viên trong nhóm có những trải nghiệm về việc vượt qua các vấn đề sức
+                    khỏe cá nhân, từ việc đối mặt với căng thẳng hàng ngày đến việc tìm kiếm cách sống lành mạnh
+                    hơn. Tụi mình nhận thấy rằng thông tin về sức khỏe thường phải tìm kiếm từ nhiều nguồn khác nhau và có
+                    thể rất phức tạp và khó hiểu. 
+                    Với tinh thần ấy, nhóm quyết định tạo ra một nền tảng trực tuyến, một nguồn thông tin toàn diện
+                    và dễ tiếp cận về sức khỏe cho mọi người. Tụi mình muốn chia sẻ những kiến thức hữu ích, những bí
+                    quyết và kinh nghiệm cá nhân một cách chân thành và thiết thực nhất có thể, để mọi người có thể
+                    áp dụng vào cuộc sống hàng ngày của mình.
+                </p>
+            </div>
+        </div>
+        <div class="about-picture-group-1">
+            <div class="about-picture-2">
+                <img src={% static "\site1\img\quanthien.JPG"%}
+                    alt="">
+                <p class="picture-title-2">
+                    Lại Quan Thiên
+                </p>
+            </div>
+            <div class="about-picture-2">
+                <img src={% static "\site1\img\quanle.JPG"%}
+                    alt="">
+                <p class="picture-title-2">
+                    Lê Minh Quân
+                </p>
+            </div>
+            <div class="about-picture-2">
+                <img src={% static "\site1\img\ductai.JPG"%}
+                    alt="">
+                <p class="picture-title-2">
+                    Đặng Đức Tài
+                </p>
+            </div>
+        </div>
+        <div class="about-picture-group-2">
+            <div class="about-picture-2">
+                <img src={% static "\site1\img\quangthinh.JPG"%}
+                    alt="">
+                <p class="picture-title-2">
+                    Nguyễn Quang Thịnh
+                </p>
+            </div>
+            <div class="about-picture-2">
+                <img src={% static "\site1\img\namphuong.JPG"%}
+                    alt="">
+                <p class="picture-title-2">
+                    Mai Nguyễn Nam Phương
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+
+<section class="about-project-section">
+    <div class="about-container">
+        <div class="about-project-section-row">
+            <div class="about-project-section-tittle">
+                <h2>Sơ Lược Về Đồ Án</h2>
+                <p class="about-p-long-2">
+                    Đồ án môn học về website này được thiết kế với mục đích chính là hỗ trợ sức khỏe của người sử
+                    dụng. Với tâm hồn chăm sóc sức khỏe cộng đồng, trang web này cung cấp một loạt các thông tin và
+                    tài nguyên hữu ích để giúp mọi người duy trì một lối sống lành mạnh và cân đối. Từ các bài viết
+                    về dinh dưỡng, tập luyện, đến các thông tin về tâm lý học và cách quản lý căng thẳng, đồ án này
+                    mong muốn góp phần vào việc nâng cao ý thức về sức khỏe cộng đồng và tạo ra một cộng đồng trực
+                    tuyến tích cực và hỗ trợ lẫn nhau trong hành trình chăm sóc sức khỏe của mỗi người.
+                </p>
+            </div>
+        </div>
+
+        <div class="project-photo">
+            <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="">
+            <p class="picture-title-pro">
+                Nhóm Chúng Mình
+            </p>
+        </div>
+        <!-- <div class="horizontal-line-2">
+        </div> -->
+        <div class="lqt__row_2">
+            <div class="col span-1-of-4 about-picture">
+                <img src="https://images.pexels.com/photos/257816/pexels-photo-257816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="calo">
+                <p class="picture-title">
+                    Calo Calculator
+                </p>
+            </div>
+
+            <div class="col span-1-of-4 about-picture">
+                <img src="https://images.pexels.com/photos/2080544/pexels-photo-2080544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="tdee">
+                <p class="picture-title">
+                    TDEE Calculator
+                </p>
+            </div>
+
+            <div class="col span-1-of-4 about-picture">
+                <img src="https://images.pexels.com/photos/53404/scale-diet-fat-health-53404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="bmr">
+                <p class="picture-title">
+                    BMR Calculator
+                </p>
+            </div>
+
+            <div class="col span-1-of-4 about-picture">
+                <img src="https://images.pexels.com/photos/28080/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="bmi">
+                <p class="picture-title">
+                    BMI Calculator
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ins-2">
+    <div class="np__content" style="display: inline-block;">
+        <i class="fa-brands fa-instagram fa-5x" style="color: #fd8f5f;"></i>
+        <h2 class="h2_chung" style="margin-top: 7px;" class="np__contenta">LIÊN HỆ VỚI CHÚNG TÔI QUA INSTAGRAM</h2>
+        <p class="np__contenta">
+
+            Theo dõi chúng tôi trên Instagram để xem thêm blog hữu ích về sức khỏe và sắc đẹp.
+        </p>
+        <div class="btnz">
+            <a href="#" class="np__Discoverybtn">Discovery more</a>
+        </div>
+    </div>
+    <div class="imgz">
+        <img src="https://images.pexels.com/photos/2171077/pexels-photo-2171077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="z" class="anhz">
+        <img src="https://images.pexels.com/photos/775032/pexels-photo-775032.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="s" class="anhz">
+    </div>
+</section>
+
+{%endblock introduction-content%} 
