@@ -23,6 +23,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
     </head>
+
     <body>
 
       <section class="">
@@ -30,7 +31,7 @@
             <div class="ql__header">
                 <div class="ql__navbar">
                     <div class="ql__navbar__left">
-                        <a href="#" class="ql__navbar__logo-img">
+                        <a href="{% url 'index' %}" class="ql__navbar__logo-img">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                 viewBox="0 0 566.93 566.93">
                                 <defs>
@@ -164,16 +165,16 @@
                                     <a href="{% url 'index' %}" class="ql__navbar__item-name">Home</a>
                                 </li>
                                 <li class="ql__navbar__item">
-                                    <a href="/resources/tool.html" class="ql__navbar__item-name">Tools</a>
+                                    <a href="{% url 'tool' %}" class="ql__navbar__item-name">Tools</a>
                                 </li>
                                 <li class="ql__navbar__item">
-                                    <a href="/resources/introduction.html" class="ql__navbar__item-name">About Us</a>
+                                    <a href="{% url 'introduction' %}" class="ql__navbar__item-name">About Us</a>
                                 </li>
                                 <li class="ql__navbar__item">
-                                    <a href="/resources/healthinfo.html" class="ql__navbar__item-name">Page</a>
+                                    <a href="{% url 'healthinfo' %}" class="ql__navbar__item-name">Page</a>
                                 </li>
                                 <li class="ql__navbar__item">
-                                    <a href="/resources/loseweight_exercise.html" class="ql__navbar__item-name">Blog</a>
+                                    <a href="{% url 'loseweight' %}" class="ql__navbar__item-name">Blog</a>
                                 </li>
                                 <li class="ql__navbar__item">
                                     <a href="#fter" class="ql__navbar__item-name">Contact</a>
@@ -219,5 +220,6 @@
     </section>
     {% block main-content%}{%endblock main-content%}
     {%block register%}{%endblock register%}
+    {% comment %} {%block index%}{%endblock index%} {% endcomment %}
     </body>
 </html>

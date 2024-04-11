@@ -1,3 +1,4 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +18,9 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="/assests/css/base.css">
-    <link rel="stylesheet" href="/assests/css/main.css">
-    <link rel="stylesheet" href="/assests/css/loseweight_exercises.css">
+    <link rel="stylesheet" href="{% static 'app1/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/css/loseweight_exercises.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -377,7 +378,7 @@
                                 <div class="mb-50">
                                     <div class="mb-30">
                                         <a href="#">
-                                            <img src="../assests/logo/Artboard 1@20x.png" alt="logo" width = "28%" height= "28%">
+                                            <img src="{% static "app1/logo/anh.png"%}" alt="logo" width = "28%" height= "28%">
                                         </a>
                                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                                             Delectus repellendus reiciendis sint dolores numquam officiis repudiandae
@@ -396,7 +397,7 @@
                                 </div>
                                 <!--   -->
                             </div>
-                            <!----------------------------------------------------------->
+                           
                             <div class="pos">
                                 <div class="mb-50">
                                     <div class="mb-30 NQT_a" style="text-align: center; color:white;">

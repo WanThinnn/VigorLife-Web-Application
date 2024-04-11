@@ -18,11 +18,10 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="/assests/css/base.css">
-    <link rel="stylesheet" href="/assests/css/main.css">
-    <link rel="stylesheet" href="/assests/css/healthinfo.css">
-    <link rel="stylesheet" href="/assests/css/introduction.css">
-
+    <link rel="stylesheet" href="{% static 'app1/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/css/introduction.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/css/healthinfo.css' %}">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -171,19 +170,19 @@
                 <div class="ql__navbar__category-list">
                     <ul class="ql__navbar__list">
                         <li class="ql__navbar__item">
-                            <a href="/index.html" class="ql__navbar__item-name">Home</a>
+                            <a href="{% url 'index' %}" class="ql__navbar__item-name">Home</a>
                         </li>
                         <li class="ql__navbar__item">
-                            <a href="/resources/tool.html" class="ql__navbar__item-name">Tools</a>
+                            <a href="{% url 'tool' %}" class="ql__navbar__item-name">Tools</a>
                         </li>
                         <li class="ql__navbar__item">
-                            <a href="/resources/introduction.html" class="ql__navbar__item-name">About Us</a>
+                            <a href="{% url 'introduction' %}" class="ql__navbar__item-name">About Us</a>
                         </li>
                         <li class="ql__navbar__item">
-                            <a href="/resources/healthinfo.html" class="ql__navbar__item-name">Page</a>
+                            <a href="{% url 'healthinfo' %}" class="ql__navbar__item-name">Page</a>
                         </li>
                         <li class="ql__navbar__item">
-                            <a href="/resources/loseweight_exercise.html" class="ql__navbar__item-name">Blog</a>
+                            <a href="{% url 'loseweight' %}" class="ql__navbar__item-name">Blog</a>
                         </li>
                         <li class="ql__navbar__item">
                             <a href="#fter" class="ql__navbar__item-name">Contact</a>
@@ -582,7 +581,7 @@
                                 <div class="mb-50">
                                     <div class="mb-30">
                                         <a href="#">
-                                            <img src="../assests/logo/Artboard 1@20x.png" alt="logo" width = "28%" height= "28%">
+                                            <img src="{% static "app1/logo/anh.png" %}" alt="logo" width = "40%" height= "40%">
                                         </a>
                                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                                             Delectus repellendus reiciendis sint dolores numquam officiis repudiandae

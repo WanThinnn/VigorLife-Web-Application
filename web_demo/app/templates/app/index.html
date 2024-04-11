@@ -1,3 +1,4 @@
+{% comment %} {% extends 'app/base.html' %} {% endcomment %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -17,10 +18,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="./assests/layout/introduction.html">
-    <link rel="stylesheet" href="./assests/layout/login.html">
-    <link rel="stylesheet" href="./assests/layout/loseweight_exercise.html">
-    <link rel="stylesheet" href="./assests/layout/healthinfo.html"> -->
     <link rel="stylesheet" href="{% static 'app1/css/base.css' %}">
     <link rel="stylesheet" href="{% static 'app1/css/main.css' %}">
     
@@ -36,6 +33,7 @@
 </head>
 
 <body>
+    
     <!-- Le Minh Quan -->
     <section class="">
         <div class="ql__main">
@@ -182,10 +180,10 @@
                                     <a href="{% url 'introduction' %}" class="ql__navbar__item-name">About Us</a>
                                 </li>
                                 <li class="ql__navbar__item">
-                                    <a href="/resources/healthinfo.html" class="ql__navbar__item-name">Page</a>
+                                    <a href="{% url 'healthinfo' %}" class="ql__navbar__item-name">Page</a>
                                 </li>
                                 <li class="ql__navbar__item">
-                                    <a href="/resources/loseweight_exercise.html" class="ql__navbar__item-name">Blog</a>
+                                    <a href="{% url 'loseweight' %}" class="ql__navbar__item-name">Blog</a>
                                 </li>
                                 <li class="ql__navbar__item">
                                     <a href="#fter" class="ql__navbar__item-name">Contact</a>
@@ -515,7 +513,7 @@
                                 </div>
                                 <!--   -->
                             </div>
-                            <!----------------------------------------------------------->
+                            
                             <div class="pos">
                                 <div class="mb-50">
                                     <div class="mb-30 NQT_a" style="text-align: center; color:white;">
@@ -574,6 +572,7 @@
 
         </footer>
     </section>
+    
 </body>
 
 </html>
