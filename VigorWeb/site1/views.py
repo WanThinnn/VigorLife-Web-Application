@@ -6,3 +6,5 @@ def home(request):
     return render(request, 'site1/home.html')
 def introduction(request):
     return render(request, 'site1/introduction.html')
+def heallthinfo(request):
+    return render(request, 'site1/heallthinfo.html')
