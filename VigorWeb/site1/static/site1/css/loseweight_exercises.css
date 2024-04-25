@@ -1,33 +1,13 @@
-
-/*Main*/
-
-#comp-kq0xz4sq {
-    max-height: 100%;
-    max-width: 100%;
-    width: auto;
-    height: auto;
-}
-
-.SxM0TO, .c9GqVL {
-    word-wrap: break-word;
-    direction: var(--text-direction);
-    min-height: var(--min-height);
-    min-width: var(--min-width);
-    overflow-wrap: break-word;
-    pointer-events: none;
-    text-align: start;
-}
-
 /*First*/
-.first {
+.ddt_first {
     scroll-margin-bottom: -20px;
     margin-bottom: 2px;;
 }
 
-.first h1 {
+.ddt_first h1 {
     display: block;
     color: #fff;
-    z-index: 1;
+    /*z-index: 1;*/
     position:absolute;
     top: 40%;
     left: 35%;
@@ -37,9 +17,9 @@
 }   
 
 /* Paragraph */
-.content {
+.ddt_content {
     color: #fff;
-    z-index: 1;
+    /*z-index: 1;*/
     transform: translate(-50%, -50%);
     white-space: normal;
     word-wrap: break-word;
@@ -52,14 +32,14 @@
     margin-bottom: 10px;
 }
 
-.content .first_head {
+.ddt_content .ddt_first_head {
     font-size: 60px;
     font-weight: bold;
     margin-bottom: -10px;
     text-align: left;
 }
 
-.content .first_text {
+.ddt_content .ddt_first_text {
     text-align: justify;
     font-size: 20px;
 
@@ -154,26 +134,35 @@
     min-width: 0;
 }
 
-.Oqnisf {
+.ddt_Oqnisf {
     overflow: visible;
 }
 
 /* Second */
-.second_header {
+.ddt_second_header {
+    text-align: center;
     font-size: 60px;
     font-weight: bold;
     margin-bottom: -10px;
-    text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
-.picking_option {
+.ddt_second_header {
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: -10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.ddt_picking_option {
     margin-bottom: 200px;
     text-align: center;
 }
 
-.about-picture-2 {
+.ddt_about-picture-2 {
     position: relative;
     margin-top: 50px;
     display: inline-block; 
@@ -181,14 +170,14 @@
 
 }
 
-.about-picture-2 img {
+.ddt_about-picture-2 img {
     width: 280px;
     height: 280px;
     object-fit: cover;
     transition: all .7;
 }
 
-.picture-title-2 {
+.ddt_picture-title-2 {
     font-weight: 400;
     font-size: 20px;
     position: absolute;
@@ -200,15 +189,15 @@
     margin-top: -10px;
 }
 
-.about-picture-group-2 .about-picture-2:hover img,
-.about-picture-group-2 .about-picture-2:active img {
+.ddt_about-picture-group-2 .ddt_about-picture-2:hover img,
+.ddt_about-picture-group-2 .ddt_about-picture-2:active img {
     filter: brightness(55%) blur(2px);
     cursor: pointer;
 
 }
 
-.about-picture-group-2 .about-picture-2:hover .picture-title-2,
-.about-picture-group-2 .about-picture-2:active .picture-title-2 {
+.ddt_about-picture-group-2 .ddt_about-picture-2:hover .ddt_picture-title-2,
+.ddt_about-picture-group-2 .ddt_about-picture-2:active .ddt_picture-title-2 {
     transform: translate(-55%, -500%);
     opacity: 1;
     color: #ffffff;
@@ -216,30 +205,28 @@
 }
 
 /* Third */
-.visit-tailor-area {
+.ddt_visit-tailor-area {
     display: block;
     margin-top: -60px;
 }
 
-.visit-tailor-area {
+.ddt_visit-tailor-area {
     background: #f4f4f4;
     display: flex;
     align-items: center;
     margin-bottom: -100px;
 }
 
-.fix {
+.ddt_fix {
     overflow: hidden;
 }
 
-.visit-tailor-area .tailor-offers {
+.ddt_visit-tailor-area .ddt_tailor-offers {
     width: 100%;
     height: 500px;
 }
 
-.visit-tailor-area .tailor-offers {
-    background-image: url(https://images.pexels.com/photos/40720/basil-herbs-green-mediterranean-40720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=22);
-    background-size: 100%;
+.ddt_visit-tailor-area .ddt_tailor-offers {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -247,12 +234,12 @@
     width: 55%;
 }
 
-.visit-tailor-area .tailor-details {
+.ddt_visit-tailor-area .ddt_tailor-details {
     width: 40%;
     padding: 20px 20px 20px 60px;
 }
 
-.visit-tailor-area .tailor-details h2 {
+.ddt_visit-tailor-area .ddt_tailor-details h2 {
     width: 300px;
     font-size: 40px;
     display: block;
@@ -262,9 +249,40 @@
     text-transform: uppercase;
 }
 
-.visit-tailor-area .tailor-details p {
+.ddt_visit-tailor-area .ddt_tailor-details p {
     color: #010A44;
     line-height: 1.7;
     font-size: 14px;
 }
 
+.ddt_tailor-details .ddt_btn {
+    background: #FD8F5F;
+    text-transform: uppercase;
+    padding: 27px 44px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-block;
+    line-height: 1;
+    letter-spacing: 2px;
+    line-height: 0;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    z-index: 1;
+    border: 0;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 0px;
+    transition: all 0.3s;
+}
+
+.ddt_btn:hover,
+.ddt_btn:active {
+    filter: brightness(90%);
+    transform: scale(110%);
+    border: 2px solid rgb(185, 114, 20);
+    text-decoration: none;
+
+}

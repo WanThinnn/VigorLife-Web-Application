@@ -8,3 +8,5 @@ def introduction(request):
     return render(request, 'site1/introduction.html')
 def heallthinfo(request):
     return render(request, 'site1/heallthinfo.html')
+def loseweight(request):
+    return render(request, 'site1/loseweight_exercise.html')
