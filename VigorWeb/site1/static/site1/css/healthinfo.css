@@ -109,14 +109,14 @@
     height: 500px;
 }
 
-.np__content {
+/* .np__content_2 {
     margin-top: 80px;
     float: left;
     margin-left: 150px;
     height: 500px;
     width: 29%;
     margin-right: 40px;
-}
+} */
 
 .btnz {
     margin-top: 20px;
@@ -292,11 +292,11 @@
     display: flex;
     text-align: center;
 }
-/* tesst */
+/* tesst
 
 .about-us-section{
     height: 80vh !important;
 }
 .about-project-section{
     margin-bottom: -100px;
-}
+} */

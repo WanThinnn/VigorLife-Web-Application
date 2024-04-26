@@ -67,7 +67,7 @@
     margin-top: 10rem;
     position: relative;
     width: 100%;
-    height: 115vh;
+    /* height: 115vh; */
     display: flex;
     text-align: center;
 }
@@ -169,7 +169,7 @@
 
 
 .about-project-section {
-    margin-top: 13rem;
+    margin-top: 8rem;
     position: relative;
     width: 100%;
     height: 160vh;
