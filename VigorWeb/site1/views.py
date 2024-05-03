@@ -10,3 +10,5 @@ def heallthinfo(request):
     return render(request, 'site1/heallthinfo.html')
 def loseweight(request):
     return render(request, 'site1/loseweight_exercise.html')
+def tools(request):
+    return render(request, 'site1/tools.html')
