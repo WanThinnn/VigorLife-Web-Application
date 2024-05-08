@@ -76,11 +76,11 @@ WSGI_APPLICATION = 'VigorWeb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vigorweb',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'vigorweb',
+        # 'USER': 'root',
+        # 'PASSWORD': '',
+        # 'HOST': 'localhost',
     }
 }
 
