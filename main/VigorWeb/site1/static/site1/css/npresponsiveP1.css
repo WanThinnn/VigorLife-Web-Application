@@ -1,5 +1,17 @@
 /* Big tablet to 1200px; */
-@media only screen and (max-width:1200px) {}
+@media only screen and (max-width:1200px) {
+    .ddt_content .ddt_first_head {
+        font-size: 40px;
+        text-align: center;
+        margin-top: -2.5em;
+    }
+
+    .ddt_content .ddt_first_text {
+        text-align: center;
+        font-size: 20px;
+        margin-top: 1em;
+    }
+}
 
 /* Small tablet to big tablet from 768x to 1023px */
 @media only screen and (max-width:1023px) {
@@ -14,64 +26,51 @@
         font-size: 17px;
         margin-top: 1em;
     }
-
-    .h2_chung {
-        margin-left: -40px;
-    }
-
-    .np__contenta {
-        margin-left: -40px;
-    }
-
-    .ddt_tailor-details .ddt_btn {
-        margin-left: -40px;
-    }
-
     .imgz .anhz {
-        width: 23%;
+        width: 22%;
+        height: 420px;
     }
-    .ins-2 {
-        margin-bottom: 100px;
-    }
+
 }
 
 /* Small phones to small tablets */
 @media only screen and (max-width: 767px) {
-    .ddt_content .ddt_first_text {
-        text-align: center;
-        font-size: 12px;
-        margin-top: -5em;
-        margin-left: 10em;
-    }
     .ddt_content
     {
         margin-left: 40px;
     }
-    .section-tittle h2
-    {
+    .ddt_content .ddt_first_text {
         text-align: center;
+        font-size: 12px;
+        margin-top: 1em;
+        margin-left: 10em;
+    }
+    .ddt_content .ddt_first_head {
+        font-size: 23px;
+        text-align: center;
+        margin-top: -6em;
     }
     .ddt_about-picture-2 img {
-        width: 220px;
-    }
-    .h2_chung {
-        margin-left: -60px;
-    }
-
-    .np__contenta {
-        margin-left: -60px;
-    }
-
-    .ddt_tailor-details .ddt_btn {
-        margin-left: -60px;
+        margin-top: 50px;
     }
     .imgz .anhz {
-        width: 18%;
+        width: 19%;
+        height: 500px;
+        margin-bottom: 60px;
     }
-    .ddt_visit-tailor-area .ddt_tailor-details h2 {
-        text-align: center;
-    }
+
 }
 
 /* Small phones from 0 to 480px; */
-@media only screen and (max-width: 480px) {}
+@media only screen and (max-width: 480px) {
+    .ddt_content .ddt_first_text {
+        text-align: center;
+        font-size: 8px;
+        margin-top: -13em;
+    }
+    .ddt_content .ddt_first_head {
+        font-size: 15px;
+        text-align: center;
+        margin-top: -6em;
+    }
+}
