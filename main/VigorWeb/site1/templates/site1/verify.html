@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>VERIFY</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    </head>
+    <body>
+        OTP: {{otp}}
+        <input type="text" name="otp" id="otp" placeholder="Enter OTP">
+        
+        <script>
+            $('#otp').change(function(){
+                let otp = $('#otp').val();
+                console.log("OTP: ",otp)
+                if (otp == '{{otp}}')
+                {
+                    console.log("OTP Verified")
+                    
+                    // Lấy CSRF token từ cookie
+                    const csrftoken = getCookie('csrftoken');
+                    
+                    // Thêm CSRF token vào dữ liệu của yêu cầu POST
+                    let postData = {'csrfmiddlewaretoken': csrftoken, 'otp': otp, 'first_name': "{{first_name}}", 'last_name': "{{last_name}}", 'email': "{{email}}", 'username': "{{username}}", 'password1': "{{password1}}", 'password2': "{{password2}}"}
+                    
+                    $.ajax({
+                        type: "POST",
+                        url: '{% url "verify" %}',
+                        data: postData,
+                        success: function(data){
+                            console.log("OTP Verifiedddd")
+                            //window.location.href = "/"
+                        }
+                    })
+                }
+            })
+    
+            // Hàm để lấy giá trị của cookie CSRF từ trình duyệt
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        // Kiểm tra xem cookie có bắt đầu bằng 'csrftoken=' không
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+        </script>
+    </body>
+</html>
