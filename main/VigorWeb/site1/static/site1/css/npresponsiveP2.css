@@ -23,11 +23,6 @@
     .about-project-section .about-project-section-tittle h2 {
         margin-top: 15rem;
     }
-    .ins-2
-    {
-        height: 650px;
-        margin-top: 90px;
-    }
 }
 
 /* Small tablet to big tablet from 768x to 1023px */
@@ -35,7 +30,6 @@
     .about-project-section .about-container {
         width: 900px;
     }
-
     .slider-row {
         margin-left: -170px;
     }
@@ -115,7 +109,7 @@
     }
 
     .ql__navbar {
-        width: 650px;
+        width: 400px;
     }
 
     .pos {
