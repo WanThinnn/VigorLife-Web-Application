@@ -1,0 +1,77 @@
+/* Big tablet to 1200px; */
+@media only screen and (max-width:1200px) {}
+
+/* Small tablet to big tablet from 768x to 1023px */
+@media only screen and (max-width:1023px) {
+    .ddt_content .ddt_first_head {
+        font-size: 20px;
+        text-align: center;
+        margin-top: -2.5em;
+    }
+
+    .ddt_content .ddt_first_text {
+        text-align: right;
+        font-size: 17px;
+        margin-top: 1em;
+    }
+
+    .h2_chung {
+        margin-left: -40px;
+    }
+
+    .np__contenta {
+        margin-left: -40px;
+    }
+
+    .ddt_tailor-details .ddt_btn {
+        margin-left: -40px;
+    }
+
+    .imgz .anhz {
+        width: 23%;
+    }
+    .ins-2 {
+        margin-bottom: 100px;
+    }
+}
+
+/* Small phones to small tablets */
+@media only screen and (max-width: 767px) {
+    .ddt_content .ddt_first_text {
+        text-align: center;
+        font-size: 12px;
+        margin-top: -5em;
+        margin-left: 10em;
+    }
+    .ddt_content
+    {
+        margin-left: 40px;
+    }
+    .section-tittle h2
+    {
+        text-align: center;
+    }
+    .ddt_about-picture-2 img {
+        width: 220px;
+    }
+    .h2_chung {
+        margin-left: -60px;
+    }
+
+    .np__contenta {
+        margin-left: -60px;
+    }
+
+    .ddt_tailor-details .ddt_btn {
+        margin-left: -60px;
+    }
+    .imgz .anhz {
+        width: 18%;
+    }
+    .ddt_visit-tailor-area .ddt_tailor-details h2 {
+        text-align: center;
+    }
+}
+
+/* Small phones from 0 to 480px; */
+@media only screen and (max-width: 480px) {}
