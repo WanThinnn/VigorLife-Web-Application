@@ -21,8 +21,6 @@
 
 .sample p {
     text-align: center;
-    /* font-weight: 100%; */
-    /* margin-top: 20px; */
 }
 
 .np__row {
@@ -109,14 +107,6 @@
     height: 500px;
 }
 
-/* .np__content_2 {
-    margin-top: 80px;
-    float: left;
-    margin-left: 150px;
-    height: 500px;
-    width: 29%;
-    margin-right: 40px;
-} */
 
 .btnz {
     margin-top: 20px;
@@ -292,11 +282,7 @@
     display: flex;
     text-align: center;
 }
-/* tesst
 
-.about-us-section{
-    height: 80vh !important;
-}
 .about-project-section{
-    margin-bottom: -100px;
-} */
+    height: 910px;
+} 

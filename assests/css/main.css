@@ -33,6 +33,7 @@
 .ql__navbar__list {
     display: flex;
     list-style: none;
+    align-items: center;
 }
 
 .ql__navbar__item {
@@ -49,7 +50,7 @@
     text-decoration: none;
     color: var(--text_white-color);
     text-align: center;
-    line-height: 10rem;
+    line-height: 1rem;
 }
 
 .ql__navbar__right {
