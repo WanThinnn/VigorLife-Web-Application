@@ -4,8 +4,14 @@ from .models import *
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-
+from django.core.mail import send_mail
+from VigorWeb.settings import EMAIL_HOST_USER
+import random
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.models import User
 # Create your views here.
+@csrf_exempt
 
 def home(request):
     return render(request, 'site1/home.html')
@@ -22,12 +28,43 @@ def loseweight(request):
 def tools(request):
     return render(request, 'site1/tools.html')
 
+def verifyOTP(request):
+    if request.method == 'POST':
+        userOTP = request.POST.get('otp')
+        email=request.POST.get('email')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        username = request.POST.get('username')
+        password1 = request.POST.get('password1')
+        password2 = request.POST.get('password2')
+
+        if password1 == password2:
+            form = User(username=username, email=email, first_name=first_name, last_name=last_name, password=password1)
+            form.save()
+
+        print ("OTP: ", userOTP)
+
+    return JsonResponse({'data' : 'Hello'}, status=200)
+
 def register(request):
     form = UserCreationForm()
     if request.method == "POST":
+        email=request.POST.get('email')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        user_name = request.POST.get('username')
+        password1 = request.POST.get('password1')
+        password2 = request.POST.get('password2')
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
+           # form.save()
+           otp = random.randint(100000,999999)
+           #send_mail("User Data: ", f"Your OTP is: {otp}", EMAIL_HOST_USER, [email], fail_silently=True)
+           messages.success(request, 'OTP has been sent to your email')
+           return render(request, 'site1/verify.html', {'otp': otp, 'first_name': first_name, 'last_name': last_name, 'email': email, 'username': user_name, 'password1': password1, 'password2': password2})
+        else:
+            print("Form error: ", form.errors)
+            messages.error(request, form.errors)
     context = {'form': form}
     return render(request, 'site1/register.html',context)
   
