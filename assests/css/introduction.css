@@ -10,7 +10,7 @@
 
 .slider-row {
     margin-top: -200px;
-    margin-left: -200px;
+    margin-left: -280px;
 }
 
 .slider-area .slider-row-caption {
@@ -23,7 +23,7 @@
 
 .slider-area .slider-row-caption {
     padding: 39px 70px 56px 68px;
-    margin-left: -200px;
+    /* margin-left: -10px; */
     margin-right: 25px;
     position: relative;
     overflow: hidden;
@@ -167,20 +167,23 @@
 
 
 .about-project-section {
-    margin-top: 10rem;
+    margin-top: 13rem;
     position: relative;
     width: 100%;
-    height: 140vh;
+    height: 160vh;
     display: flex;
     text-align: center;
     background-color: #f4f4f4;
-    margin-top: 5rem;
 }
 
 
 .about-project-section .about-container {
     margin: 0 auto; /* Để căn giữa */
     margin-top: -3rem;
+    /* padding-top: 50px; */
+    /* padding-bottom: 50px; */
+    /* height: 100px; */
+
 }
 
 .about-project-section .about-project-section-tittle h2 {

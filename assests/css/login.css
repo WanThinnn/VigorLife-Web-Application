@@ -1,0 +1,357 @@
+/* HEADER */
+.ql__header {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: space-between;
+    background-color: #1D2547;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.ql__header__left {
+    display: flex;
+}
+
+.ql__header__logo-img {
+    width: 108px;
+}
+
+.ql__header__login {
+    font-size: 3rem;
+    text-decoration: none;
+    color: var(--white-color);
+    padding-left: 16px;
+    line-height: 100px;
+    font-weight: 700;
+}
+
+.ql__header__help {
+    font-size: 2.0rem;
+    text-decoration: none;
+    color: var(--white-color);
+    line-height: 100px;
+    padding-right: 16px;
+}
+
+/* SLIDER */
+.ql__slider {
+    position: relative;
+    margin-top: 100px;
+    padding-top: 50%;
+    background: url('../img/food-img.jpeg') top center / cover no-repeat;
+}
+
+.ql__slider-content {
+    width: 460px;
+    height: 230px;
+    position: absolute;
+    /* top: 120px;
+    left: 440px; */
+    top: 35%;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 1);
+    transform: translate(-50%, -50%);
+}
+
+.ql__slider-content-heading {
+    font-size: 7rem;
+    color: var(--pink_primary-color);
+    margin: 8px; 
+    padding-right: 24px;
+}
+
+.ql__slider-content__content {
+    font-size: 1.8rem;
+    margin: 8px;
+    color: var(--pink_pastel-color);
+    line-height: 2rem;
+    padding-right: 24px;
+}
+
+.btn {
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: var(--white-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6rem;
+}
+
+.btn.btn--normal:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn.btn--size-s {
+    height: 32px;
+    font-size: 12px;
+    padding: 0 8px;
+}
+
+.btn.btn--primary {
+    color: var(--white-color);
+    background-color: #323c6c;
+    /* background-color: var(--blue_primary-color); */
+    margin-left: 10px;
+}
+
+.btn.btn--disabled {
+    color: #949494;
+    cursor: default;
+    background-color: #c3c3c3;
+}
+
+.ql__container {
+    width: 100%;
+    height: 600px;
+    background-color: var(--blue_pastel-color);
+}
+
+.ql__container-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ql__container-content-left {
+    position: relative;
+    flex: 1;
+}
+
+.ql__container-content-left-img {
+    margin: auto;
+}
+
+.ql__container-content-right {
+    flex: 1;
+    position: relative;
+}
+
+.ql__container-content-form {
+    margin: auto;
+}
+
+.auth-form {
+    width: 500px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.auth-form__container {
+    padding: 0 32px;
+}
+
+.auth-form__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    margin-top: 30px;
+}
+
+.auth-form__heading {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif ;
+    text-rendering: optimizeLegibility;
+}
+
+.auth-form__switch-btn {
+    font-size: 1.6rem;
+    color: var(--blue_primary-color);
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.auth-form__input {
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+    padding: 0 12px;
+    font-size: 1.4rem;
+    border-radius: 2px;
+    border: 1px solid var(--border-color);
+    outline: none;
+}
+
+.auth-form__input:focus {
+    border-color: #888;
+}
+
+.auth-form__aside {
+    margin-top: 18px;
+}
+
+.auth-form__policy-text {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    text-align: center;
+    padding: 0 12px;
+}
+
+.auth-form__text-link {
+    text-decoration: none;
+    color: var(--blue_primary-color);
+}
+
+.auth-form__controls {
+    margin-top: 60px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.auth-form__controls-back{
+    margin-right: 8px;
+}
+
+.auth-form__socials {
+    background-color: #f5f5f5;
+    padding: 16px 36px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+}
+
+.auth-form__socials-icon {
+    font-size: 1.8rem;
+}
+
+.auth-form__socials--facebook {
+    color: var(--white-color);
+    background-color: #3a5a98;
+}
+
+.auth-form__socials--facebook.auth-form__socials-icon {
+    color: var(--white-color);
+}
+
+.auth-form__socials-title {
+    margin: 0 30px;
+}
+
+.auth-form__socials--google {
+    background-color: var(--white-color);
+    color: #666;
+}
+
+.auth-form__socials--google.auth-form__socials-icon {
+    color: var(--white-color);
+}
+
+.auth-form__help {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.auth-form__help-link {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #939393;
+}
+
+.auth-form__help-separate {
+    display: block;
+    margin: 1px 16px 0;
+    height: 22px;
+    border-left: 1px solid #eaeaea;
+}
+
+.auth-form__help-forgot {
+    color: var(--blue_primary-color);
+}
+
+/* Footer */
+
+.footer {
+    border-top: 4px solid var(--blue_primary-color);
+    padding-top: 16px;
+    background-color: var(--white-color);
+}
+
+.footer__heading {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+.footer-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer-item__link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #737373;
+    padding: 2px 0;
+    display: flex;
+    align-items: center;
+}
+
+.footer-item__link:hover {
+    color: var(--blue_primary-color);
+}
+
+.footer-item__icon {
+    font-size: 1.6rem;
+    margin-top: -1px;
+    margin-right: 8px;
+}
+
+.footer__download {
+    display: flex;
+}
+
+.footer__download-qr {
+    width: 80px;
+    height: 80px;
+    border: 1px solid var(--border-color);
+}
+
+.footer__download-apps {
+    margin-left: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer__download-app-img {
+    height: 16px;
+}
+
+.footer__download-app-link {
+    text-decoration: none;
+    color: transparent;
+}
+
+.footer__bottom {
+    background-color: #f5f5f5;
+    padding: 8px 0;
+    margin-top: 36px;
+}
+
+.footer__text {
+    color: #737373;
+    margin: 0;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+
+

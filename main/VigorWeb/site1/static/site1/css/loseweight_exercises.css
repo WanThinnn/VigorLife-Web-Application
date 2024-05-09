@@ -1,0 +1,288 @@
+/*First*/
+.ddt_first {
+    scroll-margin-bottom: -20px;
+    margin-bottom: 2px;;
+}
+
+.ddt_first h1 {
+    display: block;
+    color: #fff;
+    /*z-index: 1;*/
+    position:absolute;
+    top: 40%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-weight: bold;
+}   
+
+/* Paragraph */
+.ddt_content {
+    color: #fff;
+    /*z-index: 1;*/
+    transform: translate(-50%, -50%);
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 80%;
+    width: 600px;
+    height: 200px;
+    position: absolute;
+    left: 35%;
+    top: 60%;
+    margin-bottom: 10px;
+}
+
+.ddt_content .ddt_first_head {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: -10px;
+    text-align: left;
+}
+
+.ddt_content .ddt_first_text {
+    text-align: justify;
+    font-size: 20px;
+
+}
+
+
+/* Button */
+.ddt_button-container {
+    position: relative;
+    width: 600px;
+    height: 200px;
+    content: justify;
+    left: 8%;
+}
+
+.ddt_eating {
+    left: 20%;
+    margin-right: 100px;
+}
+
+.ddt_exercise {
+    position: absolute;
+    margin-left: 80px;
+}
+
+.ddt__border-btn {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 14px 20px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    letter-spacing: 1px;
+    position: absolute;
+    overflow: hidden;
+    text-decoration: none;
+    transform: translateX(-50%);
+    z-index: 3;
+    margin-top: 5px;
+}
+
+.ddt__border-btn i {
+    font-size: 16px;
+    margin-right: 10px;
+    color: #119de3;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    text-decoration: none;
+}
+
+
+.ddt__room-btn a:hover{
+    color: white;
+}
+
+.ddt__border-btn::before {
+    border: 1px solid transparent;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 101%;
+    height: 101%;
+    background: #1D2547;
+    z-index: -1;
+    transition: transform 0.5s;
+    transition-timing-function: ease;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+    /* transform: scaleY(0); */
+    border-radius: 0;
+    text-decoration: none;
+
+    
+}
+
+.ddt__border-btn:hover::before {
+    transform: scaleY(1);
+    border: 1px solid transparent;
+    color: #ffffff;
+    filter: brightness(85%);
+    text-decoration: none;
+}
+
+#comp-ltv57zi8 {
+    left: 0;
+    margin-left: 0;
+    width: 100%;
+    min-width: 0;
+}
+
+.ddt_Oqnisf {
+    overflow: visible;
+}
+
+/* Second */
+.ddt_second_header {
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: -10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.ddt_second_header {
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: -10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.ddt_picking_option {
+    margin-bottom: 200px;
+    text-align: center;
+}
+
+.ddt_about-picture-2 {
+    position: relative;
+    margin-top: 50px;
+    display: inline-block; 
+    margin: 0 50px; 
+
+}
+
+.ddt_about-picture-2 img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    transition: all .7;
+}
+
+.ddt_picture-title-2 {
+    font-weight: 400;
+    font-size: 20px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    color: black;
+    transform: translate(-50%, 60%);
+    transition: all 0.5s;
+    margin-top: -10px;
+}
+
+.ddt_about-picture-group-2 .ddt_about-picture-2:hover img,
+.ddt_about-picture-group-2 .ddt_about-picture-2:active img {
+    filter: brightness(55%) blur(2px);
+    cursor: pointer;
+
+}
+
+.ddt_about-picture-group-2 .ddt_about-picture-2:hover .ddt_picture-title-2,
+.ddt_about-picture-group-2 .ddt_about-picture-2:active .ddt_picture-title-2 {
+    transform: translate(-55%, -500%);
+    opacity: 1;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+
+/* Third */
+.ddt_visit-tailor-area {
+    display: block;
+    margin-top: -60px;
+}
+
+.ddt_visit-tailor-area {
+    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    margin-bottom: -100px;
+}
+
+.ddt_fix {
+    overflow: hidden;
+}
+
+.ddt_visit-tailor-area .ddt_tailor-offers {
+    width: 100%;
+    height: 500px;
+}
+
+.ddt_visit-tailor-area .ddt_tailor-offers {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 570px;
+    width: 55%;
+}
+
+.ddt_visit-tailor-area .ddt_tailor-details {
+    width: 40%;
+    padding: 20px 20px 20px 60px;
+}
+
+.ddt_visit-tailor-area .ddt_tailor-details h2 {
+    width: 300px;
+    font-size: 40px;
+    display: block;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.ddt_visit-tailor-area .ddt_tailor-details p {
+    color: #010A44;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.ddt_tailor-details .ddt_btn {
+    background: #FD8F5F;
+    text-transform: uppercase;
+    padding: 27px 44px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-block;
+    line-height: 1;
+    letter-spacing: 2px;
+    line-height: 0;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    z-index: 1;
+    border: 0;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 0px;
+    transition: all 0.3s;
+}
+
+.ddt_btn:hover,
+.ddt_btn:active {
+    filter: brightness(90%);
+    transform: scale(110%);
+    border: 2px solid rgb(185, 114, 20);
+    text-decoration: none;
+
+}
