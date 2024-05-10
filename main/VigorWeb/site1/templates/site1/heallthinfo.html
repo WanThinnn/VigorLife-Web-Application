@@ -321,4 +321,15 @@
         </div>
     </div>
 </section> 
+
+
+{% if user.username %}
+    <form action="{% url 'post' post.id %}" method="POST">
+        {% csrf_token %}
+        <p><label>Bình luận:</label></p>
+        {{form.body}}
+        <br/>
+        <input type="submit" value="Bình luận"/>
+    </form>
+{% endif %}
 {%endblock heallthinfo-content%}

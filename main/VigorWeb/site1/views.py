@@ -10,6 +10,11 @@ import random
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
+from django.views.generic import ListView, DetailView
+from django.shortcuts import get_object_or_404
+from django.http import HttpResponseRedirect
+
+from .forms import CommentForm
 # Create your views here.
 @csrf_exempt
 
@@ -21,6 +26,30 @@ def introduction(request):
 
 def heallthinfo(request):
     return render(request, 'site1/heallthinfo.html')
+
+
+class PostListView(ListView):
+    queryset = Post.objects.all().order_by('-date')
+    template_name = 'site1/heallthinfo.html'
+    context_object_name = 'Posts'
+    paginate_by = 10
+
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'site1/post.html'
+
+def post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    form = CommentForm()
+    if request.method == "POST":
+        form = CommentForm(request.POST, author=request.user, post=post)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path)
+    return render(request, "site1/post.html", {"post": post, "form": form})
+
+
+
 
 def loseweight(request):
     return render(request, 'site1/loseweight_exercise.html')
