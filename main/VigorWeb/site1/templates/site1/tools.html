@@ -29,8 +29,6 @@
 </head>
 
 <body>
-
-    
     <section class="slider-area">
         <div class="slider-area-photo"></div>
         <div class="container">
@@ -51,186 +49,205 @@
     </section>
 
     <section class="calo-box">
-        <div class="roww">
-            <div class="calo-pos">
-                <div class="info-title">
-                    <h2>Công cụ tính TDEE và BMR</h2>
-                    <strong>Tính lượng calories cần thiết cho cơ thể bạn mỗi ngày</strong>
-                    <p>Thông tin cần thiết để tính toán</p>
-                </div>
-                <div class="input">
-                    <div class="roww">
+        <form id="Form">
+            <div class="roww">
+                <div class="calo-pos">
+                    <div class="info-title">
+                        <h2>Công cụ tính TDEE và BMR</h2>
+                        <strong>Tính lượng calories cần thiết cho cơ thể bạn mỗi ngày</strong>
+                        <p>Thông tin cần thiết để tính toán</p>
+                    </div>
+                    <div class="input">
+                        <div class="roww">
 
+                            <div class="calo-pos">
+                                <div class="item">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="label" for="phai">Giới tính</span>
+                                        </div>
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons" checked>
+                                            <label class="btn btn-QT btn-decor"> 
+                                                <input type="radio" name="phai" value="1">Nam
+                                            </label>
+                                            <label class="btn btn-QT btn-decor"> 
+                                                <input type="radio" name="phai" value="0">Nữ
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="calo-pos">
+                                <div class="item ">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <label class="label" for="height">Chiều cao</label>
+                                        </div>
+                                        <div class="btn-group">
+                                            <input style="border-color: #1d2547; border-radius:3px;" type="number" class="form-control"
+                                                placeholder="Nhập chiều cao... (cm)" maxlength="3" name="height" id="height">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="calo-pos">
+                                <div class="item">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <label class="label" for="age">Tuổi</label>
+                                        </div>
+                                        <div class="btn-group">
+                                            <input style="border-color: #1d2547; border-radius:3px;" type="number" class="form-control"
+                                                placeholder="Nhập tuổi..." maxlength="3" name="age" id="age">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="calo-pos">
+                                <div class="item">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="label" for="weight">Cân nặng</span>
+                                        </div>
+                                        <div class="btn-group">
+                                            <input style="border-color: #1d2547; border-radius:3px;" type="number" class="form-control"
+                                                placeholder="Nhập cân nặng... (kg)" maxlength="3" name="weight" id="weight">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--    -->
+                <div class="calo-pos">
+                    <div class="input">
+                        <div class="item table-container">
+                            <div class="caption">Cường độ</div>
+                            <table class="table" cellspacing="10px">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Cường độ vận động</th>
+                                        <th scope="col">Mô tả</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="list">
+                                    <tr>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="radio-cuong-do-01" name="cuong-do"
+                                                    class="custom-control-input" value="1" checked>
+                                                <label class="custom-control-label" for="radio-cuong-do-01">Vận động
+                                                    ít</label>
+                                        </td>
+                                        <td>Vận động cơ bản</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="radio-cuong-do-02" name="cuong-do"
+                                                    class="custom-control-input" value="2">
+                                                <label class="custom-control-label" for="radio-cuong-do-02">Vận động
+                                                    nhẹ</label>
+                                        </td>
+                                        <td>Tập luyện 1-3 buổi/tuần</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="radio-cuong-do-03" name="cuong-do"
+                                                    class="custom-control-input" value="3">
+                                                <label class="custom-control-label" for="radio-cuong-do-03">Vận động
+                                                    vừa</label>
+                                        </td>
+                                        <td>Tập luyện 4-5 buổi/tuần</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="radio-cuong-do-04" name="cuong-do"
+                                                    class="custom-control-input" value="4">
+                                                <label class="custom-control-label" for="radio-cuong-do-04">Vận động
+                                                    nhiều</label>
+                                        </td>
+                                        <td>Tập luyện 6-7 buổi/tuần</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="radio-cuong-do-05" name="cuong-do"
+                                                    class="custom-control-input" value="5">
+                                                <label class="custom-control-label" for="radio-cuong-do-05">Vận động cực
+                                                    nhiều</label>
+                                        </td>
+                                        <td>Cấp độ vận động viên</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!--Button-->
+                <div class="ddt_btn_calculate_container">
+                    <button id="TDEEandBMR" type="submit" class="ddt_btn_calculate">Tính toán</button>
+                </div>
+                
+                <!--    -->
+                <div class="calo-pos2 mt-30" style="padding-top: 5rem;">
+                    <div class="info-title mt-30">
+                        <h2>Chỉ số CALORIES của bạn</h2>
+                        <p>Dựa trên thông tin bạn đã cung cấp<br>
+                            Chúng tôi đã tính ra các chỉ số CALORIES của bạn như sau:
+                        </p>
+                    </div>
+                    <div class="roww mt-30 output">
                         <div class="calo-pos">
                             <div class="item">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="label">Giới tính</span>
-                                    </div>
-                                    <div class="btn-group btn-group-toggle label_gioitinh" data-toggle="buttons" checked>
-                                        <label class="btn btn-QT btn-decor">
-                                            <input type="radio" name="phai" value="1">Nam
-                                        </label>
-                                        <label class="btn btn-QT btn-decor">
-                                            <input type="radio" name="phai" value="0">Nữ
-                                        </label>
-                                    </div>
-                                </div>
+                                <label>BMR của bạn là:</label>
+                                <strong class="bmr" id="BMR">0</strong>
+                                <small>Calo / ngày</small>
                             </div>
                         </div>
-
-                        <div class="calo-pos">
-                            <div class="item ">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="label">Chiều cao</span>
-                                    </div>
-                                    <div class="btn-group">
-                                        <input style="border-color: #1d2547; border-radius:3px;" type="text"
-                                            class="form-control" placeholder="Nhập chiều cao... (cm)" maxlength="3">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="calo-pos">
                             <div class="item">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="label">Tuổi</span>
-                                    </div>
-                                    <div class="btn-group">
-                                        <input style="border-color: #1d2547; border-radius:3px;" type="text"
-                                            class="form-control" placeholder="Nhập tuổi..." maxlength="3">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="calo-pos">
-                            <div class="item">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="label">Cân nặng</span>
-                                    </div>
-                                    <div class="btn-group">
-                                        <input style="border-color: #1d2547; border-radius:3px;" type="text"
-                                            class="form-control" placeholder="Nhập cân nặng... (kg)" maxlength="3">
-                                    </div>
-                                </div>
+                                <label>TDEE của bạn là:</label>
+                                <strong class="tdee" id="TDEE">0</strong>
+                                <small>Calo / ngày</small>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-            </div>
-            <!--    -->
-            <div class="calo-pos">
-                <div class="input">
-                    <div class="item table-container">
-                        <div class="caption">Cường độ</div>
-                        <table class="table" cellspacing="10px">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Cường độ vận động</th>
-                                    <th scope="col">Mô tả</th>
-                                </tr>
-                            </thead>
-                            <tbody class="list">
-                                <tr>
-                                    <td>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="radio-cuong-do-01" name="cuong-do"
-                                                class="custom-control-input" value="1" checked>
-                                            <label class="custom-control-label" for="radio-cuong-do-01">Vận động
-                                                ít</label>
-                                    </td>
-                                    <td>Vận động cơ bản</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="radio-cuong-do-02" name="cuong-do"
-                                                class="custom-control-input" value="2">
-                                            <label class="custom-control-label" for="radio-cuong-do-02">Vận động
-                                                nhẹ</label>
-                                    </td>
-                                    <td>Tập luyện 1-3 buổi/tuần</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="radio-cuong-do-03" name="cuong-do"
-                                                class="custom-control-input" value="3">
-                                            <label class="custom-control-label" for="radio-cuong-do-03">Vận động
-                                                vừa</label>
-                                    </td>
-                                    <td>Tập luyện 4-5 buổi/tuần</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="radio-cuong-do-04" name="cuong-do"
-                                                class="custom-control-input" value="4">
-                                            <label class="custom-control-label" for="radio-cuong-do-04">Vận động
-                                                nhiều</label>
-                                    </td>
-                                    <td>Tập luyện 6-7 buổi/tuần</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="radio-cuong-do-05" name="cuong-do"
-                                                class="custom-control-input" value="5">
-                                            <label class="custom-control-label" for="radio-cuong-do-05">Vận động cực
-                                                nhiều</label>
-                                    </td>
-                                    <td>Cấp độ vận động viên</td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <div class="roww output-recommended">
+                <div class="calo-pos2">
+                    <div class="standard center-item">
+                        <span class="text-nowrap">Giữ cân</span>
+                        <span class="current-calories" id="keepWeight">0</span>
+                        <span class="text-nowrap">Calories/ngày</span>
                     </div>
-                </div>
-            </div>
-            <!--    -->
-            <div class="calo-pos2 mt-30" style="padding-top: 5rem;">
-                <div class="info-title mt-30">
-                    <h2>Chỉ số CALORIES của bạn</h2>
-                    <p>Dựa trên thông tin bạn đã cung cấp<br>
-                        Chúng tôi đã tính ra các chỉ số CALORIES của bạn như sau:
-                    </p>
-                </div>
-                <div class="roww mt-30 output">
-                    <div class="calo-pos">
-                        <div class="item">
-                            <label>BMR của bạn là:</label>
-                            <strong class="bmr">0</strong>
-                            <small>Calo / ngày</small>
-                        </div>
-                    </div>
-                    <div class="calo-pos">
-                        <div class="item">
-                            <label>TDEE của bạn là:</label>
-                            <strong class="tdee">0</strong>
-                            <small>Calo / ngày</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="roww output-recommended">
-            <div class="calo-pos2">
-                <div class="standard center-item">
-                    <span class="text-nowrap">Giữ cân</span>
-                    <span class="current-calories">0</span>
-                    <span class="text-nowrap">Calories/ngày</span>
                 </div>
             </div>
 
-        </div>
+            <div class="roww output-recommended">
+                <div class="calo-pos2">
+                    <div class="standard center-item">
+                        <span class="text-nowrap">Giảm cân</span>
+                        <span class="current-calories" id="loseWeight">0</span>
+                        <span class="text-nowrap">Calories/ngày</span>
+                    </div>
+                </div>
+            </div>
+
+        </form>
     </section>
-
-
 
 </body>
 

@@ -205,7 +205,7 @@
     line-height: 1.6;
     max-width: 100%; /* Đặt chiều rộng tối đa cho đoạn văn bản */
     width: 1100px;
-    text-align: center; /* Căn giữa văn bản */
+    text-align: justify;
     margin: 0 auto;
     margin-bottom: 5rem;
 }
