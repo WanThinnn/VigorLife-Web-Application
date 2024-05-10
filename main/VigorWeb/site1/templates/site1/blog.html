@@ -1,6 +1,7 @@
-{% extends 'site1/base.html'%}
-{%load static%}
-{% block heallthinfo-content%}
+{% extends 'site1/base.html' %}
+{% load static %}
+
+{% block heallthinfo-content %}
 <section class="slider-area">
     <div class="slider-area-photo"></div>
     <div class="container">
@@ -10,8 +11,8 @@
                     <h1>Blog</h1>
                     <nav aria-label="slider-nav">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href={%url 'home'%}  tabindex="0">Trang Chủ</a></li>
-                            <li class="breadcrumb-item"> <a href="#" tabindex="0"> Blog</a></li>
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}" tabindex="0">Trang Chủ</a></li>
+                            <li class="breadcrumb-item"><a href="#" tabindex="0">Blog</a></li>
                         </ol>
                     </nav>
                 </div>
@@ -25,41 +26,37 @@
     <div class="about-container">
         <div class="about-us-section-row">
             <div class="about-us-section-tittle">
-                
-                <h2><a href="{% url 'post' post.id %}" style="color:black">{{post.title}}</a></h2>
-                <p class="about-p-long" style="margin-bottom: 2rem;">
-                    {{post.body|safe}} 
-                </p>
+                <h2><a href="{% url 'post' post.id %}" style="color:black">{{ post.title }}</a></h2>
+                <p class="about-p-long" style="margin-bottom: 2rem;">{{ post.body|safe }}</p>
             </div>
         </div>
         
         <div class="about-picture-group-1">
-            {% for img in Images %}
+            {% for img in post.image_set.all %}
             <div class="about-picture-2">
-                <img src={{img.tiltle.url}} alt="">
-                <p class="picture-title-2">
-                    {{img.tiltle }}
-                </p>
+                <img src="{{ img.image.url }}" alt="">
+                <p class="picture-title-2">{{ img.title }}</p>
             </div>
             {% endfor %}
             <div class="np__row justify-content-center">
                 <div class="np__room-btn">
-                    <a href="" class="np__border-btn">Discover More</a>
+                    <a href="{% url 'post' post.id %}" class="np__border-btn">Discover More</a>
                 </div>
             </div>
         </div>
-
     </div>
 </section>
 {% endfor %}
 
-{% comment %} {% if user.username %}
+{% comment %}
+{% if user.username %}
     <form action="{% url 'post' post.id %}" method="POST">
         {% csrf_token %}
         <p><label>Bình luận:</label></p>
-        {{form.body}}
+        {{ form.body }}
         <br/>
         <input type="submit" value="Bình luận"/>
     </form>
-{% endif %} {% endcomment %}
-{%endblock heallthinfo-content%}
+{% endif %}
+{% endcomment %}
+{% endblock heallthinfo-content %}
