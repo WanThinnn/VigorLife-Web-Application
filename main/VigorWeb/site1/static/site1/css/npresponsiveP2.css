@@ -9,7 +9,7 @@
     }
 
     .about-project-section {
-        height: 200vh !important;
+        height: 150vh !important;
     }
 
     .about-us-section .about-container {
@@ -69,7 +69,7 @@
     }
 
     .about-project-section {
-        height: 280vh !important;
+        height: 200vh !important;
     }
 
     .about-us-section .about-container {
@@ -106,7 +106,7 @@
     }
 
     .about-project-section {
-        height: 300vh !important;
+        height: 230vh !important;
     }
 
     .about-us-section .about-container {
@@ -127,8 +127,8 @@
     }
 
     .logo_text {
-        width: 300%;
-        height: 300%;
+        width: 600%;
+        height: 400%;
     }
 
     .footer-social a {
