@@ -82,13 +82,13 @@ EMAIL_USE_SSL = False
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'vigorweb',
-        # 'USER': 'root',
-        # 'PASSWORD': '',
-        # 'HOST': 'localhost',
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'vigor_website',
+        'USER': 'admin',
+        'PASSWORD': 'Thienlai241203',
+        'HOST': 'viggor-website.clce6ae44hhz.ap-southeast-2.rds.amazonaws.com',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
