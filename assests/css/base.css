@@ -119,3 +119,7 @@ html {
 .col-third {
     width: calc(100% / 3);
 }
+
+.col-forth {
+    width: calc(100% / 4);
+}
