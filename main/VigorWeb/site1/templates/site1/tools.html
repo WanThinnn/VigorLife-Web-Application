@@ -1,5 +1,244 @@
-{% comment %} {% extends "app/base.html" %} {% endcomment %}
+{% extends 'site1/base.html' %}
 {%load static%}
+{%block tools-content%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Care</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'site1/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'site1/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'site1/css/introduction.css' %}">
+    <link rel="stylesheet" href="{% static 'site1/css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'site1/css/tools.css' %}">
+
+</head>
+
+<body>
+
+    
+    <section class="slider-area">
+        <div class="slider-area-photo"></div>
+        <div class="container">
+            <div class="slider-row">
+                <div class="col-xl-6 col-lg-8 col-md-8">
+                    <div class="slider-row-caption">
+                        <h1>Tools</h1>
+                        <nav aria-label="slider-nav">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html" tabindex="0">Home</a></li>
+                                <li class="breadcrumb-item"> <a href="#" tabindex="0"> Tools</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="calo-box">
+        <div class="roww">
+            <div class="calo-pos">
+                <div class="info-title">
+                    <h2>Công cụ tính TDEE và BMR</h2>
+                    <strong>Tính lượng calories cần thiết cho cơ thể bạn mỗi ngày</strong>
+                    <p>Thông tin cần thiết để tính toán</p>
+                </div>
+                <div class="input">
+                    <div class="roww">
+
+                        <div class="calo-pos">
+                            <div class="item">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="label">Giới tính</span>
+                                    </div>
+                                    <div class="btn-group btn-group-toggle label_gioitinh" data-toggle="buttons" checked>
+                                        <label class="btn btn-QT btn-decor">
+                                            <input type="radio" name="phai" value="1">Nam
+                                        </label>
+                                        <label class="btn btn-QT btn-decor">
+                                            <input type="radio" name="phai" value="0">Nữ
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="calo-pos">
+                            <div class="item ">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="label">Chiều cao</span>
+                                    </div>
+                                    <div class="btn-group">
+                                        <input style="border-color: #1d2547; border-radius:3px;" type="text"
+                                            class="form-control" placeholder="Nhập chiều cao... (cm)" maxlength="3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="calo-pos">
+                            <div class="item">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="label">Tuổi</span>
+                                    </div>
+                                    <div class="btn-group">
+                                        <input style="border-color: #1d2547; border-radius:3px;" type="text"
+                                            class="form-control" placeholder="Nhập tuổi..." maxlength="3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="calo-pos">
+                            <div class="item">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="label">Cân nặng</span>
+                                    </div>
+                                    <div class="btn-group">
+                                        <input style="border-color: #1d2547; border-radius:3px;" type="text"
+                                            class="form-control" placeholder="Nhập cân nặng... (kg)" maxlength="3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--    -->
+            <div class="calo-pos">
+                <div class="input">
+                    <div class="item table-container">
+                        <div class="caption">Cường độ</div>
+                        <table class="table" cellspacing="10px">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Cường độ vận động</th>
+                                    <th scope="col">Mô tả</th>
+                                </tr>
+                            </thead>
+                            <tbody class="list">
+                                <tr>
+                                    <td>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="radio-cuong-do-01" name="cuong-do"
+                                                class="custom-control-input" value="1" checked>
+                                            <label class="custom-control-label" for="radio-cuong-do-01">Vận động
+                                                ít</label>
+                                    </td>
+                                    <td>Vận động cơ bản</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="radio-cuong-do-02" name="cuong-do"
+                                                class="custom-control-input" value="2">
+                                            <label class="custom-control-label" for="radio-cuong-do-02">Vận động
+                                                nhẹ</label>
+                                    </td>
+                                    <td>Tập luyện 1-3 buổi/tuần</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="radio-cuong-do-03" name="cuong-do"
+                                                class="custom-control-input" value="3">
+                                            <label class="custom-control-label" for="radio-cuong-do-03">Vận động
+                                                vừa</label>
+                                    </td>
+                                    <td>Tập luyện 4-5 buổi/tuần</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="radio-cuong-do-04" name="cuong-do"
+                                                class="custom-control-input" value="4">
+                                            <label class="custom-control-label" for="radio-cuong-do-04">Vận động
+                                                nhiều</label>
+                                    </td>
+                                    <td>Tập luyện 6-7 buổi/tuần</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="radio-cuong-do-05" name="cuong-do"
+                                                class="custom-control-input" value="5">
+                                            <label class="custom-control-label" for="radio-cuong-do-05">Vận động cực
+                                                nhiều</label>
+                                    </td>
+                                    <td>Cấp độ vận động viên</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--    -->
+            <div class="calo-pos2 mt-30" style="padding-top: 5rem;">
+                <div class="info-title mt-30">
+                    <h2>Chỉ số CALORIES của bạn</h2>
+                    <p>Dựa trên thông tin bạn đã cung cấp<br>
+                        Chúng tôi đã tính ra các chỉ số CALORIES của bạn như sau:
+                    </p>
+                </div>
+                <div class="roww mt-30 output">
+                    <div class="calo-pos">
+                        <div class="item">
+                            <label>BMR của bạn là:</label>
+                            <strong class="bmr">0</strong>
+                            <small>Calo / ngày</small>
+                        </div>
+                    </div>
+                    <div class="calo-pos">
+                        <div class="item">
+                            <label>TDEE của bạn là:</label>
+                            <strong class="tdee">0</strong>
+                            <small>Calo / ngày</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="roww output-recommended">
+            <div class="calo-pos2">
+                <div class="standard center-item">
+                    <span class="text-nowrap">Giữ cân</span>
+                    <span class="current-calories">0</span>
+                    <span class="text-nowrap">Calories/ngày</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>
+{%endblock tools-content%} 
+
+{% comment %} {% extends "app/base.html" %} {% endcomment %}
+{% comment %} {%load static%}
 <!DOCTYPE html>
 <html>
 
@@ -586,4 +825,4 @@
 
 </body>
 
-</html>
+</html> {% endcomment %}
