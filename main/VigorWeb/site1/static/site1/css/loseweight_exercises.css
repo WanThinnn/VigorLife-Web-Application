@@ -288,7 +288,7 @@
 
 .ddt_btn-3 {
     background: rgb(0,172,238);
-  background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+    background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
     width: 130px;
     height: 40px;
     line-height: 42px;
@@ -355,3 +355,51 @@
   .ddt_btn-3 span:hover:after {
     width: 100%;
   }
+
+  .ddt_custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+
+.ddt_btn_calculate_container {
+    display: flex;
+    justify-content: center;
+}
+
+.ddt_btn_calculate {
+    font-size: 22px;
+    text-align: center;
+    font-weight: 700;
+    background-color: #112164;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 0.25rem;
+    padding: 4px 1.5rem;
+    line-height: 1.5;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    cursor: pointer;
+    transform: translateX(230px);
+    transition: all 0.3s;
+    position: relative;
+}
+
+.ddt_btn_calculate:hover {
+    background-color: #344b92;
+    transform: translateX(230px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
