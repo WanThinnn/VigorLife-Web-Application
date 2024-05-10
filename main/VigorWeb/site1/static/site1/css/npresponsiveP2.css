@@ -9,7 +9,7 @@
     }
 
     .about-project-section {
-        height: 150vh !important;
+        height: 180vh !important;
     }
 
     .about-us-section .about-container {
@@ -34,7 +34,9 @@
     .about-project-section .about-container {
         width: 100%;
     }
-
+    .about-project-section {
+        height: 190vh !important;
+    }
     .slider-row {
         margin-left: -170px;
     }
@@ -69,7 +71,7 @@
     }
 
     .about-project-section {
-        height: 200vh !important;
+        height: 260vh !important;
     }
 
     .about-us-section .about-container {
@@ -106,7 +108,7 @@
     }
 
     .about-project-section {
-        height: 230vh !important;
+        height: 270vh !important;
     }
 
     .about-us-section .about-container {
@@ -127,7 +129,7 @@
     }
 
     .logo_text {
-        width: 600%;
+        width: 200%;
         height: 400%;
     }
 
