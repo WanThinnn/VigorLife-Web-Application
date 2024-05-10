@@ -29,8 +29,6 @@
 </head>
 
 <body>
-
-    
     <section class="slider-area">
         <div class="slider-area-photo"></div>
         <div class="container">
@@ -51,7 +49,7 @@
     </section>
 
     <section class="calo-box">
-        <form id="FormTDEEandBMR">
+        <form id="Form">
             <div class="roww">
                 <div class="calo-pos">
                     <div class="info-title">
@@ -68,11 +66,11 @@
                                         <div class="input-group-prepend">
                                             <span class="label" for="phai">Giới tính</span>
                                         </div>
-                                        <div class="btn-group btn-group-toggle label_gioitinh" data-toggle="buttons" checked>
-                                            <label class="btn btn-QT btn-decor">
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons" checked>
+                                            <label class="btn btn-QT btn-decor"> 
                                                 <input type="radio" name="phai" value="1">Nam
                                             </label>
-                                            <label class="btn btn-QT btn-decor">
+                                            <label class="btn btn-QT btn-decor"> 
                                                 <input type="radio" name="phai" value="0">Nữ
                                             </label>
                                         </div>
@@ -84,7 +82,7 @@
                                 <div class="item ">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="label" for="height">Chiều cao</span>
+                                            <label class="label" for="height">Chiều cao</label>
                                         </div>
                                         <div class="btn-group">
                                             <input style="border-color: #1d2547; border-radius:3px;" type="number" class="form-control"
@@ -98,7 +96,7 @@
                                 <div class="item">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="label" for="age">Tuổi</span>
+                                            <label class="label" for="age">Tuổi</label>
                                         </div>
                                         <div class="btn-group">
                                             <input style="border-color: #1d2547; border-radius:3px;" type="number" class="form-control"
@@ -123,8 +121,9 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
+
+
                 <!--    -->
                 <div class="calo-pos">
                     <div class="input">
@@ -193,12 +192,13 @@
                         </div>
                     </div>
                 </div>
+                
 
-
-                {% comment %} Button tính toán {% endcomment %}
+                <!--Button-->
                 <div class="ddt_btn_calculate_container">
-                    <button id="btnTDEEandBMR" type="submit" class="ddt_btn_calculate">Tính toán</button>
+                    <button id="TDEEandBMR" type="submit" class="ddt_btn_calculate">Tính toán</button>
                 </div>
+                
                 <!--    -->
                 <div class="calo-pos2 mt-30" style="padding-top: 5rem;">
                     <div class="info-title mt-30">
@@ -211,35 +211,43 @@
                         <div class="calo-pos">
                             <div class="item">
                                 <label>BMR của bạn là:</label>
-                                <strong class="bmr">0</strong>
+                                <strong class="bmr" id="BMR">0</strong>
                                 <small>Calo / ngày</small>
                             </div>
                         </div>
                         <div class="calo-pos">
                             <div class="item">
                                 <label>TDEE của bạn là:</label>
-                                <strong class="tdee">0</strong>
+                                <strong class="tdee" id="TDEE">0</strong>
                                 <small>Calo / ngày</small>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </form>
 
-        <div class="roww output-recommended">
-            <div class="calo-pos2">
-                <div class="standard center-item">
-                    <span class="text-nowrap">Giữ cân</span>
-                    <span class="current-calories">0</span>
-                    <span class="text-nowrap">Calories/ngày</span>
+            <div class="roww output-recommended">
+                <div class="calo-pos2">
+                    <div class="standard center-item">
+                        <span class="text-nowrap">Giữ cân</span>
+                        <span class="current-calories" id="keepWeight">0</span>
+                        <span class="text-nowrap">Calories/ngày</span>
+                    </div>
                 </div>
             </div>
 
-        </div>
+            <div class="roww output-recommended">
+                <div class="calo-pos2">
+                    <div class="standard center-item">
+                        <span class="text-nowrap">Giảm cân</span>
+                        <span class="current-calories" id="loseWeight">0</span>
+                        <span class="text-nowrap">Calories/ngày</span>
+                    </div>
+                </div>
+            </div>
+
+        </form>
     </section>
-
-
 
 </body>
 
