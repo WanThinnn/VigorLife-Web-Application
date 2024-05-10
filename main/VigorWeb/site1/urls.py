@@ -20,9 +20,11 @@ urlpatterns = [
         template_name='site1/blog.html',
         context_object_name='Posts',
         paginate_by=1), name='blog'),
-    path('<int:pk>/', views.post, name='post'),
+    path('<int:pk>-<str:title>/', views.post, name='post'),
+    path('reply/<int:parent_id>/', views.reply_comment, name='reply_comment'),
 ]
 
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

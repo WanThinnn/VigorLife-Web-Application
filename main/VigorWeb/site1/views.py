@@ -37,17 +37,41 @@ class PostListView(ListView):
 class PostDetailView(DetailView):
     model = Post
     template_name = 'site1/post.html'
-
-def post(request, pk):
-    post = get_object_or_404(Post, pk=pk)
+    
+def post(request, pk, title):
+    post = get_object_or_404(Post, title=title, pk=pk)
     form = CommentForm()
-    if request.method == "POST":
-        form = CommentForm(request.POST, author=request.user, post=post)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(request.path)
-    return render(request, "site1/post.html", {"post": post, "form": form})
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid() and request.user.is_authenticated:
+            parent_id = request.POST.get('parent_id')
+            parent_comment = None
+            if parent_id:
+                parent_comment = Comment.objects.get(id=parent_id)
+            comment = form.save(commit=False)
+            comment.author = request.user
+            comment.post = post
+            comment.parent = parent_comment
+            comment.save()
+            return redirect('post', title=post.title, pk=post.pk)
+    return render(request, 'site1/post.html', {'post': post, 'form': form})
 
+def reply_comment(request, parent_id):
+    parent_comment = get_object_or_404(Comment, id=parent_id)
+    post = parent_comment.post
+    
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.author = request.user
+            comment.post = post
+            comment.parent = parent_comment
+            comment.save()
+            return redirect('post', title=post.title, pk=post.pk)
+    else:
+        form = CommentForm()
+    return render(request, 'site1/reply_comment.html', {'form': form})
 
 
 

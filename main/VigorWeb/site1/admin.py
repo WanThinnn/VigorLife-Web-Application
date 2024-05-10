@@ -14,9 +14,12 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ['title']
     inlines = [CommentInline]
 
-class ListImages(admin.ModelAdmin):
-    list_display = ['id','post']
-    search_fields = ['title']
- 
+class ImageAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'post_date', 'post')
+    raw_id_fields = ('post',)  # Cho phép nhập ID của bài đăng thay vì sử dụng giao diện chọn
+    
+    def post_date(self, obj):
+        return obj.post.date if obj.post else None
+    post_date.short_description = 'Post Date'
 admin.site.register(Post, PostAdmin)
-admin.site.register(Image, ListImages)
+admin.site.register(Image, ImageAdmin)
