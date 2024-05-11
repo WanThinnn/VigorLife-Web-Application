@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .models import Post, Image
-from .models import Post, Comment
+from .models import *
 # Register your models here.
 
 
 class CommentInline(admin.StackedInline):
     model = Comment
-
+class ReplyCommentInline(admin.StackedInline):
+    model = Reply
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ['id','title', 'date' ]
@@ -25,5 +25,24 @@ class ImageAdmin(admin.ModelAdmin):
     def post_date(self, obj):
         return obj.post.date if obj.post else None
     post_date.short_description = 'Post Date'
+
+
+class CommentAdmin(admin.ModelAdmin):
+    list_display = [ 'author', 'post']
+    list_filter = ['date']
+    search_fields = ['author']
+    inlines = [ReplyCommentInline]
+
+class ReplyCommentAdmin(admin.ModelAdmin):
+    list_display = ['author', 'display_comment_post', 'date']
+    list_filter = ['date']
+    search_fields = ['author']
+
+    def display_comment_post(self, obj):
+        return f'{obj.comment.post.title} - {obj.comment.body}'
+    display_comment_post.short_description = 'Post and Comment'
+ 
 admin.site.register(Post, PostAdmin)
+admin.site.register(Comment, CommentAdmin)
+admin.site.register(Reply, ReplyCommentAdmin)
 admin.site.register(Image, ImageAdmin)
