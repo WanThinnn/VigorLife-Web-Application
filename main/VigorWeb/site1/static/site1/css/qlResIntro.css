@@ -7,8 +7,8 @@
     }
 
     .ql1z {
-        width: 90%;
-        height: 90%;
+        width: 90% !important;
+        height: 90% !important;
     }
 }
  
@@ -51,28 +51,27 @@
 
     .about-us-section-tittle h2, 
     .about-us-section-tittle p {
-        display: none;
+        display: block;
     }
 
 
     .ql1z {
-        width: 75%;
-        height: 75%;
+        width: 75% !important;
+        height: 75% !important;
     }
 
-    .anh2 {
+    .anh2, .anh1 {
         display: none;
     }
 
-    .lqt__row_2 {
-        display: flex;
+    .row {
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
     }
 
-    .css_hinh {
-        margin: 30px 0 30px 0;
+    .picture-title {
+        display: none;
     }
 }
  
@@ -83,7 +82,6 @@
         margin-top: 50px;
         font-size: 5rem;
     }
-
     .ql__navbar__item {
         display: block;
     }
@@ -98,6 +96,45 @@
 
     .mobile__menu-btn {
         display: block;
+    }
+
+    .about-picture-group-1 {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .about-project-section {
+        margin-top: 1200px;
+    }
+
+    .about-p-long {
+        width: auto;
+    }
+
+    .about-us-section-tittle h2, 
+    .about-us-section-tittle p {
+        display: block;
+    }
+
+
+    .ql1z {
+        width: 75% !important;
+        height: 75% !important;
+    }
+
+    .anh2, .anh1 {
+        display: none;
+    }
+
+    .row {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .picture-title {
+        display: none;
     }
 }
  
@@ -108,7 +145,6 @@
         margin-top: 50px;
         font-size: 5rem;
     }
-
     .ql__navbar__item {
         display: block;
     }
@@ -124,5 +160,43 @@
     .mobile__menu-btn {
         display: block;
     }
- 
+
+    .about-picture-group-1 {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .about-project-section {
+        margin-top: 1200px;
+    }
+
+    .about-p-long {
+        width: auto;
+    }
+
+    .about-us-section-tittle h2, 
+    .about-us-section-tittle p {
+        display: block;
+    }
+
+
+    .ql1z {
+        width: 75% !important;
+        height: 75% !important;
+    }
+
+    .anh2, .anh1 {
+        display: none;
+    }
+
+    .row {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .picture-title {
+        display: none;
+    }
 }

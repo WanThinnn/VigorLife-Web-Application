@@ -222,14 +222,14 @@
     font-weight: 400;
     line-height: 1.6;
     max-width: 100%;
-    width: 800px;
+    width: auto;
     text-align: center;
     margin: 0 auto;
     margin-bottom: 5rem;
     margin-top: 2rem;
 }
 
-.about-project-section .lqt__row_2{
+.about-project-section .row{
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -254,6 +254,18 @@
     left: 50%;
     color: black;
     transform: translate(0, 50%);
+    transition: all 0.5s;
+}
+
+.picture-title {
+
+    font-weight: 400;
+    font-size: 20px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    color: black;
+    transform: translate(-55%, 50%);
     transition: all 0.5s;
 }
 
