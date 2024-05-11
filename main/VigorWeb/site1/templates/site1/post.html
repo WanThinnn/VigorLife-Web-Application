@@ -1,5 +1,4 @@
-{% extends 'site1/base.html' %} {% load static %} 
-{% block heallthinfo-content%}
+{% extends 'site1/base.html' %} {% load static %} {% block heallthinfo-content%}
 <section class="slider-area">
   <div class="slider-area-photo"></div>
   <div class="container">
@@ -52,43 +51,33 @@
         <h4 class="comment-date">{{ comment.date }}</h4>
       </div>
       <p class="comment-body" style="font-size: 16px">{{ comment.body}}</p>
-      {% if user.is_authenticated %}
-      <div class="reply-form">
-        <form action="{% url 'reply_comment' comment.id %}" method="POST">
+    </div>
+      {% for reply in comment.replies.all %}
+      <div style="margin-left: 20px">
+        <h5><strong>{{ reply.author }}</strong></h5>
+        <p>{{ reply.date }}</p>
+        <p>{{ reply.body|linebreaks }}</p>
+        <form action="{% url 'post' post.pk post.title %}" method="POST">
           {% csrf_token %}
-          <textarea name="body"></textarea>
-          <button type="submit">Reply</button>
+          <input type="hidden" name="parent_comment_id" value="{{ comment.pk }}">
+          <label for="id_body">Reply:</label>
+          <textarea name="body" id="id_body"></textarea>
+          <input type="submit" value="Reply">
         </form>
       </div>
-      {% endif %} 
-      {% for reply in comment.replies.all %}
-      <div class="reply">
-        <div class="reply-header">
-          <h4 class="reply-author">{{ reply.author }}</h4>
-          <h5 class="reply-date">{{ reply.date }}</h5>
-        </div>
-        <p class="reply-body">{{ reply.body }}</p>
-      </div>
-    </div>
-    {% endfor %} 
-    {% if user.username %}
-    <div class="comment-form-container">
-      <form
-        action="{% url 'post' post.id post.title %}"
-        method="POST"
-        class="comment-form"
-      >
-        {% csrf_token %}
-        <div class="form-group">
-          <label for="comment-body">Bình luận:</label>
-          {{ form.body }}
-        </div>
-        <button type="submit" class="btn btn-primary">Gửi Bình luận</button>
-      </form>
-    </div>
-    {% endif %}
-    {% endfor %} 
+      {% endfor %} 
+    {% endfor %}
 
+
+    {% if user.username %}
+    <form action="{% url 'post' post.id post.title %}" method="POST">
+      {% csrf_token %}
+      <p><label>Bình luận:</label></p>
+      {{form.body}}
+      <br />
+      <input type="submit" value="Bình luận" />
+    </form>
+    {% endif %}
   </div>
 </section>
 {% endblock heallthinfo-content %}

@@ -21,7 +21,7 @@ urlpatterns = [
         context_object_name='Posts',
         paginate_by=1), name='blog'),
     path('<int:pk>-<str:title>/', views.post, name='post'),
-    path('reply/<int:parent_id>/', views.reply_comment, name='reply_comment'),
+    # path('reply/<int:parent_id>/', views.reply_comment, name='reply_comment'),
 ]
 
 
