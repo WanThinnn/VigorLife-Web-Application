@@ -32,9 +32,7 @@ document.getElementById("Form").addEventListener("submit", function (event) {
             tdee = bmr * 1.9;
             break;
     }
-    var lose = tdee - 500;
     document.getElementById("BMR").innerText = bmr.toFixed(0);
     document.getElementById("TDEE").innerText = tdee.toFixed(0);
     document.getElementById("keepWeight").innerText = tdee.toFixed(0); 
-    document.getElementById("loseWeight").innerText = lose.toFixed(0); 
 });
