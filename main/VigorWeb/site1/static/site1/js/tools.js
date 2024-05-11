@@ -1,5 +1,5 @@
 document.getElementById("Form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+    event.preventDefault();
 
     var height = parseFloat(document.getElementById("height").value);
     var weight = parseFloat(document.getElementById("weight").value);
@@ -32,7 +32,23 @@ document.getElementById("Form").addEventListener("submit", function (event) {
             tdee = bmr * 1.9;
             break;
     }
+    
+    var dec1, dec2, dec3, inc1, inc2, inc3;
+
+    dec1 = 0.85 * tdee;
+    dec2 = 0.71 * tdee;
+    dec3 = 0.42 * tdee;
+    inc1 = 1.15 * tdee;
+    inc2 = 1.29 * tdee;
+    inc3 = 1.58 * tdee;
+
     document.getElementById("BMR").innerText = bmr.toFixed(0);
     document.getElementById("TDEE").innerText = tdee.toFixed(0);
     document.getElementById("keepWeight").innerText = tdee.toFixed(0); 
+    document.getElementById("decrease85").innerText = dec1.toFixed(0); 
+    document.getElementById("decrease71").innerText = dec2.toFixed(0); 
+    document.getElementById("decrease42").innerText = dec3.toFixed(0); 
+    document.getElementById("increase115").innerText = inc1.toFixed(0); 
+    document.getElementById("increase129").innerText = inc2.toFixed(0); 
+    document.getElementById("increase158").innerText = inc3.toFixed(0); 
 });
