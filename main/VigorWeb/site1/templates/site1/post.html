@@ -52,25 +52,12 @@
       </div>
       <p class="comment-body" style="font-size: 16px">{{ comment.body}}</p>
     </div>
-      {% for reply in comment.replies.all %}
-      <div style="margin-left: 20px">
-        <h5><strong>{{ reply.author }}</strong></h5>
-        <p>{{ reply.date }}</p>
-        <p>{{ reply.body|linebreaks }}</p>
-        <form action="{% url 'post' post.pk post.title %}" method="POST">
-          {% csrf_token %}
-          <input type="hidden" name="parent_comment_id" value="{{ comment.pk }}">
-          <label for="id_body">Reply:</label>
-          <textarea name="body" id="id_body"></textarea>
-          <input type="submit" value="Reply">
-        </form>
-      </div>
-      {% endfor %} 
-    {% endfor %}
+       
+    {% endfor %} 
 
 
     {% if user.username %}
-    <form action="{% url 'post' post.id post.title %}" method="POST">
+    <form action="{% url 'post' post.id post.title %}" method="POST" class="comment">
       {% csrf_token %}
       <p><label>Bình luận:</label></p>
       {{form.body}}
