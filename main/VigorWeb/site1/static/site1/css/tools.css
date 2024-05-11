@@ -296,7 +296,7 @@
 .calo-box .output .item label {
     font-size: 2.5rem;
     font-weight: 700;
-    font-family: Lato;
+    font-family: 'Arial', cursive;
     padding: 5px 0;
     color: #1d2547;
     margin-bottom: 0;
@@ -345,4 +345,164 @@
     font-size: 40px;
     line-height: 1;
     margin-bottom: 3px
+}
+
+/* Bổ sung */
+div[class^=col-] {
+    padding-left: .25rem;
+    padding-right: .25rem;
+}
+
+@media (min-width: 992px) {
+    .col-lg-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+.col-lg-6 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.output-recommended table {
+    margin-bottom: 0;
+    border: 0;
+    border-spacing: 0 1rem;
+    border-collapse: separate;
+}
+
+.output-recommended {
+    margin-top: 1rem;
+}
+
+.row {
+    margin-left: -.25rem;
+    margin-right: -.25rem;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.table {
+    max-width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+
+.output-recommended table thead {
+    color: #ffffff;
+    background-color: #1d2547;
+}
+
+.output-recommended table thead tr, .output-recommended table tbody tr {
+    outline: 1px solid #1d2547;
+    border-radius: .25rem;
+}
+
+.output-recommended table thead th {
+    border: 0;
+    padding: .25rem .5rem;
+    border-radius: .25rem;
+}
+
+.output-recommended table th, .output-recommended table td {
+    border: 0;
+}
+
+.output-recommended table thead th strong {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.output-recommended table {
+    margin-bottom: 0;
+    border: 0;
+    border-spacing: 0 1rem;
+    border-collapse: separate;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    unicode-bidi: isolate;
+    border-color: inherit;
+}
+
+.output-recommended table tbody td {
+    vertical-align: middle;
+}
+
+.table td, .table th {
+    padding: .75rem;
+}
+
+.output-recommended table tbody td:first-child strong {
+    position: relative;
+    display: block;
+}
+
+.output-recommended table tbody td strong {
+    color: #000000bb;
+}
+
+.output-recommended table strong {
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.output-recommended table tbody td:first-child strong:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    height: 50px;
+    border-right: 1px solid #1d2547;
+}
+
+.output-recommended table tbody td small {
+    display: block;
+    font-size: 16px;
+    color: #00000085;
+    line-height: 15px;
+}
+
+.small, small {
+    font-size: 80%;
+    font-weight: 400;
+}
+
+.output-recommended table tbody td span {
+    color: #e83323;
+    display: block;
+    font-size: 30px;
+    line-height: 20px;
+}
+
+.ddt_empty-space {
+    height: 150px; 
 }
