@@ -9,10 +9,14 @@ class CommentInline(admin.StackedInline):
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ['id','title', 'date']
+    list_display = ['id','title', 'date' ]
     list_filter = ['date']
     search_fields = ['title']
     inlines = [CommentInline]
+    def get_parent_title(self, obj):
+        if obj.parent:
+            return obj.parent.title
+        return None
 
 class ImageAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'post_date', 'post')
