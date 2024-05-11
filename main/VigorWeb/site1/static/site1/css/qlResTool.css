@@ -14,6 +14,21 @@
         margin-top: 50px;
         font-size: 6rem;
     }
+    .ql__navbar__item {
+        display: block;
+    }
+
+    .ql__navbar__form-search {
+        display: none;
+    }
+
+    .ql__navbar__user-container {
+        display: none;
+    }
+
+    .mobile__menu-btn {
+        display: block;
+    }
 }
  
 /* Small phones to small tablets */
@@ -23,6 +38,7 @@
         margin-top: 50px;
         font-size: 6rem;
     }
+
     .ql__navbar__item {
         display: block;
     }
@@ -47,6 +63,7 @@
         margin-top: 50px;
         font-size: 6rem;
     }
+
     .ql__navbar__item {
         display: block;
     }
