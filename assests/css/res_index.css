@@ -7,6 +7,9 @@
  
 /* Small tablet to big tablet from 768x to 1023px */
 @media only screen and (max-width:1023px){
+    .ql__navbar__list {
+        display: block;
+    }
     .ql__slider-content {
         display: none;
     }
@@ -16,6 +19,26 @@
 @media only screen and (max-width: 767px){
     .ql__slider-content {
         display: none;
+    }
+
+    .ql__navbar__item {
+        display: block;
+    }
+
+    .ql__navbar__form-search {
+        display: none;
+    }
+
+    .ql__navbar__user-container {
+        display: none;
+    }
+
+    .mobile__menu-btn {
+        display: block;
+    }
+
+    .ql_css {
+        display: none !important;
     }
 
     .para_ql {
@@ -30,6 +53,10 @@
     .ql-s-col-width {
         width: 100% !important;
     }
+
+    .ql_css {
+        display: none;
+    }
 }
  
 /* Small phones from 0 to 480px; */
@@ -37,4 +64,21 @@
     .ql__slider-content {
         display: none;
     }
+
+    .ql__navbar__form-search {
+        display: none;
+    }
+
+    .ql__navbar__user-container {
+        display: none;
+    }
+
+    .mobile__menu-btn {
+        display: block;
+    }
+
+    .ql_css {
+        display: none !important;
+    }
+
 }
