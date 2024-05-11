@@ -413,12 +413,12 @@ div {
 }
 
 .output-recommended table thead {
-    color: #e6b645;
-    background-color: #fdf2de;
+    color: #ffffff;
+    background-color: #1d2547;
 }
 
 .output-recommended table thead tr, .output-recommended table tbody tr {
-    outline: 1px solid #f1b61c8e;
+    outline: 1px solid #1d2547;
     border-radius: .25rem;
 }
 
@@ -465,7 +465,7 @@ tbody {
 }
 
 .output-recommended table tbody td strong {
-    color: #000000a0;
+    color: #000000bb;
 }
 
 .output-recommended table strong {
@@ -481,7 +481,7 @@ tbody {
     top: 0;
     z-index: 2;
     height: 50px;
-    border-right: 1px solid #f1b61c8e;
+    border-right: 1px solid #1d2547;
 }
 
 .output-recommended table tbody td small {
@@ -501,4 +501,8 @@ tbody {
     display: block;
     font-size: 30px;
     line-height: 20px;
+}
+
+.ddt_empty-space {
+    height: 150px; 
 }
