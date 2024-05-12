@@ -44,26 +44,60 @@
       {% endfor %}
     </div>
 
-    {% for comment in post.comments.all %}
-    <div class="comment">
-      <div class="comment-header">
+{% for comment in post.comments.all %}
+<div class="comment">
+    <div class="comment-header">
         <h3 class="comment-author">{{ comment.author }}</h3>
         <h4 class="comment-date">{{ comment.date }}</h4>
-      </div>
-      <p class="comment-body" style="font-size: 16px">{{ comment.body}}</p>
     </div>
-       
-    {% endfor %} 
+    <p class="" style="font-size: 16px">{{ comment.body}}</p>
+    <button class="reply-btn">Trả lời</button>   
+    {% for reply in comment.replies.all %}
+    <div class="reply">
+        <div class="comment-header">
+            <h3 class="comment-author">{{ reply.author }}</h3>
+            <h4 class="comment-date">{{ reply.date }}</h4>
+        </div>
+        <p class="" style="font-size: 16px">{{ reply.body}}</p>
+    </div>
+    {% endfor %}
+    <div >
+        <form action="{% url 'reply' post.id post.title %}" method="POST" id="main_form" class="reply-form">
+            {% csrf_token %}
+            <input type="hidden" name="author" value="{{ comment.author.id }}">
+            <input type="hidden" name="comment" value="{{ comment.id }}">
+            <p><label>Trả lời Bình luận:</label></p>
+            {% comment %} {{ form.body }} {% endcomment %}
+            <textarea id="comment_body" name="body" class="comment-body" style="font-size: 16px;"></textarea>
+            
 
+            <br />
+            <button type="submit"> Trả lời</button>
+        </form>
+    </div>
+</div>
 
-    {% if user.username %}
-    <form action="{% url 'post' post.id post.title %}" method="POST" class="comment">
+{% endfor %}
+
+<button id="load-more-btn">Xem thêm</button>
+
+    {% if user.is_authenticated %}
+  <div>
+    <form
+      action="{% url 'post' post.id post.title %}"
+      method="POST"
+      class="comment-form"
+    >
       {% csrf_token %}
       <p><label>Bình luận:</label></p>
-      {{form.body}}
+      {% comment %} {{form.body}} {% endcomment %}
+      <textarea id="comment_body" name="body" class="comment-body" style="font-size: 16px;"></textarea>
+
       <br />
-      <input type="submit" value="Bình luận" />
+      <button  type="submit"> Bình luận</button>
     </form>
+    {% else %}
+    <p>Vui lòng <a href="{% url 'login' %}">đăng nhập</a> để bình luận.</p>
     {% endif %}
   </div>
 </section>
