@@ -33,16 +33,12 @@
         display: none;
     }
 
-    .ql__navbar__right {
-        display: block;
-    }
     
-    .ql__navbar__category-list {
-        display: block;
-    }
 
     .mobile__menu-btn {
         display: block;
+        top: 0;
+        left: 0;
     }
 
     .ql_css {
