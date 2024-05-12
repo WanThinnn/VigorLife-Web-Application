@@ -7,7 +7,7 @@
 /* NAVBAR */
 .ql__navbar {
     width: 100%;
-    height: 100px;
+    height: 68px;
     /* background-color: #efe2da; */
     /* background-color: var(--blue_pastel-color); */
     background-color: #1D2547;
@@ -28,10 +28,13 @@
     width: 108px;
 }
 
-.ql__navbar__category-list {}
+.ql__navbar__category-list {
+    height: 68px;
+}
 
 .ql__navbar__list {
     display: flex;
+    align-items: center;
     list-style: none;
 }
 
@@ -54,6 +57,18 @@
 .ql__navbar__right {
     display: flex;
     align-items: center;
+}
+
+.ql__navbar__form-search {
+    display: inline-block;
+}
+
+.ql__navbar__user-container {
+    display: inline-block;
+}
+
+.mobile__menu-btn {
+    display: inline-block;
 }
 
 .ql__navbar__right .ql__navbar__form input {
@@ -126,7 +141,7 @@
     border-radius: 2px;
     box-shadow: 0 1px 3.125rem rgba(0, 0, 0, 0.2);
     margin-top: 2px;
-    z-index: 1;
+    z-index: 100;
     background-color: #1D2547;
     display: none;
 }
@@ -142,7 +157,7 @@
 }
 
 .ql__navbar__user-container:hover .ql__navbar__user-list {
-    display: inline-block;
+    display: block;
 }
 
 .ql__navbar__user-container:hover .ql__navbar__user-acc {
@@ -169,10 +184,14 @@
     font-weight: 400;
 }
 
+.mobile__menu-btn {
+    display: none;
+}
+
 /* SLIDER */
 .ql__slider {
     position: relative;
-    margin-top: 100px;
+    margin-top: 52px;
     padding-top: 50%;
     background: url('../img/Health.jpg') top center / cover no-repeat;
 }

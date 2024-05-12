@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="/assests/css/main.css">
     <link rel="stylesheet" href="/assests/css/res_index.css">
     <link rel="stylesheet" href="/assests/css/res_qt_index.css">
+    <link rel="stylesheet" href="/main/VigorWeb/site1/static/site1/css/main.css">
+    <link rel="stylesheet" href="/assests/css/main.css">
     <link rel="stylesheet" href="/main/VigorWeb/site1/static/site1/css/qlResIndex.css">
     <link rel="stylesheet" href="/main/VigorWeb/site1/static/site1/css/qlResIndex_body.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +45,7 @@
     <section class="">
         <div class="ql__main">
             <div class="ql__header">
-                <div class="ql__navbar">
+                <div id="header" class="ql__navbar">
                     <div class="ql__navbar__left">
                         <a href="#" class="ql__navbar__logo-img">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 500">
@@ -2398,6 +2400,20 @@
                     </div>
                 </div>
             </div>
+            <script>
+                var header = document.getElementById('header');
+                var mobileMenu = document.getElementById('mb-mn');
+                
+                mobileMenu.onclick = function() {
+                    var isClosed = header.clientHeight === 68;
+                    if (isClosed) {
+                        header.style.height = 'auto';
+                    }
+                    else {
+                        header.style.height = null;
+                    }
+                }
+            </script>
 
             <div class="ql__slider">
                 <div class="ql__slider-content">

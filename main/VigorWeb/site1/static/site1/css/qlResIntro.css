@@ -31,8 +31,13 @@
         display: none;
     }
 
+    .ql__navbar__right {
+        display: block
+    }
+
     .mobile__menu-btn {
         display: block;
+        text-align: none;
     }
 
     .about-picture-group-1 {
