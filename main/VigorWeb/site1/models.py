@@ -12,9 +12,11 @@ class CreateUserForm(UserCreationForm):
 
 # Create your models here.
 class Post(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=100)
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
+    post_image  = models.ForeignKey('Image', on_delete=models.SET_NULL, null=True, related_name='post_images')
     def __str__(self):
         return self.title
     @property

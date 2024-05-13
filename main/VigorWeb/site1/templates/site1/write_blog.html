@@ -1,0 +1,17 @@
+
+{%load static%}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Viết Blog</title>
+</head>
+<body>
+    <h1>Viết Blog Mới</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Đăng Bài</button>
+    </form>
+</body>
+</html>

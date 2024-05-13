@@ -1,7 +1,7 @@
 {% extends 'site1/base.html' %}
 {% load static %}
-
 {% block heallthinfo-content %}
+
 <section class="slider-area">
     <div class="slider-area-photo"></div>
     <div class="container">
@@ -22,41 +22,62 @@
 </section>
 
 {% for post in Posts %}
-<section class="about-us-section">
-    <div class="about-container">
-        <div class="about-us-section-row">
-            <div class="about-us-section-tittle">
-                <h2><a href="{% url 'post' post.id post.title%}" style="color:black">{{ post.title }}</a></h2>
-                <p class="about-p-long" style="margin-bottom: 2rem;">{{ post.body|safe }}</p>
+    {% if forloop.counter|divisibleby:2 %}
+
+    <section class="about-us-section" style="background-color:#f4f4f4">
+        <div class="about-container">
+            <div class="about-us-section-row">
+                <div class="about-us-section-tittle">
+                    <h2><a href="{% url 'post' post.id post.title%}" style="color:black">{{ post.title }}</a></h2>
+                    <p class="about-p-long" style="margin-bottom: 2rem;">{{ post.body|safe }}</p>
+                </div>
             </div>
-        </div>
-        
-        <div class="about-picture-group-1">
-            {% for img in post.image_set.all %}
-            <div class="about-picture-2">
-                <img src="{{ img.image.url }}" alt="">
-                <p class="picture-title-2">{{ img.title }}</p>
-            </div>
-            {% endfor %}
-            <div class="np__row justify-content-center">
-                <div class="np__room-btn">
-                    <a href="{% url 'post' post.id post.title %}" class="np__border-btn">Discover More</a>
+            
+            <div class="about-picture-group-1">
+                {% for img in post.image_set.all %}
+                <div class="about-picture-2">
+                    <img src="{{ img.image.url }}" alt="">
+                    <p class="picture-title-2">{{ img.title }}</p>
+                </div>
+                
+
+                {% endfor %}
+                <div class="np__row justify-content-center">
+                    <div class="np__room-btn">
+                        <a href="{% url 'post' post.id post.title %}" class="np__border-btn">Discover More</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    {% else %}
+    <section class="about-us-section">
+        <div class="about-container">
+            <div class="about-us-section-row">
+                <div class="about-us-section-tittle">
+                    <h2><a href="{% url 'post' post.id post.title%}" style="color:black">{{ post.title }}</a></h2>
+                    <p class="about-p-long" style="margin-bottom: 2rem;">{{ post.body|safe }}</p>
+                </div>
+            </div>
+            
+            <div class="about-picture-group-1">
+                {% for img in post.image_set.all %}
+                <div class="about-picture-2">
+                    <img src="{{ img.image.url }}" alt="">
+                    <p class="picture-title-2">{{ img.title }}</p>
+                </div>
+                
+
+                {% endfor %}
+                <div class="np__row justify-content-center">
+                    <div class="np__room-btn">
+                        <a href="{% url 'post' post.id post.title %}" class="np__border-btn">Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
 {% endfor %}
 
-{% comment %}
-{% if user.username %}
-    <form action="{% url 'post' post.id %}" method="POST">
-        {% csrf_token %}
-        <p><label>Bình luận:</label></p>
-        {{ form.body }}
-        <br/>
-        <input type="submit" value="Bình luận"/>
-    </form>
-{% endif %}
-{% endcomment %}
 {% endblock heallthinfo-content %}

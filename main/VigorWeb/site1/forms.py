@@ -35,3 +35,19 @@ class RelyCommentForm(forms.ModelForm):
     class Meta:
         model = Reply
         fields = ["body"]
+
+class BlogForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['title', 'body']
+
+    def __init__(self, *args, **kwargs):
+        self.author = kwargs.pop('author', None)
+        super().__init__(*args, **kwargs)
+
+    def save(self, commit=True):
+        post = super().save(commit=False)
+        post.author = self.author
+        if commit:
+            post.save()
+        return post

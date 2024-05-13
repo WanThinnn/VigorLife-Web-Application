@@ -30,7 +30,7 @@ def heallthinfo(request):
 
 class PostListView(ListView):
     queryset = Post.objects.all().order_by('-date')
-    template_name = 'site1/heallthinfo.html'
+    template_name = 'site1/blog.html'
     context_object_name = 'Posts'
     paginate_by = 10
 
@@ -62,6 +62,16 @@ def reply_cmt(request, pk, title):
             return HttpResponseRedirect(request.path)
     return render(request, "site1/post.html", {"post": post, "form": form})
 
+def write_blog(request):
+    if request.method == 'POST':
+        author_id = request.POST.get('author')
+        form = BlogForm(request.POST, author=author_id)
+        if form.is_valid():
+            form.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = BlogForm(author=request.user)
+    return render(request, 'site1/write_blog.html', {'form': form})
 
 def loseweight(request):
     return render(request, 'site1/loseweight_exercise.html')
@@ -129,3 +139,6 @@ def loginPage(request):
 def logoutPage(request):
     logout(request)
     return redirect('login')
+
+
+

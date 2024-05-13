@@ -64,14 +64,16 @@
 
 
 .about-us-section {
-    margin-top: 10rem;
+    margin-top: 5rem;
     position: relative;
     width: 100%;
     /* height: 115vh; */
     display: flex;
     text-align: center;
 }
-
+.about-us-section-row{
+    margin-top: 7rem;
+}
 
 .about-us-section .about-container {
     margin: 0 auto; /* Để căn giữa */
@@ -132,7 +134,7 @@
     margin-bottom: 50px;
     display: inline-block; 
     margin: 0 50px; 
-    margin-top: 120px;
+    /* margin-top: 120px; */
 }
 
 .about-picture-2 img {
@@ -200,10 +202,7 @@
 
 .about-project-section .about-container {
     margin: 0 auto; /* Để căn giữa */
-    margin-top: -3rem;
-    /* padding-top: 50px; */
-    /* padding-bottom: 50px; */
-    /* height: 100px; */
+    margin-top: 13rem;
 
 }
 
@@ -299,4 +298,8 @@
     background-color: none;
     margin-top: 50px;
     padding-top: 30px;
+}
+
+.about-project-section-row{
+    margin-top: -100px;
 }

@@ -19,9 +19,10 @@ urlpatterns = [
         queryset=Post.objects.all().order_by('-date'),
         template_name='site1/blog.html',
         context_object_name='Posts',
-        paginate_by=1), name='blog'),
+        paginate_by=10), name='blog'),
     path('<int:pk>-<str:title>/', views.post, name='post'),
     path('reply/<int:pk>-<str:title>/', views.reply_cmt, name='reply'),
+    path('write/', views.write_blog, name='write_blog'),
 ]
 
 
