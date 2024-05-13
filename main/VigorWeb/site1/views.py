@@ -21,6 +21,9 @@ from .forms import *
 def home(request):
     return render(request, 'site1/home.html')
 
+def autocomplete(request):
+    return render(request, 'site1/base.html')
+
 def introduction(request):
     return render(request, 'site1/introduction.html')
 

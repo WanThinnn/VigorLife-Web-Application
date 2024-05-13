@@ -30,11 +30,14 @@
         <link href="{% static 'site1/css/npresponsiveP2.css' %}" rel='stylesheet'>
         <link href="{% static 'site1/css/npresponsiveP1.css' %}" rel='stylesheet'>
         <link href="{% static 'site1/css/forms.css' %}" rel='stylesheet'>
+<<<<<<< HEAD
         <link rel="stylesheet" href="{% static 'site1/font/themify-icons-font/themify-icons/themify-icons.css' %}">
 
+=======
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+>>>>>>> b409c4a063624ddde68bd7e304cad1d6a717fec8
         <script src="{% static 'site1/js/forms.js' %}"></script>
         <script src="{% static 'site1/js/blog.js' %}"></script>
-
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>       
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
@@ -2364,11 +2367,38 @@
                                 <li><a class="chu_the_a" href="#">Tìm hiểu thêm</a></li>
                                 <li><a class="chu_the_a" href="#">Liên hệ</a></li>
                             </ul>
+<<<<<<< HEAD
                             <!-- End: Nav -->
         
                             <!-- Begin: Mobile Button -->
                             <div id="mobile-menu" class="mobile-menu-btn">
                                 <i class=" ti-menu menu-icon"></i>
+=======
+                        </div>
+                    </div>
+
+                    <div class="ql__navbar__right" style="margin-right:10px">
+                        <div class="ql__navbar__form-search">
+                            <form action="#" class="ql__navbar__form">
+                                <input type="text" placeholder="Tìm Kiếm" style="color: #fff" name = "search" id ="search">
+                                <i class="navbar__icon fa-solid fa-magnifying-glass"></i>
+                            </form>
+                            <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+                            <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+                            <script>
+                                $( function() {
+                                $( "#search" ).autocomplete({
+                                source: ['js', 'nammphuong', 'xinchao']
+                            });
+                            } );
+                            </script>
+                        </div>
+
+                        <div class="ql__navbar__user-container">
+                            <div class="ql__navbar__user">
+                                <i class="fa-regular fa-user"></i>
+                                <a href="#" class="ql__navbar__user-acc">Tài khoản</a>
+>>>>>>> b409c4a063624ddde68bd7e304cad1d6a717fec8
                             </div>
                             <!-- End: Mobile Button -->
         

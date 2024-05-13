@@ -7,6 +7,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('', views.home, name='home'),
+    path('', views.autocomplete, name='autocomplete'),
     path('introduction/', views.introduction, name='introduction'),
     # path('blog/',views.heallthinfo,name='blog'),
     path('loseweight/', views.loseweight, name='loseweight'),
