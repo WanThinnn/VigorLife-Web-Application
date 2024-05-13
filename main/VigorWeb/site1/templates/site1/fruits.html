@@ -1,0 +1,66 @@
+{% extends 'site1/base.html' %} {%load static%} {%block fruits-content%}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hoa Quả</title>
+    <link href="{% static 'site1/css/fruits.css' %}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <section class="slider-area">
+      <div class="slider-area-photo"></div>
+      <div class="container">
+        <div class="slider-row">
+          <div class="col-xl-6 col-lg-8 col-md-8">
+            <div class="slider-row-caption">
+              <h1>Về Chúng Tôi</h1>
+              <nav aria-label="slider-nav">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="index.html" tabindex="0">Trang Chủ</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a href="#" tabindex="0">Về Chúng Tôi</a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="header-fruit">
+      <h1>Hoa Quả Giàu Năng Lượng</h1>
+    </div>
+
+    <div class="fruit-list">
+      {% for fruit in fruits %} 
+      {% if forloop.counter0|divisibleby:3 %}
+      <div class="np__row">
+        {% endif %}
+        <figure>
+          <a href="#" class="imagez">
+            <img
+              src="{{ fruit.image.url }}"
+              alt="{{ fruit.name }}"
+              class="animalimg"
+            />
+          </a>
+          <a href="#" class="linkz">
+            <figcaption>
+              <label class="np__prc">{{ fruit.name }}</label><br />
+              <p style="color: rgb(189, 144, 60)" class="np__prc">
+                {{ fruit.calories }}
+              </p>
+            </figcaption>
+          </a>
+        </figure>
+        {% if forloop.counter|divisibleby:3 or forloop.last %}
+      </div>
+      {% endif %} {% endfor %}
+    </div>
+  </body>
+</html>
+{%endblock fruits-content%}

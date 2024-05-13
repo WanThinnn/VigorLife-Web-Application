@@ -1,7 +1,11 @@
 {% extends 'site1/base.html' %}
 {% load static %}
 {% block heallthinfo-content %}
+<head>
+    <title>Blog</title>
+    <link href="{% static 'site1/css/blog.css' %}" rel="stylesheet">
 
+</head>
 <section class="slider-area">
     <div class="slider-area-photo"></div>
     <div class="container">
@@ -29,24 +33,24 @@
             <div class="about-us-section-row">
                 <div class="about-us-section-tittle">
                     <h2><a href="{% url 'post' post.id post.title%}" style="color:black">{{ post.title }}</a></h2>
-                    <p class="about-p-long" style="margin-bottom: 2rem;">{{ post.body|safe }}</p>
+                    <p class="about-p-long" style="margin-bottom: 7rem;">{{ post.body|safe }}</p>
                 </div>
             </div>
             
             <div class="about-picture-group-1">
+            
                 {% for img in post.image_set.all %}
                 <div class="about-picture-2">
                     <img src="{{ img.image.url }}" alt="">
                     <p class="picture-title-2">{{ img.title }}</p>
                 </div>
-                
-
                 {% endfor %}
-                <div class="np__row justify-content-center">
-                    <div class="np__room-btn">
-                        <a href="{% url 'post' post.id post.title %}" class="np__border-btn">Discover More</a>
-                    </div>
+            </div>
+            <div class="ddt_tailor-details">
+                <div class="ddt_btn">
+                    <a href="{% url 'post' post.id post.title %}" class="border-btn">Xem Thêm</a>
                 </div>
+            </div>
             </div>
         </div>
     </section>
@@ -56,24 +60,24 @@
             <div class="about-us-section-row">
                 <div class="about-us-section-tittle">
                     <h2><a href="{% url 'post' post.id post.title%}" style="color:black">{{ post.title }}</a></h2>
-                    <p class="about-p-long" style="margin-bottom: 2rem;">{{ post.body|safe }}</p>
+                    <p class="about-p-long" style="margin-bottom: 7rem;">{{ post.body|safe }}</p>
                 </div>
             </div>
-            
+
             <div class="about-picture-group-1">
+            
                 {% for img in post.image_set.all %}
                 <div class="about-picture-2">
                     <img src="{{ img.image.url }}" alt="">
                     <p class="picture-title-2">{{ img.title }}</p>
                 </div>
-                
-
                 {% endfor %}
-                <div class="np__row justify-content-center">
-                    <div class="np__room-btn">
-                        <a href="{% url 'post' post.id post.title %}" class="np__border-btn">Discover More</a>
-                    </div>
+            </div>
+            <div class="ddt_tailor-details">
+                <div class="ddt_btn">
+                    <a href="{% url 'post' post.id post.title %}" class="border-btn">Xem Thêm</a>
                 </div>
+            </div>
             </div>
         </div>
     </section>

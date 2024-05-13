@@ -30,6 +30,7 @@
         <link href="{% static 'site1/css/npresponsiveP2.css' %}" rel='stylesheet'>
         <link href="{% static 'site1/css/npresponsiveP1.css' %}" rel='stylesheet'>
         <link href="{% static 'site1/css/forms.css' %}" rel='stylesheet'>
+
         <link rel="stylesheet" href="{% static 'site1/font/themify-icons-font/themify-icons/themify-icons.css' %}">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
         <script src="{% static 'site1/js/forms.js' %}"></script>
@@ -42,7 +43,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         
     
-        <title>Trang chủ</title>
+        {% comment %} <title>Trang chủ</title> {% endcomment %}
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
@@ -62,7 +63,7 @@
                             <!-- Begin: Nav -->
                             <ul id="nav">
                                 <li>
-                                    <a href="#" class="ql__navbar__logo-img">
+                                    <a href="{% url  'home'%}" class="ql__navbar__logo-img">
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 500">
                                             <defs>
                                                 <style>
@@ -2356,12 +2357,12 @@
                                         </svg>
                                     </a>
                                 </li>
-                                <li><a class="chu_the_a" href="#">Trang chủ</a></li>
-                                <li><a class="chu_the_a" href="#">Chúng tôi</a></li>
-                                <li><a class="chu_the_a" href="#">Công cụ</a></li>
-                                <li><a class="chu_the_a" href="#">Blog</a></li>
-                                <li><a class="chu_the_a" href="#">Tìm hiểu thêm</a></li>
-                                <li><a class="chu_the_a" href="#">Liên hệ</a></li>
+                                <li><a class="chu_the_a" href="{% url  'home'%}">Trang chủ</a></li>
+                                <li><a class="chu_the_a" href="{% url  'introduction'%}">Chúng tôi</a></li>
+                                <li><a class="chu_the_a" href="{% url  'tools'%}">Công cụ</a></li>
+                                <li><a class="chu_the_a" href="{% url  'blog'%}">Blog</a></li>
+                                <li><a class="chu_the_a" href="{% url  'loseweight'%}">Tìm hiểu thêm</a></li>
+                                <li><a class="chu_the_a" href="#fter">Liên hệ</a></li>
                             </ul>
                             <!-- End: Nav -->
         
@@ -2459,6 +2460,8 @@
 
     {%block tools-content%} {%endblock tools-content%} 
     {%block register%} {%endblock register%}
+    {%block fruits-content%} {%endblock fruits-content%}
+    {%block write-blog%}{%endblock write-blog%}
 
     <section class="background-nqt">
         <div class="NQT_container">

@@ -67,15 +67,19 @@ def reply_cmt(request, pk, title):
 
 def write_blog(request):
     if request.method == 'POST':
-        author_id = request.POST.get('author')
-        form = BlogForm(request.POST, author=author_id)
-        if form.is_valid():
-            post = form.save()  # Lưu bài viết và nhận lại post đã được lưu
-            # Điều hướng đến trang post
+        blog_form = BlogForm(request.POST, author=request.user)
+        image_form = ImageUploadForm(request.POST, request.FILES)
+        if blog_form.is_valid() and image_form.is_valid():
+            post = blog_form.save()
+            images = request.FILES.getlist('images')  # Lấy danh sách hình ảnh từ form tải lên
+            titles = request.POST.getlist('title')    # Lấy danh sách tiêu đề từ form
+            for image, title in zip(images, titles):
+                Image.objects.create(image=image, post=post, title=title)  # Lưu hình ảnh vào cơ sở dữ liệu
             return redirect('post', pk=post.pk, title=post.title)
     else:
-        form = BlogForm(author=request.user)
-    return render(request, 'site1/write_blog.html', {'form': form})
+        blog_form = BlogForm(author=request.user)
+        image_form = ImageUploadForm()
+    return render(request, 'site1/write_blog.html', {'blog_form': blog_form, 'image_form': image_form})
 
 def loseweight(request):
     return render(request, 'site1/loseweight_exercise.html')
@@ -146,3 +150,13 @@ def logoutPage(request):
 
 
 
+# def fruit(request, name, calo):
+#     fruit = Fruit.objects.filter(name=name, calories=calo).first()  # Sử dụng first() thay vì get()
+#     return render(request, "site1/fruits.html", {"fruit": fruit})
+
+
+class FruitListView(ListView):
+    model = Fruit
+    template_name = 'site1/fruits.html'
+    context_object_name = 'fruits'
+    queryset = Fruit.objects.all().order_by('-name')

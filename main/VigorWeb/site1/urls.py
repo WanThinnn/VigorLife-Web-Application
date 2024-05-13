@@ -1,10 +1,12 @@
 from django.contrib import admin
 from django.urls import path
 from . import views
-from .models import Post
+from .models import *
 from django.views.generic import ListView
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import *
+
 urlpatterns = [
     path('', views.home, name='home'),
     path('', views.autocomplete, name='autocomplete'),
@@ -23,7 +25,9 @@ urlpatterns = [
         paginate_by=10), name='blog'),
     path('<int:pk>-<str:title>/', views.post, name='post'),
     path('reply/<int:pk>-<str:title>/', views.reply_cmt, name='reply'),
-    path('write_blog/', views.write_blog, name='write_blog'),
+    path('blog/write_blog/', views.write_blog, name='write_blog'),
+    path('fruits/', FruitListView.as_view(), name='fruits'),
+    
 ]
 
 
