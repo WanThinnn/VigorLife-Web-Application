@@ -7,16 +7,118 @@
  
 /* Small tablet to big tablet from 768x to 1023px */
 @media only screen and (max-width:1023px){
+    #nav .subnav a {
+        padding: 5px 12px;
+    }
+
+    #nav .subnav a {
+        padding: 5px 12px;
+    }
+    #header {
+        overflow: hidden;
+    }
+
+    #header .mobile-menu-btn {
+        display: block;
+    }
+
+
+    #header .search-btn {
+        display: none;
+    }
+
+    #nav {
+        display: block;
+    }
+
+    #nav li a {
+        padding: 1px 24px;
+    }
+
+    #nav > li {
+        display: block;
+    }
+
+    #nav > li:first-child {
+        display: inline-block;
+    }
+
+    #nav .subnav {
+        position: initial;
+        background-color: #333;
+    }
+
+    #nav .subnav a {
+        color: #fff;
+        padding: 5px 41px;
+    }
     .ql__navbar__list {
         display: block;
     }
     .ql__slider-content {
         display: none;
     }
+    .ql1234 {
+        width: auto !important;
+        margin: 0 !important;
+    }
+    
 }
  
 /* Small phones to small tablets */
 @media only screen and (max-width: 767px){
+    #nav .subnav a {
+        padding: 5px 12px;
+    }
+    #header {
+        overflow: hidden;
+        height: 68px;
+    }
+
+    #header .mobile-menu-btn {
+        display: block;
+    }
+
+
+    #header .search-btn {
+        display: none;
+    }
+
+    #nav {
+        display: block;
+    }
+
+    #nav li a {
+        padding: 1px 24px;
+    }
+
+    #nav > li {
+        display: block;
+    }
+
+    #nav > li:first-child {
+        display: inline-block;
+    }
+
+    #nav .subnav {
+        position: initial;
+        background-color: #333;
+    }
+
+    #nav .subnav a {
+        color: #fff;
+        padding: 5px 41px;
+    }
+
+    #nav li a {
+        line-height: 58px;
+        font-size: 1.4rem;
+    }
+
+    #nav li {
+        height: 60px;
+    }
+
     .ql__slider-content {
         display: none;
     }
@@ -31,14 +133,6 @@
 
     .ql__navbar__user-container {
         display: none;
-    }
-
-    
-
-    .mobile__menu-btn {
-        display: block;
-        top: 0;
-        left: 0;
     }
 
     .ql_css {
@@ -70,10 +164,59 @@
     .background-nqt {
         margin-top: 600px;
     }
+    .ql1234 {
+        width: auto !important;
+        margin: 0 !important;
+    }
+    
 }
  
 /* Small phones from 0 to 480px; */
 @media only screen and (max-width: 480px){
+    #header {
+        overflow: hidden;
+    }
+
+    .mobile-menu-btn { 
+        display: block;
+    }
+
+    #header .mobile-menu-btn {
+        display: block;
+    }
+
+    #header .search-btn {
+        display: none;
+    }
+
+    #nav {
+        display: block;
+    }
+
+    #nav li a {
+        padding: 1px 24px;
+    }
+
+    #nav > li {
+        display: block;
+    }
+
+    #nav > li:first-child {
+        display: inline-block;
+    }
+
+    #nav .subnav {
+        position: initial;
+        background-color: #333;
+    }
+
+    #nav .subnav a {
+        color: #fff;
+        padding: 5px 41px;
+    }
+    #nav .subnav a {
+        padding: 5px 12px;
+    }
     .ql__slider-content {
         display: none;
     }
@@ -101,5 +244,8 @@
     .background-nqt {
         margin-top: 600px;
     }
-
+    .ql1234 {
+        width: auto !important;
+        margin: 0 !important;
+    }
 }

@@ -68,8 +68,13 @@
  /* Small phones to small tablets */
  @media only screen and (max-width: 767px){
     .h2_chung {
-        font-size: 18px !important;
+        font-size: 36px !important;
     }
+
+    .ql_1234 {
+        font-size: 36px !important;
+    }
+
     .pera-header, 
     .pera-bottom {
         display: none;
