@@ -63,10 +63,21 @@
      .information li{
          font-size: 14px;
      }
+
+     .visit-tailor-area {
+        margin-top: 100px;
+        margin-bottom: 100px;
+     }
  }
  
  /* Small phones to small tablets */
  @media only screen and (max-width: 767px){
+
+    .visit-tailor-area {
+        margin-top: 100px;
+        margin-bottom: 100px;
+     }
+
     .h2_chung {
         font-size: 36px !important;
     }
@@ -179,6 +190,11 @@
         margin-top: 10%;
         margin-left: 20%;
     }
+
+    .visit-tailor-area {
+        margin-top: 100px;
+        margin-bottom: 100px;
+     }
  
     .heading-main-box{
      transform: translate(-10%, -50%);
