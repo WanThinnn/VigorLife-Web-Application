@@ -67,8 +67,9 @@ def write_blog(request):
         author_id = request.POST.get('author')
         form = BlogForm(request.POST, author=author_id)
         if form.is_valid():
-            form.save()
-            return redirect('post_detail', pk=post.pk)
+            post = form.save()  # Lưu bài viết và nhận lại post đã được lưu
+            # Điều hướng đến trang post
+            return redirect('post', pk=post.pk, title=post.title)
     else:
         form = BlogForm(author=request.user)
     return render(request, 'site1/write_blog.html', {'form': form})

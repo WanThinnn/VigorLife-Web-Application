@@ -1,10 +1,13 @@
 .comment {
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     padding: 10px;
     text-align: left;
     background: #fdfeff;
     border-radius: 5px;
+    width: 700px;
+    max-width: 100%;
+    margin: 0px auto;
 }
 
 .comment .comment-header {
@@ -37,11 +40,12 @@
     margin-top: 20px;
     text-align: left;
     background: #fdfeff;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-
+    width: 700px;
+    margin: 0 auto;
 }
 
 .comment-form .form-group {
@@ -61,6 +65,9 @@
     padding: 8px 16px;
     border-radius: 5px;
     cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
 }
 
 .comment-form button[type='submit']:hover,
@@ -76,6 +83,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    margin-bottom: 7px;
 }
 
 .comment-body:focus {
@@ -84,9 +92,9 @@
 }
 
 
-.reply {
+.reply {    
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     padding: 10px;
     text-align: left;
     background: #fdfeff;

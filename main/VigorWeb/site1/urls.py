@@ -22,7 +22,7 @@ urlpatterns = [
         paginate_by=10), name='blog'),
     path('<int:pk>-<str:title>/', views.post, name='post'),
     path('reply/<int:pk>-<str:title>/', views.reply_cmt, name='reply'),
-    path('write/', views.write_blog, name='write_blog'),
+    path('write_blog/', views.write_blog, name='write_blog'),
 ]
 
 
