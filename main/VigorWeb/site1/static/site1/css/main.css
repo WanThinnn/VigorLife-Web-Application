@@ -345,7 +345,7 @@
 /* SLIDER */
 .ql__slider {
     position: relative;
-    margin-top: 52px;
+    margin-top: 0px;
     padding-top: 50%;
     background: url('../img/Health.jpg') top center / cover no-repeat;
 }
