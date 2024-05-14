@@ -9,8 +9,12 @@
     position: relative;
     width: 100%;
     flex: 0 0 50%;
-    max-width: 50%;
+    /* max-width: 50%; */
     padding-left: 0.5rem;
+}
+
+.ddt_column3 .calo-pos {
+    max-width: 33%;
 }
 
 .calo-pos2 {
@@ -504,5 +508,5 @@ tbody {
 }
 
 .ddt_empty-space {
-    height: 150px; 
+    height: 90px; 
 }

@@ -32,6 +32,10 @@ document.getElementById("Form").addEventListener("submit", function (event) {
             tdee = bmr * 1.9;
             break;
     }
+
+    var bmi;
+    height /= 100;
+    bmi=weight/(height*height);
     
     var dec1, dec2, dec3, inc1, inc2, inc3;
 
@@ -44,6 +48,7 @@ document.getElementById("Form").addEventListener("submit", function (event) {
 
     document.getElementById("BMR").innerText = bmr.toFixed(0);
     document.getElementById("TDEE").innerText = tdee.toFixed(0);
+    document.getElementById("BMI").innerText = bmi.toFixed(2);
     document.getElementById("keepWeight").innerText = tdee.toFixed(0); 
     document.getElementById("decrease85").innerText = dec1.toFixed(0); 
     document.getElementById("decrease71").innerText = dec2.toFixed(0); 
