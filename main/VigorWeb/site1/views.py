@@ -86,11 +86,6 @@ def write_blog(request):
 def loseweight(request):
     return render(request, 'site1/loseweight_exercise.html')
 
-###############################
-###############################
-###############################
-###############################
-#9nIgsnVfHFA7sVgBPbho6Q==soVB8dv5tTBqJpfH
 def calo(request):
     import json
     import requests
@@ -129,10 +124,6 @@ def calo(request):
         return render(request, 'site1/calo.html', context)
     else:
         return render(request, 'site1/calo.html', {'query': 'Enter a valid query'})
-###############################
-###############################
-###############################
-###############################
 
 def tools(request):
     return render(request, 'site1/tools.html')
