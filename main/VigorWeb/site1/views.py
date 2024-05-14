@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from VigorWeb.settings import EMAIL_HOST_USER
 import random
+from django.db.models import Sum
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
@@ -168,5 +169,17 @@ class FruitListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['classification'] = self.kwargs.get('classification')  # Truyền giá trị classification vào context
+        classification = self.kwargs.get('classification')
+        if classification:
+            fruits = Fruit.objects.filter(classification=classification)
+        else:
+            fruits = Fruit.objects.all()
+        
+        # Sử dụng aggregate để tính tổng calories
+        total_calories = fruits.aggregate(Sum('calories'))['calories__sum']
+        context['total_calories'] = total_calories if total_calories is not None else 0
+        context['classification'] = classification
         return context
+
+def ListFruit(request):
+    return render(request, 'site1/list_fruits.html')

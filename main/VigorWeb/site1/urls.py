@@ -27,6 +27,7 @@ urlpatterns = [
     path('reply/<int:pk>-<str:title>/', views.reply_cmt, name='reply'),
     path('blog/write_blog/', views.write_blog, name='write_blog'),
     path('fruits/<str:classification>/', FruitListView.as_view(), name='fruits'),
+    path('fruits/', views.ListFruit, name='list-fruits'),
     
 ]
 

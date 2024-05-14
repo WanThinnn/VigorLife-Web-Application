@@ -96,9 +96,9 @@
     line-height: 1.6;
     max-width: 100%; /* Đặt chiều rộng tối đa cho đoạn văn bản */
     width: 800px;
-    text-align: center; /* Căn giữa văn bản */
+    text-align: justify; /* Căn giữa văn bản */
     margin: 0 auto;
-    margin-bottom: 5rem;
+    margin-bottom: -10rem;
     margin-top: 2rem;
 }
 
@@ -201,7 +201,7 @@
 
 .about-project-section .about-container {
     margin: 0 auto; /* Để căn giữa */
-    margin-top: 13rem;
+    /* margin-top: 13rem; */
 
 }
 
@@ -221,7 +221,7 @@
     line-height: 1.6;
     max-width: 100%;
     width: 800px;
-    text-align: center;
+    text-align: justify;
     margin: 0 auto;
     margin-bottom: 5rem;
     margin-top: 2rem;
@@ -293,9 +293,9 @@
 
 .ins-2 {
     width: 100%;
-    height: 500px;
+    height: 587px;
     background-color: none;
-    margin-top: 400px;
+    /* margin-top: 400px; */
     padding-top: 30px;
 }
 

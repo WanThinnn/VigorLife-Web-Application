@@ -93,7 +93,7 @@
                 mạng hóa sự kết hợp giữa mã hóa và chăm sóc sức khỏe, 
                 giúp tất cả mọi người có thể tiếp cận cuộc sống lành mạnh hơn.</p>
             <a href="/introduction.html" class="lqt__btn">
-                Thêm</a>
+            XEM THÊM</a>
         </div>
     </div>
 </section>
@@ -106,11 +106,11 @@
         mọng nước - một món ăn ngon và bổ dưỡng cho vị giác và sức khỏe của bạn.</p>
     <div class="np__row">
         <figure>
-            <a href="{% url 'fruits' 'it-calo' %}" class="imagez">
+            <a href="{% url 'fruits' 'low_calories' %}" class="imagez">
                 <!-- <img src="https://hips.hearstapps.com/hmg-prod/images/rabbit-breeds-american-white-1553635287.jpg?crop=0.976xw:0.651xh;0.0242xw,0.291xh&resize=980:*" -->
                 <img src="https://images.pexels.com/photos/235294/pexels-photo-235294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                     alt="Rabbit" class="animalimg">
-                <a href="{% url 'fruits' 'it-calo' %}" class="linkz">
+                <a href="{% url 'fruits' 'low_calories' %}" class="linkz">
                     <figcaption><label class="np__prc">Hoa Quả Ít Calo</label><br>
                         <p style="color: rgb(189, 144, 60);" class="np__prc">Từ 100 - 300 calo</p>
                     </figcaption>
@@ -118,32 +118,32 @@
             </a>
         </figure>
         <figure>
-            <a href="#" class="imagez">
+            <a href="{% url 'fruits' 'high_calories' %}" class="imagez">
                 <img src="https://images.pexels.com/photos/139751/pexels-photo-139751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                     alt="Dog" class="animalimg">
-                <a href="#" class="linkz">
-                    <figcaption><label class="np__prc">Hoa Quả Lành Mạnh</label><br>
+                <a href="{% url 'fruits' 'high_calories' %}" class="linkz">
+                    <figcaption><label class="np__prc">Hoa Quả Nhiều Calo</label><br>
                         <p style="color: rgb(189, 144, 60);" class="np__prc">Đẹp & Ít calo</p>
                     </figcaption>
                 </a>
             </a>
         </figure>
         <figure>
-            <a href="#" class="imagez">
+            <a href="{% url 'fruits' 'medium_calories' %}" class="imagez">
                 <img src="https://images.pexels.com/photos/2683373/pexels-photo-2683373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                     alt="Cat" class="animalimg">
-                <a href="#" class="linkz">
-                    <figcaption><label class="np__prc">Hoa Quả Nhiều Calo</label><br>
+                <a href="{% url 'fruits' 'medium_calories' %}" class="linkz">
+                    <figcaption><label class="np__prc">Hoa Quả Lành Mạnh</label><br>
                         <p style="color: rgb(189, 144, 60);" class="np__prc">Tươi mát, sảng khoái</p>
                     </figcaption>
                 </a>
             </a>
         </figure>
-        <!-- <div class="np__btn">
-            <a class="np__Discoverybtn" style="align-items: center;" href="#">DISCOVERY MORE</a>
-        </div> -->
-    </div>
 
+    </div>
+    <div class="np__btn">
+        <a class="np__Discoverybtn" style="align-items: center;" href="{% url 'list-fruits'%}">XEM THÊM</a>
+    </div> 
 </section>
 <!-- <section class="ins">
 
@@ -194,6 +194,9 @@
             <a class="ddt__product-link" href="">Erobic</a>
         </div>
     </div>
+    <div class="np__btn">
+        <a class="np__Discoverybtn" style="align-items: center;" href="#">XEM THÊM</a>
+    </div> 
 </section>
 
 {%endblock main-content%} 
