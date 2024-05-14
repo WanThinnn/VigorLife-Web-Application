@@ -218,13 +218,7 @@ class FruitListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-<<<<<<< HEAD
         context['classification'] = self.kwargs.get('classification')  # Truyền giá trị classification vào context
-        return context
-    
-    
-    
-=======
         classification = self.kwargs.get('classification')
         if classification:
             fruits = Fruit.objects.filter(classification=classification)
@@ -239,4 +233,3 @@ class FruitListView(ListView):
 
 def ListFruit(request):
     return render(request, 'site1/list_fruits.html')
->>>>>>> fdb40b3f2a59e55f5583803b9077cfe2fd289de0
