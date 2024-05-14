@@ -59,10 +59,10 @@
                   <div class="np__row">
               {% endif %}
               <figure>
-                  <a href="#" class="imagez">
+                  <a href="{% url 'foodspage' food.classification food.name %}" class="imagez">
                       <img src="{{ food.image.url }}" alt="{{ food.name }}" class="animalimg" />
                   </a>
-                  <a href="#" class="linkz">
+                  <a href="{% url 'foodspage' food.classification food.name %}" class="linkz">
                       <figcaption>
                           <label class="np__prc">{{ food.name }}</label><br />
                           <p style="color: rgb(189, 144, 60)" class="np__prc">{{ food.calories }} calo/100g</p>

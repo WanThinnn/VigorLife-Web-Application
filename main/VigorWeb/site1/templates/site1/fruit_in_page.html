@@ -35,16 +35,16 @@
                     <a href="{% url 'fruits' classification%}" tabindex="0"
                       >Hoa Quả Ít Năng Lượng</a
                     >
-                    {% elif classification == "high_calories" %}
-                    <a href="{% url 'fruits' classification%}" tabindex="0"
-                      >Hoa Quả Giàu Năng Lượng</a
-                    >
                     {% elif classification == "medium_calories" %}
                     <a href="{% url 'fruits' classification%}" tabindex="0"
                       >Hoa Quả Lành Mạnh</a
                     >
+                    {% elif classification == "high_calories" %}
+                    <a href="{% url 'fruits' classification%}" tabindex="0"
+                      >Hoa Quả Giàu Năng Lượng</a
+                    >
                     {% else %}
-                    <a href="{% url 'fruits'%}" tabindex="0">Chưa Có Dữ Liệu</a>
+                    <a href="{% url 'fruits' classification%}" tabindex="0">Chưa Có Dữ Liệu</a>
                     {% endif %}
                   </li>
                   <li class="breadcrumb-item">
@@ -81,7 +81,7 @@
               </figcaption>
             </a>
           </figure>
-          <figure style="width: 131%">
+          <figure style="width: 131%; ">
             <figcaption style="background-color: #1e2a5c; margin-top: 0px;">
               <label class="np__prc" style="font-size: 40px; font-weight: 600;  color:white;  margin-top: 10px"
                 ><b>Mô Tả</b></label

@@ -247,5 +247,13 @@ class FoodListView(ListView):
 def ListFoods(request):
     return render(request, 'site1/list_foods.html')
 
-def FoodsPage(request):
-    return render(request, 'site1/food_in_page.html')
+def FoodsPage(request, classification, name):
+    # Bạn có thể xử lý classification và name ở đây nếu cần
+    food = get_object_or_404(Food, name=name, classification=classification)
+    context = {
+        'classification': classification,
+        'name': name,
+        'food': food,
+        # Thêm các dữ liệu cần thiết vào context nếu cần
+    }
+    return render(request, 'site1/food_in_page.html', context)
