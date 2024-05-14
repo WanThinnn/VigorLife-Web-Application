@@ -55,13 +55,13 @@ class Reply(models.Model):
 
 class Fruit(models.Model):
     CLASSIFICATION_CHOICES = [
-        ('HIGH_CALORIES', 'nhieu-calo'),
-        ('LOW_CALORIES', 'it-calo'),
-        ('MODERATE_CALORIES', 'calo-vua-phai'),
+        ('high_calories', 'Nhiều Calo'),
+        ('low_calories', 'Ít Calo'),
+        ('medium_calories', 'Calo Vừa Phải'),
     ]
     name = models.CharField(max_length=100)  # Tên của trái cây
     description = models.TextField()         # Mô tả trái cây
-    calories = models.IntegerField()            # Lượng calo của trái cây
+    calories = models.IntegerField()         # Lượng calo của trái cây
     classification = models.CharField(max_length=50, choices=CLASSIFICATION_CHOICES)  # Phân loại trái cây
     image = models.ImageField(upload_to='fruit_images/')  # Hình ảnh của trái cây
 

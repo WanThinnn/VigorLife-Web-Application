@@ -688,16 +688,31 @@
 .np__btn {
     margin-top: 35px;
     margin-bottom: 80px;
-    margin-left: 72px;
+    /* margin-left: 72px; */
 
 }
 
 .np__btn a {
-    text-decoration: none;
-    font-size: 20px;
-    padding: 15px;
-    background-color: #fd8f5f;
-    color: white;
+    background: #FD8F5F;
+    text-transform: uppercase;
+    padding: 27px 44px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-block;
+    line-height: 1;
+    -moz-user-select: none;
+    letter-spacing: 2px;
+    line-height: 0;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    z-index: 1;
+    border: 0;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 0px;
     transition: all 0.3s;
 }
 
@@ -705,13 +720,13 @@
 
 .np__Discoverybtn {
     text-transform: uppercase;
-    margin-right: 20px;
+    /* margin-right: 20px; */
 }
 
 .np__Discoverybtn:hover,
 .np__Discoverybtn:active {
     filter: brightness(90%);
-    transform: scale(110%);
+    transform: scale(130%);
     border: 2px solid rgb(185, 114, 20);
     text-decoration: none;
 }
@@ -729,7 +744,7 @@
 .np__content {
     margin-top: 80px;
     float: left;
-    margin-left: 150px;
+    margin-left: 100px;
     height: 300px;
     width: 29%;
     margin-right: 40px;
@@ -778,12 +793,16 @@
 /*Đặng Đức Tài*/
 
 .Ducktai {
-    margin-top: 100px;
-    margin-bottom: -100px;
-    height: 600px;
+    margin-top: 60px;
+    /* margin-bottom: -100px; */
+    height: 700px;
     text-align: center;
     position: relative;
+    background-color: #f4f4f4;
 
+}
+.Ducktai .tieu-de{
+    padding-top: 1px;
 }
 
 .Ducktai .tieu-de p{
@@ -802,8 +821,8 @@
 }
 
 .Ducktai .tieu-de .h2_chung{
-    /* padding-top: 80px; */
-    margin-top: 100px;
+    padding-top: 80px;
+    /* margin-top: 100px; */
     font-size: 40px;
     width: 100%;
 }
