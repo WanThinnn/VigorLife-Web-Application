@@ -14,7 +14,8 @@ from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
-
+import feedparser
+from bs4 import BeautifulSoup
 from .forms import *
 
 # Create your views here.
@@ -257,3 +258,34 @@ def FoodsPage(request, classification, name):
         # Thêm các dữ liệu cần thiết vào context nếu cần
     }
     return render(request, 'site1/food_in_page.html', context)
+
+
+def News(request):
+    rss_feed_url = "https://vnexpress.net/rss/suc-khoe.rss"
+    feed = feedparser.parse(rss_feed_url)
+    items_rss = []
+    for item in feed.entries:
+        title = item.get("title")
+        pub_date = item.get("published")
+        link = item.get("link")
+        
+        description = item.get("summary")
+        description_soup = BeautifulSoup(description, 'html.parser')
+        description_text = description_soup.get_text()
+        img_tag = description_soup.find("img")
+        img_src = './static/site1/images/news_img.jpg'
+        if img_tag:
+            img_src = img_tag["src"]
+        
+        item = {
+            "title": title,
+            "pub_date":pub_date,
+            "link":link,
+            "description_text":description_text,
+            "image":img_src,
+            
+        }
+        items_rss.append(item)
+        
+        
+    return render(request, 'site1/news.html', {"items_rss":items_rss})

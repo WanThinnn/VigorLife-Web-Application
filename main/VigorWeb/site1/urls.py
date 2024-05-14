@@ -37,6 +37,8 @@ urlpatterns = [
     path('foods/<str:classification>/', FoodListView.as_view(), name='foods'),
     path('foods/<str:classification>/<str:name>', views.FoodsPage, name='foodspage'),
     
+    path('news/', views.News, name='news'), 
+    
 ]
 
 
