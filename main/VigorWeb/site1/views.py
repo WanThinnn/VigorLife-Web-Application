@@ -15,6 +15,7 @@ from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 
 from .forms import *
+
 # Create your views here.
 @csrf_exempt
 
@@ -83,6 +84,54 @@ def write_blog(request):
 
 def loseweight(request):
     return render(request, 'site1/loseweight_exercise.html')
+
+###############################
+###############################
+###############################
+###############################
+#9nIgsnVfHFA7sVgBPbho6Q==soVB8dv5tTBqJpfH
+def calo(request):
+    import json
+    import requests
+    if request.method == 'POST':
+        query = request.POST['query']
+        api_url = 'https://api.api-ninjas.com/v1/nutrition?query='
+        api_request = requests.get(
+            api_url + query, headers={'X-Api-Key': '9nIgsnVfHFA7sVgBPbho6Q==soVB8dv5tTBqJpfH'})
+        try:
+            api = json.loads(api_request.content)
+            print(api_request.content)
+            
+            if isinstance(api, list) and len(api) > 0:
+                calo = api[0].get('calories', 0)
+                jog = calo / 378 * 60
+                yoga = calo / 223 * 60
+                gym = calo / 483 * 60
+                walk = calo / 294 * 60
+
+                context = {
+                    'api': api,
+                    'jog': jog,
+                    'yoga': yoga,
+                    'gym': gym,
+                    'walk': walk,
+                }
+            else:
+                context = {
+                    'api': "oops! There was an error"
+                }
+        except Exception as e:
+            context = {
+                'api': "oops! There was an error"
+            }
+            print(e)
+        return render(request, 'site1/calo.html', context)
+    else:
+        return render(request, 'site1/calo.html', {'query': 'Enter a valid query'})
+###############################
+###############################
+###############################
+###############################
 
 def tools(request):
     return render(request, 'site1/tools.html')
@@ -170,3 +219,6 @@ class FruitListView(ListView):
         context = super().get_context_data(**kwargs)
         context['classification'] = self.kwargs.get('classification')  # Truyền giá trị classification vào context
         return context
+    
+    
+    
