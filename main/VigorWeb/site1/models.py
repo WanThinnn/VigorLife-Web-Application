@@ -67,4 +67,19 @@ class Fruit(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Food(models.Model):
+    CLASSIFICATION_CHOICES = [
+        ('high_calories', 'Nhiều Calo'),
+        ('low_calories', 'Ít Calo'),
+        ('medium_calories', 'Calo Vừa Phải'),
+    ]
+    name = models.CharField(max_length=100)  
+    description = models.TextField()        
+    calories = models.IntegerField()       
+    classification = models.CharField(max_length=50, choices=CLASSIFICATION_CHOICES) 
+    image = models.ImageField(upload_to='foods_images/')  # Hình ảnh của trái cây
+
+    def __str__(self):
+        return self.name
 

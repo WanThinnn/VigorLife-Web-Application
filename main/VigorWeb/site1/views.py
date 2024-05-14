@@ -209,18 +209,43 @@ class FruitListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['classification'] = self.kwargs.get('classification')  # Truyền giá trị classification vào context
-        classification = self.kwargs.get('classification')
-        if classification:
-            fruits = Fruit.objects.filter(classification=classification)
-        else:
-            fruits = Fruit.objects.all()
-        
-        # Sử dụng aggregate để tính tổng calories
-        total_calories = fruits.aggregate(Sum('calories'))['calories__sum']
-        context['total_calories'] = total_calories if total_calories is not None else 0
-        context['classification'] = classification
+        context['classification'] = self.kwargs.get('classification')
         return context
 
 def ListFruit(request):
     return render(request, 'site1/list_fruits.html')
+
+def FruitsPage(request, classification, name):
+    # Bạn có thể xử lý classification và name ở đây nếu cần
+    fruit = get_object_or_404(Fruit, name=name, classification=classification)
+    context = {
+        'classification': classification,
+        'name': name,
+        'fruit': fruit,
+        # Thêm các dữ liệu cần thiết vào context nếu cần
+    }
+    return render(request, 'site1/fruit_in_page.html', context)
+
+
+
+class FoodListView(ListView):
+    model = Food
+    template_name = 'site1/foods.html'
+    context_object_name = 'foods'
+
+    def get_queryset(self):
+        classification = self.kwargs.get('classification')
+        if classification:
+            return Food.objects.filter(classification=classification).order_by('-name')
+        return Food.objects.all().order_by('-name')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['classification'] = self.kwargs.get('classification')
+        return context
+
+def ListFoods(request):
+    return render(request, 'site1/list_foods.html')
+
+def FoodsPage(request):
+    return render(request, 'site1/food_in_page.html')

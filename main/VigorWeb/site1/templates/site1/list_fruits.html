@@ -18,7 +18,7 @@
                         <nav aria-label="slider-nav">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{% url 'home' %}" tabindex="0">Trang Chủ</a></li>
-                                <li class="breadcrumb-item"> <a href="#" tabindex="0">Hoa Quả</a></li>
+                                <li class="breadcrumb-item"> <a href="#" tabindex="0">Hoa Quả Tốt</a></li>
                             </ol>
                         </nav>
                     </div>
@@ -40,19 +40,8 @@
                     <img src="https://images.pexels.com/photos/235294/pexels-photo-235294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                         alt="Rabbit" class="animalimg">
                     <a href="{% url 'fruits' 'low_calories' %}" class="linkz">
-                        <figcaption><label class="np__prc">Hoa Quả Ít Calo</label><br>
+                        <figcaption><label class="np__prc">Hoa Quả Ít Năng Lượng</label><br>
                             <p style="color: rgb(189, 144, 60);" class="np__prc">Từ 100 - 300 calo</p>
-                        </figcaption>
-                    </a>
-                </a>
-            </figure>
-            <figure>
-                <a href="{% url 'fruits' 'high_calories' %}" class="imagez">
-                    <img src="https://images.pexels.com/photos/139751/pexels-photo-139751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                        alt="Dog" class="animalimg">
-                    <a href="{% url 'fruits' 'high_calories' %}" class="linkz">
-                        <figcaption><label class="np__prc">Hoa Quả Nhiều Calo</label><br>
-                            <p style="color: rgb(189, 144, 60);" class="np__prc">Đẹp & Ít calo</p>
                         </figcaption>
                     </a>
                 </a>
@@ -68,6 +57,18 @@
                     </a>
                 </a>
             </figure>
+            <figure>
+                <a href="{% url 'fruits' 'high_calories' %}" class="imagez">
+                    <img src="https://images.pexels.com/photos/139751/pexels-photo-139751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        alt="Dog" class="animalimg">
+                    <a href="{% url 'fruits' 'high_calories' %}" class="linkz">
+                        <figcaption><label class="np__prc">Hoa Quả Giàu Năng Lượng</label><br>
+                            <p style="color: rgb(189, 144, 60);" class="np__prc">Đẹp & Ít calo</p>
+                        </figcaption>
+                    </a>
+                </a>
+            </figure>
+
 
         </div>
          <div class="np__btn">

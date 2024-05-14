@@ -48,6 +48,10 @@ class FruitAdmin(admin.ModelAdmin):
     list_display = ['name', 'classification', 'calories']
     list_filter = ['name']
     search_fields = ['name','classification' ]
+class FoodAdmin(admin.ModelAdmin):
+    list_display = ['name', 'classification', 'calories']
+    list_filter = ['name']
+    search_fields = ['name','classification' ]
 
  
 admin.site.register(Post, PostAdmin)
@@ -55,3 +59,4 @@ admin.site.register(Comment, CommentAdmin)
 admin.site.register(Reply, ReplyCommentAdmin)
 admin.site.register(Image, ImageAdmin)
 admin.site.register(Fruit, FruitAdmin)
+admin.site.register(Food, FoodAdmin)

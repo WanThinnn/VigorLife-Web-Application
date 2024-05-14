@@ -19,6 +19,7 @@ urlpatterns = [
     path('logout/', views.logoutPage, name='logout'),
     path('register/', views.register, name='register'),
     path('verify/', views.verifyOTP, name='verify'),
+    
     path('blog/', ListView.as_view(
         queryset=Post.objects.all().order_by('-date'),
         template_name='site1/blog.html',
@@ -27,8 +28,14 @@ urlpatterns = [
     path('<int:pk>-<str:title>/', views.post, name='post'),
     path('reply/<int:pk>-<str:title>/', views.reply_cmt, name='reply'),
     path('blog/write_blog/', views.write_blog, name='write_blog'),
-    path('fruits/<str:classification>/', FruitListView.as_view(), name='fruits'),
+    
     path('fruits/', views.ListFruit, name='list-fruits'),
+    path('fruits/<str:classification>/', FruitListView.as_view(), name='fruits'),
+    path('fruits/<str:classification>/<str:name>',views.FruitsPage, name='fruitspage'),
+    
+    path('foods/', views.ListFoods, name='list-foods'),
+    path('foods/<str:classification>/', FoodListView.as_view(), name='foods'),
+    path('foods/<str:classification>/<str:name>', views.FoodsPage, name='foodspage'),
     
 ]
 
