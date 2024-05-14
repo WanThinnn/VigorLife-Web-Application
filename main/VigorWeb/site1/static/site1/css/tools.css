@@ -510,3 +510,11 @@ tbody {
 .ddt_empty-space {
     height: 90px; 
 }
+
+.tbBMI {
+    font-size: 18px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
