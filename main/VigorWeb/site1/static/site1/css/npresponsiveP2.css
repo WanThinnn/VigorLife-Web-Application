@@ -9,11 +9,7 @@
     }
 
     .about-project-section {
-        height: 220vh !important;
-    }
-
-    .about-us-section .about-container {
-        margin-top: -6rem;
+        height: 180vh !important;
     }
 
     .about-us-section .about-container {
@@ -23,19 +19,34 @@
     .about-project-section .about-project-section-tittle h2 {
         margin-top: 15rem;
     }
+
+    .slider-area .slider-row-caption {
+        margin-left: 80px;
+    }
+
+    .about-project-section .about-p-long-2 {
+        width: 75%;
+    }
 }
 
 /* Small tablet to big tablet from 768x to 1023px */
 @media only screen and (max-width:1023px) {
     .about-project-section .about-container {
-        width: 900px;
+        width: 100%;
+    }
+    .about-project-section {
+        height: 190vh !important;
     }
     .slider-row {
         margin-left: -170px;
     }
 
+    .about-us-section .about-p-long {
+        max-width: 60%;
+    }
+
     .ql__navbar {
-        width: 900px;
+        width: 100%;
     }
 
     .pos {
@@ -56,15 +67,15 @@
 /* Small phones to small tablets */
 @media only screen and (max-width: 767px) {
     .about-project-section .about-container {
-        width: 650px;
+        width: 100%;
     }
 
     .about-project-section {
-        height: 280vh !important;
+        height: 260vh !important;
     }
 
     .about-us-section .about-container {
-        width: 650px;
+        width: 100%;
     }
 
     .slider-row {
@@ -72,7 +83,7 @@
     }
 
     .ql__navbar {
-        width: 650px;
+        width: 100%;
     }
 
     .pos {
@@ -93,15 +104,15 @@
 /* Small phones from 0 to 480px; */
 @media only screen and (max-width: 480px) {
     .about-project-section .about-container {
-        width: 400px;
+        width: 100%;
     }
 
     .about-project-section {
-        height: 320vh !important;
+        height: 270vh !important;
     }
 
     .about-us-section .about-container {
-        width: 400px;
+        width: 100%;
     }
 
     .slider-row {
@@ -109,7 +120,7 @@
     }
 
     .ql__navbar {
-        width: 400px;
+        width: 100%;
     }
 
     .pos {
@@ -118,11 +129,17 @@
     }
 
     .logo_text {
-        width: 300%;
-        height:300%;
+        width: 200%;
+        height: 400%;
     }
 
     .footer-social a {
         margin-left: -5px;
+    }
+
+    .about-p-long-2 {
+        font-size: 1.5rem;
+        width: 70%;
+        margin: 0 auto;
     }
 }

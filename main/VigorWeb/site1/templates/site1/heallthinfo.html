@@ -29,7 +29,7 @@
                     lượng tối thiểu mà cơ thể cần, để thực hiện các chức năng cơ bản nhằm đảm bảo duy trì sự sống của cơ thể.
                 </p>
                 <p class="about-p-long-2" style="margin-bottom: 2rem; font-size: 1.5rem;">
-                    Công thức phổ biến để ước tính BMR là công thức Harris-Benedict. Các yếu tố cần thiết là cân nặng, chiều cao, tuổi và giới tính.<br>
+                    Công thức phổ biến để ước tính BMR là công thức Harris-Benedict<br>Các yếu tố cần thiết là cân nặng, chiều cao, tuổi và giới tính.<br>
                     <ul>
                         <li style="margin-bottom: 2rem; font-size: 1.5rem;list-style-type: none;" class="about-p-long-2">
                             <b>Nam giới: </b>BMR = 66 + 13.7 × cân nặng (kg) + 5 × chiều cao (cm) - 6.8 × tuổi (năm) 
@@ -89,12 +89,12 @@
                             <b>TEF:</b> Hiệu quả tiêu thụ thức ăn, chiếm khoảng 10% TDEE.
                         </li>
                         <li style=" margin-bottom: 2rem;list-style-type: none;" class="about-p-long-2">
-                            <b>NEAT:</b> Hoạt động hàng ngày không phải là hoạt động vận động, ví dụ như đi bộ, 
+                            <b>NEAT:</b> Hoạt động hàng ngày không phải là hoạt động vận động<br> Ví dụ như đi bộ, 
                             lau nhà, tắm rửa, chiếm khoảng 15-20% TDEE.
                         </li>
                         <li style=" margin-bottom: 2rem;list-style-type: none;" class="about-p-long-2">
-                            <b>EAT:</b> Hoạt động vận động, như tập thể dục, chạy bộ, yoga, chiếm từ 20% trở lên TDEE, 
-                            tùy thuộc vào mức độ và thời lượng của hoạt động.
+                            <b>EAT:</b> Hoạt động vận động, như tập thể dục, chạy bộ, yoga, chiếm từ 20% trở lên TDEE<br> 
+                            Tùy thuộc vào mức độ và thời lượng của hoạt động.
                         </li>
                     </ul>
                 </p>
@@ -321,4 +321,15 @@
         </div>
     </div>
 </section> 
+
+
+{% if user.username %}
+    <form action="{% url 'post' post.id %}" method="POST">
+        {% csrf_token %}
+        <p><label>Bình luận:</label></p>
+        {{form.body}}
+        <br/>
+        <input type="submit" value="Bình luận"/>
+    </form>
+{% endif %}
 {%endblock heallthinfo-content%}

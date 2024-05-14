@@ -10,17 +10,76 @@ import random
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
+from django.views.generic import ListView, DetailView
+from django.shortcuts import get_object_or_404
+from django.http import HttpResponseRedirect
+
+from .forms import *
 # Create your views here.
 @csrf_exempt
 
 def home(request):
     return render(request, 'site1/home.html')
 
+def autocomplete(request):
+    return render(request, 'site1/base.html')
+
 def introduction(request):
     return render(request, 'site1/introduction.html')
 
 def heallthinfo(request):
     return render(request, 'site1/heallthinfo.html')
+
+
+class PostListView(ListView):
+    queryset = Post.objects.all().order_by('-date')
+    template_name = 'site1/blog.html'
+    context_object_name = 'Posts'
+    paginate_by = 10
+
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'site1/post.html'
+
+
+def post(request, pk, title):
+    post = get_object_or_404(Post, pk=pk, title=title)
+    form = CommentForm()
+    if request.method == "POST":
+        form = CommentForm(request.POST, author=request.user, post=post)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path)
+    return render(request, "site1/post.html", {"post": post, "form": form})
+
+def reply_cmt(request, pk, title):
+    post = get_object_or_404(Post, pk=pk, title=title)
+    form = RelyCommentForm()
+    if request.method == "POST":
+        author_id = request.POST.get('author')
+        comment_id = request.POST.get('comment')
+        comment = get_object_or_404(Comment, pk=comment_id, author=author_id)
+        form = RelyCommentForm(request.POST, author=request.user, comment=comment)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path)
+    return render(request, "site1/post.html", {"post": post, "form": form})
+
+def write_blog(request):
+    if request.method == 'POST':
+        blog_form = BlogForm(request.POST, author=request.user)
+        image_form = ImageUploadForm(request.POST, request.FILES)
+        if blog_form.is_valid() and image_form.is_valid():
+            post = blog_form.save()
+            images = request.FILES.getlist('images')  # Lấy danh sách hình ảnh từ form tải lên
+            titles = request.POST.getlist('title')    # Lấy danh sách tiêu đề từ form
+            for image, title in zip(images, titles):
+                Image.objects.create(image=image, post=post, title=title)  # Lưu hình ảnh vào cơ sở dữ liệu
+            return redirect('post', pk=post.pk, title=post.title)
+    else:
+        blog_form = BlogForm(author=request.user)
+        image_form = ImageUploadForm()
+    return render(request, 'site1/write_blog.html', {'blog_form': blog_form, 'image_form': image_form})
 
 def loseweight(request):
     return render(request, 'site1/loseweight_exercise.html')
@@ -59,7 +118,7 @@ def register(request):
         if form.is_valid():
            # form.save()
            otp = random.randint(100000,999999)
-           #send_mail("User Data: ", f"Your OTP is: {otp}", EMAIL_HOST_USER, [email], fail_silently=True)
+           send_mail("User Data: ", f"Your OTP is: {otp}", EMAIL_HOST_USER, [email], fail_silently=True)
            messages.success(request, 'OTP has been sent to your email')
            return render(request, 'site1/verify.html', {'otp': otp, 'first_name': first_name, 'last_name': last_name, 'email': email, 'username': user_name, 'password1': password1, 'password2': password2})
         else:
@@ -88,3 +147,26 @@ def loginPage(request):
 def logoutPage(request):
     logout(request)
     return redirect('login')
+
+
+
+# def fruit(request, name, calo):
+#     fruit = Fruit.objects.filter(name=name, calories=calo).first()  # Sử dụng first() thay vì get()
+#     return render(request, "site1/fruits.html", {"fruit": fruit})
+
+
+class FruitListView(ListView):
+    model = Fruit
+    template_name = 'site1/fruits.html'
+    context_object_name = 'fruits'
+
+    def get_queryset(self):
+        classification = self.kwargs.get('classification')
+        if classification:
+            return Fruit.objects.filter(classification=classification).order_by('-name')
+        return Fruit.objects.all().order_by('-name')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['classification'] = self.kwargs.get('classification')  # Truyền giá trị classification vào context
+        return context

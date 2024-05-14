@@ -1,9 +1,9 @@
 /* Big tablet to 1200px; */
 @media only screen and (max-width:1200px) {
     .ddt_content .ddt_first_head {
-        font-size: 40px;
+        font-size: 26px;
         text-align: center;
-        margin-top: -2.5em;
+        margin-top: -9em;
     }
 
     .ddt_content .ddt_first_text {
@@ -16,19 +16,24 @@
 /* Small tablet to big tablet from 768x to 1023px */
 @media only screen and (max-width:1023px) {
     .ddt_content .ddt_first_head {
-        font-size: 20px;
+        font-size: 17px;
         text-align: center;
-        margin-top: -2.5em;
+        margin-top: -17em;
     }
 
     .ddt_content .ddt_first_text {
-        text-align: right;
-        font-size: 17px;
+        text-align: center;
+        font-size: 15px;
         margin-top: 1em;
+        margin-left: 3em;
     }
     .imgz .anhz {
         width: 22%;
-        height: 420px;
+        height: 460px;
+        margin-bottom: 50px;
+    }
+    .ins-2 {
+        margin-left: -3em;
     }
 
 }
@@ -46,31 +51,110 @@
         margin-left: 10em;
     }
     .ddt_content .ddt_first_head {
-        font-size: 23px;
+        font-size: 16px;
         text-align: center;
-        margin-top: -6em;
+        margin-top: -19em;
     }
     .ddt_about-picture-2 img {
         margin-top: 50px;
     }
     .imgz .anhz {
-        width: 19%;
-        height: 500px;
+        width: 17%;
+        height: 480px;
         margin-bottom: 60px;
     }
-
+    .ddt__border-btn {
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        text-transform: uppercase;
+        padding: 10px 10px;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 16px;
+        letter-spacing: 1px;
+        position: absolute;
+        overflow: hidden;
+        text-decoration: none;
+        transform: translateX(-50%);
+        z-index: 3;
+        margin-top: 12px;
+    }
+    .ddt_visit-tailor-area .ddt_tailor-details h2 {
+        width: 100%;
+        font-size: 30px;
+        display: block;
+        font-weight: 900;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+    .ins-2 {
+        width: 100%;
+        height: 500px;
+        background-color: none;
+        margin-top: 50px;
+        padding-top: 30px;
+        margin-left: -5em;
+    }
+    .ddt_tailor-details .ddt_btn {
+        padding: 27px 30px;
+    }
+    .ddt_main_bg
+    {
+        margin-top: 50px;
+    }
+    .background-nqt {
+        margin-top: 180px;
+    }
 }
 
 /* Small phones from 0 to 480px; */
 @media only screen and (max-width: 480px) {
     .ddt_content .ddt_first_text {
-        text-align: center;
-        font-size: 8px;
-        margin-top: -13em;
+        display: none;
     }
     .ddt_content .ddt_first_head {
-        font-size: 15px;
-        text-align: center;
-        margin-top: -6em;
+        display: none;
+    }
+    .imgz .anhz {
+        display: none;
+    }
+    .ddt_visit-tailor-area .ddt_tailor-details {
+        width: 40%;
+        margin-left: 30px;
+        padding: 0px 0px 0px 0px;
+    }
+    .ddt_tailor-details .ddt_btn {
+        padding: 24px 9px;
+    }
+    .ql__navbar {
+        width: 100%;
+    }
+    .ddt_tailor-details
+    {
+        width: 200%;
+    }
+    .background-nqt {
+        margin-top: 300px;
+    }
+    .ddt_first {
+        scroll-margin-bottom: -20px;
+        margin-bottom: 2px;
+    }
+    .section-tittle h2 {
+        font-size: 30px;
+    }
+    .h2_chung {
+        font-size: 3rem;
+        display: block;
+        font-weight: 900;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        margin-top: -50px !important;
+    }
+    .fa-brands.fa-instagram.fa-5x
+    {
+        margin-bottom: 50px;
     }
 }

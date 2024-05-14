@@ -1,0 +1,60 @@
+.header-fruit{
+
+    text-align: center;
+    margin-top: 100px;
+
+}
+.header-fruit h1{
+
+    font-weight: 800;
+    font-size: 50px;
+}
+
+.np__row {
+    margin-left: 11%;
+    margin-right: 10%;
+    /* margin-top: 130px; */
+}
+
+.np__row figure {
+    float: left;
+    width: 31%;
+    border: 1px solid gray;
+    margin-top: 40px;
+    margin-left: 1%;
+}
+
+.np__row figure img {
+    display: block;
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+}
+
+.np__row figcaption {
+    text-align: center;
+    margin-top: 28px;
+}
+
+
+
+.imgz .anhz {
+    width: 24%;
+    height: 390px;
+    margin-top: 30px;
+    margin-left: 10px;
+    float: left;
+    position: relative;
+    object-fit: cover;
+
+
+}
+
+.imgz .anhz:hover,
+.imgz .anhz:active {
+    filter: brightness(80%);
+}
+
+.imgz {
+    position: relative;
+}

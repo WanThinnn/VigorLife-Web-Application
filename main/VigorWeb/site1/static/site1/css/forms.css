@@ -1,0 +1,135 @@
+.comment {
+    margin-bottom: 20px;
+    /* border: 1px solid #ccc; */
+    padding: 10px;
+    text-align: left;
+    background: #fdfeff;
+    border-radius: 5px;
+    width: 700px;
+    max-width: 100%;
+    margin: 0px auto;
+}
+
+.comment .comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.comment .comment-author {
+    font-weight: bold;
+    color: #1D2547;
+    font-size: 16px;
+
+
+}
+
+.comment .comment-date {
+    font-style: italic;
+    color: #999;
+    font-size: 12px;
+}
+
+.comment .comment-body {
+    margin-top: 5px;
+    height: 30px;
+    margin-bottom: 15px;
+}
+
+.comment-form {
+    margin-top: 20px;
+    text-align: left;
+    background: #fdfeff;
+    /* border: 1px solid #ccc; */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 700px;
+    margin: 0 auto;
+}
+
+.comment-form .form-group {
+    margin-bottom: 10px;
+}
+
+.comment-form label {
+    display: block;
+    font-weight: bold;
+}
+
+.comment-form button[type="submit"],
+.reply-form button[type="submit"] {
+    background-color: #FD8F5F;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.comment-form button[type='submit']:hover,
+.reply-form button[type='submit']:hover {
+    background-color: #FF6347;
+    /* Màu hover khác */
+}
+
+.comment-body {
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.comment-body:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+.reply {    
+    margin-bottom: 20px;
+    /* border: 1px solid #ccc; */
+    padding: 10px;
+    text-align: left;
+    background: #fdfeff;
+    border-radius: 5px;
+    margin-left: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+.reply-form {
+    margin-top: 20px;
+    text-align: left;
+    background: #fdfeff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: block;
+
+}
+.reply-form{
+    display: none;
+}
+
+
+.reply-form label {
+    display: block;
+    font-weight: bold;
+}
+.comment {
+    /* Thêm đổ bóng cho mỗi bình luận */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* X-axis, Y-axis, Blur, Color */
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
