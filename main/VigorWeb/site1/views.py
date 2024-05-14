@@ -159,4 +159,14 @@ class FruitListView(ListView):
     model = Fruit
     template_name = 'site1/fruits.html'
     context_object_name = 'fruits'
-    queryset = Fruit.objects.all().order_by('-name')
+
+    def get_queryset(self):
+        classification = self.kwargs.get('classification')
+        if classification:
+            return Fruit.objects.filter(classification=classification).order_by('-name')
+        return Fruit.objects.all().order_by('-name')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['classification'] = self.kwargs.get('classification')  # Truyền giá trị classification vào context
+        return context

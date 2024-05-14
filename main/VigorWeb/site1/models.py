@@ -55,9 +55,9 @@ class Reply(models.Model):
 
 class Fruit(models.Model):
     CLASSIFICATION_CHOICES = [
-        ('HIGH_CALORIES', 'Hoa quả nhiều calo'),
-        ('LOW_CALORIES', 'Ít calo'),
-        ('MODERATE_CALORIES', 'Calo vừa phải'),
+        ('HIGH_CALORIES', 'nhieu-calo'),
+        ('LOW_CALORIES', 'it-calo'),
+        ('MODERATE_CALORIES', 'calo-vua-phai'),
     ]
     name = models.CharField(max_length=100)  # Tên của trái cây
     description = models.TextField()         # Mô tả trái cây
