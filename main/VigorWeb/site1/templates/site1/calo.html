@@ -23,18 +23,44 @@
         </div>
     </div>
 </section>
-<div class="ddt_empty-space"></div>
+
+
+<section class="about-us-section">
+    <div class="about-container">
+        <div class="about-us-section-row">
+            <div class="about-us-section-tittle">
+                <h2>Công cụ tính calories</h2>
+                <p class="about-p-long">
+                    Đây là công cụ để bạn có thể tính toán được xem món ăn của bạn
+                    chứa bao nhiêu calories. Bên cạnh đó, công cụ này còn đưa ra lời
+                    cảnh báo đối với những món ăn chứa hàm lượng calories hay các chất
+                    vượt quá mức cần thiết. Hãy nhập tên món ăn bằng Tiếng Anh để có trải
+                    nghiệm và kết quả tốt nhất. Hãy nhập tên Tiếng Việt không dấu nếu đó là
+                    món ăn Việt Nam và không thể dịch sang Tiếng Anh.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+<section class="calo-empty-space"></section>
+
+
+<section class="ddt_calo">
 <div class="container">
     {% comment %} {{api}} {% endcomment %}
     <div class="row justify-content-center">
-        <div class="col-md-8 text-center">
             <form method="POST" id="caloForm">
 
                 {% csrf_token %}
-                <div class="btn-group">
-                    <input style="border-color: #1d2547; border-radius:3px;" class="form-control"
+
+                <div class="input-group input-group-lg calo-search-bar">
+                    <input class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2"
                         placeholder="Nhập tên món ăn" type="text" name="query" required>
-                    <button class="btn whoop" type="submit" id="button-addon2">Find calories</button>
+                    <button class="btn btn-outline-secondary calo-search-button" type="submit" id="button-addon2">Tính calories</button>
                 </div>
             </form>
 
@@ -42,10 +68,10 @@
 
             {%if api %}
             {% if api == "oops! There was an error"%}
-            <div class="alert alert-warning"> Oh no! something went wrong.Please try again in sometime. </div>
+            <div class="alert alert-warning"> Có vẻ như bạn đã nhập sai tên món ăn. Vui lòng nhập lại! </div>
 
             {% else %}
-            <h1>{{api.0.name | capfirst}} has a total of <strong id="caloNumber">{{api.0.calories}}</strong> Calories
+            <h1>{{api.0.name | capfirst}} có tổng cộng <strong id="caloNumber">{{api.0.calories}}</strong> Calories
                 {%if api.0.calories > 200%}
                 <img src="{% static 'site1/images/shocked.png' %}" class="img-responsive" />
                 {%endif%}
@@ -141,6 +167,7 @@
         </div>
     </div>
 </div>
+</section>
 
 
 {% endblock calo-content %}
