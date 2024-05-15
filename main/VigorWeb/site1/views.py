@@ -7,14 +7,25 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from VigorWeb.settings import EMAIL_HOST_USER
 import random
+from django.db.models import Sum
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
+from django.views.generic import ListView, DetailView
+from django.shortcuts import get_object_or_404
+from django.http import HttpResponseRedirect
+import feedparser
+from bs4 import BeautifulSoup
+from .forms import *
+
 # Create your views here.
 @csrf_exempt
 
 def home(request):
     return render(request, 'site1/home.html')
+
+def autocomplete(request):
+    return render(request, 'site1/base.html')
 
 def introduction(request):
     return render(request, 'site1/introduction.html')
@@ -22,8 +33,98 @@ def introduction(request):
 def heallthinfo(request):
     return render(request, 'site1/heallthinfo.html')
 
+
+class PostListView(ListView):
+    queryset = Post.objects.all().order_by('-date')
+    template_name = 'site1/blog.html'
+    context_object_name = 'Posts'
+    paginate_by = 10
+
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'site1/post.html'
+
+
+def post(request, pk, title):
+    post = get_object_or_404(Post, pk=pk, title=title)
+    form = CommentForm()
+    if request.method == "POST":
+        form = CommentForm(request.POST, author=request.user, post=post)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path)
+    return render(request, "site1/post.html", {"post": post, "form": form})
+
+def reply_cmt(request, pk, title):
+    post = get_object_or_404(Post, pk=pk, title=title)
+    form = RelyCommentForm()
+    if request.method == "POST":
+        author_id = request.POST.get('author')
+        comment_id = request.POST.get('comment')
+        comment = get_object_or_404(Comment, pk=comment_id, author=author_id)
+        form = RelyCommentForm(request.POST, author=request.user, comment=comment)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path)
+    return render(request, "site1/post.html", {"post": post, "form": form})
+
+def write_blog(request):
+    if request.method == 'POST':
+        blog_form = BlogForm(request.POST, author=request.user)
+        image_form = ImageUploadForm(request.POST, request.FILES)
+        if blog_form.is_valid() and image_form.is_valid():
+            post = blog_form.save()
+            images = request.FILES.getlist('images')  # Lấy danh sách hình ảnh từ form tải lên
+            titles = request.POST.getlist('title')    # Lấy danh sách tiêu đề từ form
+            for image, title in zip(images, titles):
+                Image.objects.create(image=image, post=post, title=title)  # Lưu hình ảnh vào cơ sở dữ liệu
+            return redirect('post', pk=post.pk, title=post.title)
+    else:
+        blog_form = BlogForm(author=request.user)
+        image_form = ImageUploadForm()
+    return render(request, 'site1/write_blog.html', {'blog_form': blog_form, 'image_form': image_form})
+
 def loseweight(request):
     return render(request, 'site1/loseweight_exercise.html')
+
+def calo(request):
+    import json
+    import requests
+    if request.method == 'POST':
+        query = request.POST['query']
+        api_url = 'https://api.api-ninjas.com/v1/nutrition?query='
+        api_request = requests.get(
+            api_url + query, headers={'X-Api-Key': '9nIgsnVfHFA7sVgBPbho6Q==soVB8dv5tTBqJpfH'})
+        try:
+            api = json.loads(api_request.content)
+            print(api_request.content)
+            
+            if isinstance(api, list) and len(api) > 0:
+                calo = api[0].get('calories', 0)
+                jog = calo / 378 * 60
+                yoga = calo / 223 * 60
+                gym = calo / 483 * 60
+                walk = calo / 294 * 60
+
+                context = {
+                    'api': api,
+                    'jog': jog,
+                    'yoga': yoga,
+                    'gym': gym,
+                    'walk': walk,
+                }
+            else:
+                context = {
+                    'api': "oops! There was an error"
+                }
+        except Exception as e:
+            context = {
+                'api': "oops! There was an error"
+            }
+            print(e)
+        return render(request, 'site1/calo.html', context)
+    else:
+        return render(request, 'site1/calo.html', {'query': 'Enter a valid query'})
 
 def tools(request):
     return render(request, 'site1/tools.html')
@@ -88,3 +189,103 @@ def loginPage(request):
 def logoutPage(request):
     logout(request)
     return redirect('login')
+
+
+
+# def fruit(request, name, calo):
+#     fruit = Fruit.objects.filter(name=name, calories=calo).first()  # Sử dụng first() thay vì get()
+#     return render(request, "site1/fruits.html", {"fruit": fruit})
+
+
+class FruitListView(ListView):
+    model = Fruit
+    template_name = 'site1/fruits.html'
+    context_object_name = 'fruits'
+
+    def get_queryset(self):
+        classification = self.kwargs.get('classification')
+        if classification:
+            return Fruit.objects.filter(classification=classification).order_by('-name')
+        return Fruit.objects.all().order_by('-name')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['classification'] = self.kwargs.get('classification')
+        return context
+
+def ListFruit(request):
+    return render(request, 'site1/list_fruits.html')
+
+def FruitsPage(request, classification, name):
+    # Bạn có thể xử lý classification và name ở đây nếu cần
+    fruit = get_object_or_404(Fruit, name=name, classification=classification)
+    context = {
+        'classification': classification,
+        'name': name,
+        'fruit': fruit,
+        # Thêm các dữ liệu cần thiết vào context nếu cần
+    }
+    return render(request, 'site1/fruit_in_page.html', context)
+
+
+
+class FoodListView(ListView):
+    model = Food
+    template_name = 'site1/foods.html'
+    context_object_name = 'foods'
+
+    def get_queryset(self):
+        classification = self.kwargs.get('classification')
+        if classification:
+            return Food.objects.filter(classification=classification).order_by('-name')
+        return Food.objects.all().order_by('-name')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['classification'] = self.kwargs.get('classification')
+        return context
+
+def ListFoods(request):
+    return render(request, 'site1/list_foods.html')
+
+def FoodsPage(request, classification, name):
+    # Bạn có thể xử lý classification và name ở đây nếu cần
+    food = get_object_or_404(Food, name=name, classification=classification)
+    context = {
+        'classification': classification,
+        'name': name,
+        'food': food,
+        # Thêm các dữ liệu cần thiết vào context nếu cần
+    }
+    return render(request, 'site1/food_in_page.html', context)
+
+
+def News(request):
+    rss_feed_url = "https://vnexpress.net/rss/suc-khoe.rss"
+    feed = feedparser.parse(rss_feed_url)
+    items_rss = []
+    for item in feed.entries:
+        title = item.get("title")
+        pub_date = item.get("published")
+        link = item.get("link")
+        
+        description = item.get("summary")
+        description_soup = BeautifulSoup(description, 'html.parser')
+        description_text = description_soup.get_text()
+        img_tag = description_soup.find("img")
+        img_src = './static/site1/images/news_img.jpg'
+        if img_tag:
+            img_src = img_tag["src"]
+        
+        item = {
+            "title": title,
+            "pub_date":pub_date,
+            "link":link,
+            "description_text":description_text,
+            "image":img_src,
+            
+        }
+        items_rss.append(item)
+        
+        
+    return render(request, 'site1/news.html', {"items_rss":items_rss})

@@ -1,4 +1,4 @@
-/* HEADER */
+/* HEADER
 .ql__header {
     display: flex;
     width: 100%;
@@ -70,7 +70,7 @@
     color: var(--pink_pastel-color);
     line-height: 2rem;
     padding-right: 24px;
-}
+} */
 
 .btn {
     min-width: 124px;

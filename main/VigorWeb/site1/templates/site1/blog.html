@@ -1,0 +1,87 @@
+{% extends 'site1/base.html' %}
+{% load static %}
+{% block heallthinfo-content %}
+<head>
+    <title>Blog</title>
+    <link href="{% static 'site1/css/blog.css' %}" rel="stylesheet">
+
+</head>
+<section class="slider-area">
+    <div class="slider-area-photo"></div>
+    <div class="container">
+        <div class="slider-row">
+            <div class="col-xl-6 col-lg-8 col-md-8">
+                <div class="slider-row-caption">
+                    <h1>Blog</h1>
+                    <nav aria-label="slider-nav">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}" tabindex="0">Trang Chủ</a></li>
+                            <li class="breadcrumb-item"><a href="#" tabindex="0">Blog</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% for post in Posts %}
+    {% if forloop.counter|divisibleby:2 %}
+
+    <section class="about-us-section" style="background-color:#f4f4f4">
+        <div class="about-container">
+            <div class="about-us-section-row">
+                <div class="about-us-section-tittle">
+                    <h2><a href="{% url 'post' post.id post.title%}" style="color:black">{{ post.title }}</a></h2>
+                    <p class="about-p-long" style="margin-bottom: 7rem;">{{ post.body|safe }}</p>
+                </div>
+            </div>
+            
+            <div class="about-picture-group-1">
+            
+                {% for img in post.image_set.all %}
+                <div class="about-picture-2">
+                    <img src="{{ img.image.url }}" alt="">
+                    <p class="picture-title-2">{{ img.title }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="ddt_tailor-details">
+                <div class="ddt_btn">
+                    <a href="{% url 'post' post.id post.title %}" class="border-btn">Xem Thêm</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    {% else %}
+    <section class="about-us-section">
+        <div class="about-container">
+            <div class="about-us-section-row">
+                <div class="about-us-section-tittle">
+                    <h2><a href="{% url 'post' post.id post.title%}" style="color:black">{{ post.title }}</a></h2>
+                    <p class="about-p-long" style="margin-bottom: 7rem;">{{ post.body|safe }}</p>
+                </div>
+            </div>
+
+            <div class="about-picture-group-1">
+            
+                {% for img in post.image_set.all %}
+                <div class="about-picture-2">
+                    <img src="{{ img.image.url }}" alt="">
+                    <p class="picture-title-2">{{ img.title }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="ddt_tailor-details">
+                <div class="ddt_btn">
+                    <a href="{% url 'post' post.id post.title %}" class="border-btn">Xem Thêm</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+{% endfor %}
+
+{% endblock heallthinfo-content %}

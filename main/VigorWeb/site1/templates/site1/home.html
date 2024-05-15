@@ -15,9 +15,9 @@
                     Chào mừng bạn đến với Vigor - điểm đến của bạn về mọi thứ liên quan đến sức 
                     khỏe và thể chất. Chúng tôi tận tâm cung cấp cho bạn các tài nguyên và công cụ có giá trị để hỗ trợ hành 
                     trình hướng tới một lối sống lành mạnh hơn của bạn. Mục tiêu của chúng 
-                     tôi là cung cấp cho bạn kiến ​​thức và sự hỗ trợ mà bạn cần để thực hiện những thay đổi tích cực và ưu 
-                     tiên việc tự chăm sóc bản thân. Hãy tham gia cộng
-                     đồng của chúng tôi ngay hôm nay và bắt tay vào con đường hướng tới hạnh phúc toàn diện cùng chúng tôi.
+                    tôi là cung cấp cho bạn kiến ​​thức và sự hỗ trợ mà bạn cần để thực hiện những thay đổi tích cực và ưu 
+                    tiên việc tự chăm sóc bản thân. Hãy tham gia cộng
+                    đồng của chúng tôi ngay hôm nay và bắt tay vào con đường hướng tới hạnh phúc toàn diện cùng chúng tôi.
                 </p>
             </div>
         </div>
@@ -30,15 +30,14 @@
         <div class="row justify-content-center">
             <div class="col-xl-7 col-lg-8 col-md-10">
                 <div class="section-tittle mb-60 text-center wow fadeInUp">
-                    <h2 class="h2_chung">CÔNG CỤ</h2>
-                    <p>Bằng cách sử dụng những công cụ này, người dùng có thể đánh giá sức khỏe của mình và đặt ra các 
+                    <h2 style="font-size: 36px;" class="ql_1234 h2_chung">CÔNG CỤ</h2>
+                    <p class="ql1234">Bằng cách sử dụng những công cụ này, người dùng có thể đánh giá sức khỏe của mình và đặt ra các 
                         mục tiêu về cân nặng cũng như lối sống lành mạnh. Ngoài ra, bằng cách hiểu về BMR, họ có thể điều 
                         chỉnh chế độ ăn uống và 
                         tập luyện để phù hợp với mục tiêu giảm cân hoặc tăng cân an toàn và hiệu quả.</p>
                 </div>
             </div>
         </div>
-
 
         <div class="horizontal-line">
         </div>
@@ -94,7 +93,7 @@
                 mạng hóa sự kết hợp giữa mã hóa và chăm sóc sức khỏe, 
                 giúp tất cả mọi người có thể tiếp cận cuộc sống lành mạnh hơn.</p>
             <a href="/introduction.html" class="lqt__btn">
-                Xem thêm</a>
+            XEM THÊM</a>
         </div>
     </div>
 </section>
@@ -107,46 +106,96 @@
         mọng nước - một món ăn ngon và bổ dưỡng cho vị giác và sức khỏe của bạn.</p>
     <div class="np__row">
         <figure>
-            <a href="#" class="imagez">
+            <a href="{% url 'fruits' 'low_calories' %}" class="imagez">
                 <!-- <img src="https://hips.hearstapps.com/hmg-prod/images/rabbit-breeds-american-white-1553635287.jpg?crop=0.976xw:0.651xh;0.0242xw,0.291xh&resize=980:*" -->
                 <img src="https://images.pexels.com/photos/235294/pexels-photo-235294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                     alt="Rabbit" class="animalimg">
-                <a href="#" class="linkz">
-                    <figcaption><label class="np__prc">Trái cây giàu năng lượng</label><br>
+                <a href="{% url 'fruits' 'low_calories' %}" class="linkz">
+                    <figcaption><label class="np__prc">Hoa Quả Ít Năng Lượng</label><br>
                         <p style="color: rgb(189, 144, 60);" class="np__prc">Từ 100 - 300 calo</p>
                     </figcaption>
                 </a>
             </a>
         </figure>
         <figure>
-            <a href="#" class="imagez">
-                <img src="https://images.pexels.com/photos/139751/pexels-photo-139751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                    alt="Dog" class="animalimg">
-                <a href="#" class="linkz">
-                    <figcaption><label class="np__prc">Quả mọng</label><br>
-                        <p style="color: rgb(189, 144, 60);" class="np__prc">Đẹp & Ít calo</p>
-                    </figcaption>
-                </a>
-            </a>
-        </figure>
-        <figure>
-            <a href="#" class="imagez">
+            <a href="{% url 'fruits' 'medium_calories' %}" class="imagez">
                 <img src="https://images.pexels.com/photos/2683373/pexels-photo-2683373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                     alt="Cat" class="animalimg">
-                <a href="#" class="linkz">
-                    <figcaption><label class="np__prc">Họ Citrus  </label><br>
+                <a href="{% url 'fruits' 'medium_calories' %}" class="linkz">
+                    <figcaption><label class="np__prc">Hoa Quả Lành Mạnh</label><br>
                         <p style="color: rgb(189, 144, 60);" class="np__prc">Tươi mát, sảng khoái</p>
                     </figcaption>
                 </a>
             </a>
         </figure>
-        <!-- <div class="np__btn">
-            <a class="np__Discoverybtn" style="align-items: center;" href="#">DISCOVERY MORE</a>
-        </div> -->
+        <figure>
+            <a href="{% url 'fruits' 'high_calories' %}" class="imagez">
+                <img src="https://images.pexels.com/photos/139751/pexels-photo-139751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Dog" class="animalimg">
+                <a href="{% url 'fruits' 'high_calories' %}" class="linkz">
+                    <figcaption><label class="np__prc">Hoa Quả Giàu Năng Lượng</label><br>
+                        <p style="color: rgb(189, 144, 60);" class="np__prc">Đẹp & Ít calo</p>
+                    </figcaption>
+                </a>
+            </a>
+        </figure>
     </div>
-
+    <div class="np__btn">
+        <a class="np__Discoverybtn" style="align-items: center;" href="{% url 'list-fruits'%}">XEM THÊM</a>
+    </div> 
 </section>
-<section class="ins">
+
+
+
+<section class="sample" id="listfood">
+    <h2 class="h2_chung">MÓN ĂN NGON - VUI NGÀY MỚI!</h2>
+    <p class="sample__content">Đắm mình trong sự tươi tốt rực rỡ của thiên nhiên với sự lựa chọn tinh tế của 
+        chúng tôi về các loại trái cây tươi, 
+        mọng nước - một món ăn ngon và bổ dưỡng cho vị giác và sức khỏe của bạn.</p>
+    <div class="np__row">
+        <figure>
+            <a href="{% url 'foods' 'low_calories' %}" class="imagez">
+                <!-- <img src="https://hips.hearstapps.com/hmg-prod/images/rabbit-breeds-american-white-1553635287.jpg?crop=0.976xw:0.651xh;0.0242xw,0.291xh&resize=980:*" -->
+                <img src="https://images.pexels.com/photos/235294/pexels-photo-235294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Rabbit" class="animalimg">
+                <a href="{% url 'foods' 'low_calories' %}" class="linkz">
+                    <figcaption><label class="np__prc">Món Mặn Ít Năng Lượng</label><br>
+                        <p style="color: rgb(189, 144, 60);" class="np__prc">Từ 100 - 300 calo</p>
+                    </figcaption>
+                </a>
+            </a>
+        </figure>
+        <figure>
+            <a href="{% url 'foods' 'medium_calories' %}" class="imagez">
+                <img src="https://images.pexels.com/photos/2683373/pexels-photo-2683373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Cat" class="animalimg">
+                <a href="{% url 'foods' 'medium_calories' %}" class="linkz">
+                    <figcaption><label class="np__prc">Món Chay Lành Mạnh</label><br>
+                        <p style="color: rgb(189, 144, 60);" class="np__prc">Tươi mát, sảng khoái</p>
+                    </figcaption>
+                </a>
+            </a>
+        </figure>
+        <figure>
+            <a href="{% url 'foods' 'high_calories' %}" class="imagez">
+                <img src="https://images.pexels.com/photos/139751/pexels-photo-139751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Dog" class="animalimg">
+                <a href="{% url 'foods' 'high_calories' %}" class="linkz">
+                    <figcaption><label class="np__prc">Món Mặn Giàu Năng Lượng</label><br>
+                        <p style="color: rgb(189, 144, 60);" class="np__prc">Đẹp & Ít calo</p>
+                    </figcaption>
+                </a>
+            </a>
+        </figure>
+
+
+    </div>
+     <div class="np__btn">
+        <a class="np__Discoverybtn" style="align-items: center;" href="{% url 'list-foods'%}">XEM THÊM</a>
+    </div>  
+</section>
+
+<!-- <section class="ins">
 
     <div class="np__content" style="display: inline-block;">
         <i class="fa-brands fa-instagram fa-5x" style="color: #fd8f5f;"></i>
@@ -162,12 +211,12 @@
         <img src="https://images.pexels.com/photos/775032/pexels-photo-775032.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             alt="s" class="anhz">
     </div>
-</section>
+</section> -->
 
 <!--Đặng Đức Tài-->
 <section class="Ducktai">
     <div class="tieu-de">
-        <h2 class="h2_chung">TOP PICK</h2>
+        <h2 class="h2_chung">BLOG</h2>
         <p>
             Sứ mệnh của chúng tôi là trao quyền và truyền cảm hứng cho cộng đồng để ưu tiên cho hạnh phúc của họ,
              thúc đẩy những thay đổi tích cực dẫn đến cuộc sống hạnh phúc hơn, khỏe mạnh hơn. 
@@ -195,11 +244,9 @@
             <a class="ddt__product-link" href="">Erobic</a>
         </div>
     </div>
-    <div class="ddt__row justify-content-center">
-        <div class="ddt__room-btn">
-            <a href="" class="ddt__border-btn">Xem thêm</a>
-        </div>
-    </div>
+    <div class="np__btn">
+        <a class="np__Discoverybtn" style="align-items: center;" href="#">XEM THÊM</a>
+    </div> 
 </section>
 
 {%endblock main-content%} 

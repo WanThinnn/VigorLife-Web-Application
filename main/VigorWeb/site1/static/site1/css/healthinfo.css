@@ -1,7 +1,7 @@
 /*Mai Nguyen Nam Phuong */
 .sample {
     width: 100%;
-    height: 600px;
+    height: 700px;
 }
 
 .sample h2 {
@@ -69,17 +69,17 @@
 .np__btn {
     margin-top: 35px;
     margin-bottom: 80px;
-    margin-left: 215px;
+    /* margin-left: 215px; */
 
 
 }
 
 .np__btn a {
     text-decoration: none;
-    margin-left: 450px;
+    /* margin-left: 450px; */
     margin-top: 0px;
-    font-size: 20px;
-    padding: 15px;
+    /* font-size: 20px; */
+    /* padding: 15px; */
     background-color: #fd8f5f;
     color: white;
     transition: all 0.3s;
@@ -88,7 +88,7 @@
 
 .np__Discoverybtn {
     text-transform: uppercase;
-    margin-right: 20px;
+    /* margin-right: 20px; */
 
 }
 
@@ -124,6 +124,8 @@
 .np__contenta {
     font-size: 1.5rem;
     margin-top: -5px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .imgz .anhz {
@@ -198,7 +200,7 @@
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-    margin-bottom: 90px;
+    /* margin-bottom: 90px; */
 }
 
 .np-about-picture img {

@@ -1,0 +1,109 @@
+{% extends 'site1/base.html' %} {% load static %} {% block heallthinfo-content%}
+<head>
+  <link href="{% static 'site1/css/blog.css' %}" rel="stylesheet">
+  <link href="{% static 'site1/css/post.css' %}" rel='stylesheet'>
+
+</head>
+<section class="slider-area">
+  <div class="slider-area-photo"></div>
+  <div class="container">
+    <div class="slider-row">
+      <div class="col-xl-6 col-lg-8 col-md-8">
+        <div class="slider-row-caption">
+          <h1>Blog</h1>
+          <nav aria-label="slider-nav">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="{% url 'home' %}" tabindex="0">Trang Chủ</a>
+              </li>
+              <li class="breadcrumb-item"><a href="#" tabindex="0">Blog</a></li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-us-section">
+  <div class="about-container">
+    <div class="about-us-section-row">
+      <div class="about-us-section-tittle">
+        <h2>
+          <a href="{% url 'post' post.id post.title%}" style="color: black"
+            >{{ post.title }}</a
+          >
+        </h2>
+        <p class="about-p-long" style="margin-bottom: 7rem">
+          {{ post.body|safe }}
+        </p>
+      </div>
+    </div>
+
+    <div class="about-picture-group-1">
+      {% for img in post.image_set.all %}
+      <div class="about-picture-2">
+        <img src="{{ img.image.url }}" alt="" />
+        <p class="picture-title-2">{{ img.title }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+  {% for comment in post.comments.all %}
+  <div class="comment">
+    <div class="comment-header">
+        <h3 class="comment-author">{{ comment.author }}</h3>
+        <h4 class="comment-date">{{ comment.date }}</h4>
+    </div>
+    <p class="" style="font-size: 16px">{{ comment.body}}</p>
+    <button class="reply-btn">Trả lời</button>   
+    {% for reply in comment.replies.all %}
+    <div class="reply">
+        <div class="comment-header">
+            <h3 class="comment-author">{{ reply.author }}</h3>
+            <h4 class="comment-date">{{ reply.date }}</h4>
+        </div>
+        <p class="" style="font-size: 16px">{{ reply.body}}</p>
+    </div>
+    {% endfor %}
+    <div >
+        <form action="{% url 'reply' post.id post.title %}" method="POST" id="main_form" class="reply-form">
+            {% csrf_token %}
+            <input type="hidden" name="author" value="{{ comment.author.id }}">
+            <input type="hidden" name="comment" value="{{ comment.id }}">
+            <p><label>Trả lời Bình luận:</label></p>
+            {% comment %} {{ form.body }} {% endcomment %}
+            <textarea id="comment_body" name="body" class="comment-body" style="font-size: 16px;"></textarea>
+            
+
+            <br />
+            <button type="submit"> Trả lời</button>
+        </form>
+    </div>
+</div>
+
+{% endfor %}
+
+<button id="load-more-btn">Xem thêm</button>
+
+    {% if user.is_authenticated %}
+  <div>
+    <form
+      action="{% url 'post' post.id post.title %}"
+      method="POST"
+      class="comment-form"
+    >
+      {% csrf_token %}
+      <p><label>Bình luận:</label></p>
+      {% comment %} {{form.body}} {% endcomment %}
+      <textarea id="comment_body" name="body" class="comment-body" style="font-size: 16px;"></textarea>
+
+      <br />
+      <button  type="submit"> Bình luận</button>
+    </form>
+    {% else %}
+    <p>Vui lòng <a href="{% url 'login' %}">đăng nhập</a> để bình luận.</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock heallthinfo-content %}

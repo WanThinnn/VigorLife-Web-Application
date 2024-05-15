@@ -1,0 +1,146 @@
+{% extends 'site1/base.html' %}
+{%load static%}
+{% block calo-content %}
+
+<!-- pip install requests -->
+
+
+<section class="slider-area">
+    <div class="slider-area-photo"></div>
+    <div class="container">
+        <div class="slider-row">
+            <div class="col-xl-6 col-lg-8 col-md-8">
+                <div class="slider-row-caption">
+                    <h1>Tính Calories</h1>
+                    <nav aria-label="slider-nav">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}" tabindex="0">Trang Chủ</a></li>
+                            <li class="breadcrumb-item"><a href="#" tabindex="0">Tính Calories</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="ddt_empty-space"></div>
+<div class="container">
+    {% comment %} {{api}} {% endcomment %}
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <form method="POST" id="caloForm">
+
+                {% csrf_token %}
+                <div class="btn-group">
+                    <input style="border-color: #1d2547; border-radius:3px;" class="form-control"
+                        placeholder="Nhập tên món ăn" type="text" name="query" required>
+                    <button class="btn whoop" type="submit" id="button-addon2">Find calories</button>
+                </div>
+            </form>
+
+            <div class="ddt_empty-space"></div>
+
+            {%if api %}
+            {% if api == "oops! There was an error"%}
+            <div class="alert alert-warning"> Oh no! something went wrong.Please try again in sometime. </div>
+
+            {% else %}
+            <h1>{{api.0.name | capfirst}} has a total of <strong id="caloNumber">{{api.0.calories}}</strong> Calories
+                {%if api.0.calories > 200%}
+                <img src="{% static 'site1/images/shocked.png' %}" class="img-responsive" />
+                {%endif%}
+            </h1>
+
+            {%if api.0.sodium_mg > 1000%}
+            <div class="alert alert-danger d-flex align-items-center mt-3" role="alert">
+                <div>
+                    This food contains an high amount of sodium. High Sodium cuases Sever dehydration and water
+                    retention.
+                </div>
+            </div>
+            {%endif%}
+
+            {%if api.0.sugar_g > 100%}
+            <div class="alert alert-danger d-flex align-items-center mt-3" role="alert">
+                <div>
+                    This food contains an high amount of sugar. Sugar causes insulin spikes and is a no.1 cause for
+                    Obesity.
+                </div>
+            </div>
+            {%endif%}
+
+        </div>
+
+        <div class="row justify-content-center mt-5 mb-5">
+            <div class="col-md-10 caloriescont shadow rounded">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <h2 class="mt-3 mb-4">Nutritional Values </h2><span></span>
+                        <ul>
+                            <li class="servingsize">Serving Size per 100/Grams <span class="float-end"></span></li>
+                            <li>Carbohydrates: <span class="float-end"> {{api.0.carbohydrates_total_g}} </span>
+                            </li>
+                            <li>Cholesterol: <span class="float-end"> {{api.0.cholesterol_mg}} </span></li>
+                            <li>Saturated fat: <span class="float-end"> {{api.0.fat_saturated_g}} </span></li>
+                            <li>Total Fat: <span class="float-end"> {{api.0.fat_total_g}} </span></li>
+                            <li>Fiber Content: <span class="float-end"> {{api.0.fiber_g}} </span></li>
+                            <li>Potassium <span class="float-end"> {{api.0.potassium_mg}} </span></li>
+                            <li>Protein: <span class="float-end"> {{api.0.protein_g}} <span></li>
+                            <li>Sodium:<span class="float-end"> {{api.0.sodium_mg}} </span></li>
+                            <li>Sugar: <span class="float-end"> {{api.0.sugar_g}} </span></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <h4 class="mt-3 mb-4">To burn {{api.0.calories}} calories you will have to</h4>
+                        <div class="d-flex align-items-center mb-5">
+                            <div class="flex-shrink-0">
+                                <img src="{% static 'site1/images/running.png' %}" alt="Ảnh">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5> Jog </h5>
+                                <p>you will have to jog for <strong id="Jog">
+                                    {{ jog|floatformat:0 }} </strong> Minutes</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-5">
+                            <div class="flex-shrink-0">
+                                <img src="{% static 'site1/images/yoga.png' %}" alt="Ảnh">
+                            </div>
+                            <div class="flex-grow-1 ms-4">
+                                <h5> Do Power Yoga </h5>
+                                <p>you will have to Power Yoga for <strong id="Yoga">
+                                    {{ yoga|floatformat:0 }} </strong> Minutes</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-5">
+                            <div class="flex-shrink-0">
+                                <img src="{% static 'site1/images/weightlifter.png' %}" alt="Ảnh">
+                            </div>
+                            <div class="flex-grow-1 ms-4">
+                                <h5>Get a Gym Workout </h5>
+                                <p>you will have to lift weight for <strong id="Gym">
+                                    {{ gym|floatformat:0 }} </strong> Minutes </p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <img src="{% static 'site1/images/walking.png' %}" alt="Ảnh">
+                            </div>
+                            <div class="flex-grow-1 ms-1">
+                                <h5> Go for a Brisk Walk </h5>
+                                <p>you will have to brisk walk for <strong id="Walk">
+                                    {{ walk|floatformat:0 }} </strong> Minutes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {%endif%}
+            {%endif%}
+        </div>
+    </div>
+</div>
+
+
+{% endblock calo-content %}

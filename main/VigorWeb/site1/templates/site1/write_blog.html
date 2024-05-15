@@ -1,0 +1,60 @@
+{% extends 'site1/base.html' %} {%load static%} {%block write-blog%}
+<link href="{% static 'site1/css/write_blog.css' %}" rel="stylesheet" />
+<title>Hello</title>
+
+
+
+<section class="slider-area">
+  <div class="slider-area-photo"></div>
+  <div class="container">
+    <div class="slider-row">
+      <div class="col-xl-6 col-lg-8 col-md-8">
+        <div class="slider-row-caption">
+          <h1>Viết Blog</h1>
+          <nav aria-label="slider-nav">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="index.html" tabindex="0">blog</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="#" tabindex="0">Viết Blog</a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <h1 class="blog-heading">Viết Blog Mới</h1>
+  <form class="form-container" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2 class="blog-img">Hình ảnh minh hoạ</h2>
+    {{ image_form.as_p }}
+    <input
+      type="hidden"
+      name="image_title"
+      value="{{ image_form.title.value }}"
+    />
+    {{ image_form.as_p }}
+    <input
+      type="hidden"
+      name="image_title"
+      value="{{ image_form.title.value }}"
+    />
+
+    {{ image_form.as_p }}
+    <input
+      type="hidden"
+      name="image_title"
+      value="{{ image_form.title.value }}"
+    />
+
+    <h2 class="blog-title">Nội dung bài viết</h2>
+    {{ blog_form.as_p }}
+    <button class="form-submit" type="submit">Đăng Bài</button>
+  </form>
+</div>
+
+{%endblock write-blog%}

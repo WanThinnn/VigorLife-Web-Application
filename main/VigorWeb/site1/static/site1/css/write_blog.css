@@ -1,0 +1,115 @@
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+} 
+
+.blog-heading {
+    font-size: 50px;
+    color: #333333;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+}
+
+.form-submit {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* CSS */
+/* Form container */
+.form-container {
+    width: 100%;
+    max-width: 600px; /* Giới hạn chiều rộng của biểu mẫu */
+    margin: 0 auto; /* Căn giữa biểu mẫu */
+    padding: 20px;
+    background-color: #f9f9f9; /* Màu nền */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+}
+
+/* Input fields */
+.form-container input[type=text],
+.form-container input[type=file] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Submit button */
+/* Submit button */
+.form-container button[type=submit] {
+    background-color: #1d2547;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.1s ease; /* Thêm transition ở đây */
+}
+
+/* Submit button on hover */
+.form-container button[type=submit]:hover {
+    background-color: #FD8F5F;
+    transition-delay: 0.1s; /* Thêm delay ở đây */
+}
+/* Error message */
+.error-message {
+    color: red;
+    font-size: 14px;
+}
+
+.blog_img {
+    color: #333;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.blog_title {
+    color: #555;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.blog_body{
+    width: 600px;
+}
+
+
+#id_images{
+    font-size: 1rem;
+}
