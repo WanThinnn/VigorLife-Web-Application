@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'site1',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'VigorWeb.urls'
@@ -63,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
             ],
         },
     },
@@ -73,8 +76,8 @@ WSGI_APPLICATION = 'VigorWeb.wsgi.application'
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = '22521416@gm.uit.edu.vn'
-EMAIL_HOST_PASSWORD = 'iqbiicrcfjrnotoi'  # 4chu
+EMAIL_HOST_USER = 'vigorwebsite@gmail.com'
+EMAIL_HOST_PASSWORD = 'byzanesrojydokzm'  # 4chu
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 # Database
@@ -124,3 +127,16 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#social app
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '841132686664-2agbn63nemst4l54nd79c0o23aj607mh.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+LOGIN_URL='login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'login'
