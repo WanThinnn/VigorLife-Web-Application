@@ -29,7 +29,7 @@ class Post(models.Model):
     
 class Image(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    image = models.ImageField(null=True)
+    image = models.ImageField(null=True, upload_to='post_images/')
     title = models.CharField(max_length=100, null=True)
     def __str__(self):
         return f"Image for {self.post.date} - {self.post.title}"
@@ -51,3 +51,35 @@ class Reply(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return f'Replied by {self.author} for {self.comment}'
+
+
+class Fruit(models.Model):
+    CLASSIFICATION_CHOICES = [
+        ('high_calories', 'Nhiều Calo'),
+        ('low_calories', 'Ít Calo'),
+        ('medium_calories', 'Calo Vừa Phải'),
+    ]
+    name = models.CharField(max_length=100)  # Tên của trái cây
+    description = models.TextField()         # Mô tả trái cây
+    calories = models.IntegerField()         # Lượng calo của trái cây
+    classification = models.CharField(max_length=50, choices=CLASSIFICATION_CHOICES)  # Phân loại trái cây
+    image = models.ImageField(upload_to='fruit_images/')  # Hình ảnh của trái cây
+
+    def __str__(self):
+        return self.name
+    
+class Food(models.Model):
+    CLASSIFICATION_CHOICES = [
+        ('high_calories', 'Nhiều Calo'),
+        ('low_calories', 'Ít Calo'),
+        ('medium_calories', 'Calo Vừa Phải'),
+    ]
+    name = models.CharField(max_length=100)  
+    description = models.TextField()        
+    calories = models.IntegerField()       
+    classification = models.CharField(max_length=50, choices=CLASSIFICATION_CHOICES) 
+    image = models.ImageField(upload_to='foods_images/')  # Hình ảnh của trái cây
+
+    def __str__(self):
+        return self.name
+

@@ -1,0 +1,113 @@
+{% extends 'site1/base.html' %} {%load static%} {%block fruits-page-content%}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ name }}</title>
+    <link href="{% static 'site1/css/fruits.css' %}" rel="stylesheet" />
+    <link href="{% static 'site1/css/fruit_in_page.css' %}" rel="stylesheet" />
+    <style>
+      .divider {
+        border: 0.5px solid black; /* Màu và kiểu đường kẻ */
+        margin: 10px 0; /* Khoảng cách trên và dưới đường kẻ */
+      .description-container {
+          display: flex;
+          justify-content: center;
+        }
+
+
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="slider-area">
+      <div class="slider-area-photo"></div>
+      <div class="container">
+        <div class="slider-row">
+          <div class="col-xl-6 col-lg-8 col-md-8">
+            <div class="slider-row-caption">
+              <h1>{{ name }}</h1>
+              <nav aria-label="slider-nav">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    {% if classification == "low_calories" %}
+                    <a href="{% url 'fruits' classification%}" tabindex="0"
+                      >Hoa Quả Ít Năng Lượng</a
+                    >
+                    {% elif classification == "medium_calories" %}
+                    <a href="{% url 'fruits' classification%}" tabindex="0"
+                      >Hoa Quả Lành Mạnh</a
+                    >
+                    {% elif classification == "high_calories" %}
+                    <a href="{% url 'fruits' classification%}" tabindex="0"
+                      >Hoa Quả Giàu Năng Lượng</a
+                    >
+                    {% else %}
+                    <a href="{% url 'fruits' classification%}" tabindex="0">Chưa Có Dữ Liệu</a>
+                    {% endif %}
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a href="#" tabindex="0">{{ name }}</a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class = "fruit-section">
+      <div class="header-fruit">
+        <h1>{{ name }}</h1>
+      </div>
+      <div class="fruit-list" style="height: 100%;margin-bottom: 100px;">
+        <div class="np__row">
+          <figure style="width: 131%">
+            <a href="#" class="imagez">
+              <img
+                src="{{ fruit.image.url }}"
+                alt="{{ name }}"
+                class="animalimg"
+              />
+            </a>
+            <a href="#" class="linkz">
+              <figcaption>
+                <label class="np__prc">{{ name }}</label><br />
+                <p style="color: rgb(189, 144, 60)" class="np__prc">
+                  {{ fruit.calories }} calo/100g
+                </p>
+              </figcaption>
+            </a>
+          </figure>
+          <figure style="width: 131%; ">
+            <figcaption style="background-color: #1e2a5c; margin-top: 0px;">
+              <label class="np__prc" style="font-size: 40px; font-weight: 600;  color:white;  margin-top: 10px"
+                ><b>Mô Tả</b></label
+              ><br />
+              <hr class="divider" />
+              <!-- Đoạn thẳng ngang -->
+            </figcaption>
+
+            <div class="description-container">
+              <p class="description-text">{{ fruit.description }}</p>
+              <style>
+                .description-text {
+                  text-align: justify;
+                  color: black;
+                  margin: 10px 20px;
+                font-size: 15px;
+                }
+              </style>
+              
+            </div>
+          </figure>
+        </div>
+      </div>
+    </seciton>
+
+  </body>
+  
+</html>
+{%endblock fruits-page-content%}

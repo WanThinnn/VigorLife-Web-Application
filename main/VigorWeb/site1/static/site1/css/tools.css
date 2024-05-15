@@ -9,8 +9,12 @@
     position: relative;
     width: 100%;
     flex: 0 0 50%;
-    max-width: 50%;
+    /* max-width: 50%; */
     padding-left: 0.5rem;
+}
+
+.ddt_column3 .calo-pos {
+    max-width: 33%;
 }
 
 .calo-pos2 {
@@ -89,14 +93,14 @@
     text-align: left;
 }
 
-.input-group {
+/* .input-group {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     overflow: hidden;
     text-align: center;
-}
+} */
 
 .calo-box .item .input-group .input-group-prepend .label {
     font-size: 18px;
@@ -342,6 +346,7 @@
     color: red;
     padding: 0 .5rem;
     border-radius: 5px;
+    
     font-size: 40px;
     line-height: 1;
     margin-bottom: 3px
@@ -504,5 +509,13 @@ tbody {
 }
 
 .ddt_empty-space {
-    height: 150px; 
+    height: 90px; 
+}
+
+.tbBMI {
+    font-size: 18px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
 }

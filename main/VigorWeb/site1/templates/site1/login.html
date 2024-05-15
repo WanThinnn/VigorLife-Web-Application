@@ -48,6 +48,11 @@
                           <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                             <button type="submit" class="btn btn-primary btn-lg">Login</button>
                           </div>
+                          <div class="row justify-content-center">
+                            <button class ="btn btn-primary mb-2" style="width:100px">
+                              <a href="{% url 'social:begin' 'google-oauth2'%}">Login With Google</a>
+                            </button>
+                          </div>
                           <p class="text-center h5 fw-bold mb-5 mx-1 mx-md-4 mt-4">Dont't have account? <a href="{% url 'register'%}">Register</a></p>
                           <p class="text-center h5 fw-bold mb-5 mx-1 mx-md-4 mt-4">Forgot your password? <a href="{% url 'register'%}">New password</a></p>
                         </form>

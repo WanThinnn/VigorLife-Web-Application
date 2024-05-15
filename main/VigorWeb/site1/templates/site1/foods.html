@@ -1,0 +1,82 @@
+{% extends 'site1/base.html' %}
+{%load static%}
+{% block detailsfoods-content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Món Ăn</title>
+    <link href="{% static 'site1/css/fruits.css' %}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <section class="slider-area">
+      <div class="slider-area-photo"></div>
+      <div class="container">
+        <div class="slider-row">
+          <div class="col-xl-6 col-lg-8 col-md-8">
+            <div class="slider-row-caption">
+              <h1>Thực Phẩm</h1>
+              <nav aria-label="slider-nav">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="{% url 'list-foods' %}" tabindex="0">Món Ăn</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                  {% if classification == "low_calories" %}
+                    <a href="#" tabindex="0">Món Mặn Ít Năng Lượng</a>
+                  {% elif classification == "medium_calories"  %}
+                    <a href="#" tabindex="0">Món Chay Lành Mạnh</a>
+                  {% elif classification == "high_calories" %}
+                    <a href="#" tabindex="0">Món Mặn Giàu Năng Lượng</a>
+                  {% else %}
+                    <a href="#" tabindex="0">Chưa Có Dữ Liệu</a>
+                  {% endif %}
+                  </li>
+
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="header-fruit">
+      {% if classification == "low_calories" %}
+        <h1>Món Mặn Ít Năng Lượng</h1>
+      {% elif classification == "medium_calories" %}
+        <h1>Món Chay Lành Mạnh</h1>
+      {% elif classification == "high_calories" %}
+        <h1>Món Mặn Giàu Năng Lượng</h1>
+      {% else %}
+      <h1>Chưa Có Dữ Liệu</h1>
+      {% endif %}
+    </div>
+    <div class="fruit-list">
+      {% for food in foods %}
+          {% if food.classification == classification %}
+              {% if forloop.counter0|divisibleby:3 %}
+                  <div class="np__row">
+              {% endif %}
+              <figure>
+                  <a href="{% url 'foodspage' food.classification food.name %}" class="imagez">
+                      <img src="{{ food.image.url }}" alt="{{ food.name }}" class="animalimg" />
+                  </a>
+                  <a href="{% url 'foodspage' food.classification food.name %}" class="linkz">
+                      <figcaption>
+                          <label class="np__prc">{{ food.name }}</label><br />
+                          <p style="color: rgb(189, 144, 60)" class="np__prc">{{ food.calories }} calo/100g</p>
+                      </figcaption>
+                  </a>
+              </figure>
+              {% if forloop.counter|divisibleby:3 or forloop.last %}
+                  </div>
+              {% endif %}
+          {% endif %}
+      {% endfor %}
+  </div>
+  
+
+  </body>
+</html>
+{% endblock detailsfoods-content %}

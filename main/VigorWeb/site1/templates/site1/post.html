@@ -1,4 +1,9 @@
 {% extends 'site1/base.html' %} {% load static %} {% block heallthinfo-content%}
+<head>
+  <link href="{% static 'site1/css/blog.css' %}" rel="stylesheet">
+  <link href="{% static 'site1/css/post.css' %}" rel='stylesheet'>
+
+</head>
 <section class="slider-area">
   <div class="slider-area-photo"></div>
   <div class="container">
@@ -29,7 +34,7 @@
             >{{ post.title }}</a
           >
         </h2>
-        <p class="about-p-long" style="margin-bottom: 2rem">
+        <p class="about-p-long" style="margin-bottom: 7rem">
           {{ post.body|safe }}
         </p>
       </div>
