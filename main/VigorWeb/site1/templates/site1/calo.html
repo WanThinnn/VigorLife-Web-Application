@@ -34,9 +34,10 @@
                     Đây là công cụ để bạn có thể tính toán được xem món ăn của bạn
                     chứa bao nhiêu calories. Bên cạnh đó, công cụ này còn đưa ra lời
                     cảnh báo đối với những món ăn chứa hàm lượng calories hay các chất
-                    vượt quá mức cần thiết. Hãy nhập tên món ăn bằng Tiếng Anh để có trải
-                    nghiệm và kết quả tốt nhất. Hãy nhập tên Tiếng Việt không dấu nếu đó là
-                    món ăn Việt Nam và không thể dịch sang Tiếng Anh.
+                    vượt quá mức cần thiết, đưa ra một số lời khuyên về tập luyện cho bạn.
+                    Hãy nhập tên món ăn bằng Tiếng Anh để có trải nghiệm và kết quả tốt nhất. 
+                    Hãy nhập tên Tiếng Việt không dấu nếu đó là món ăn Việt Nam và không thể 
+                    dịch sang Tiếng Anh.
                 </p>
             </div>
         </div>
@@ -80,8 +81,8 @@
             {%if api.0.sodium_mg > 1000%}
             <div class="alert alert-danger d-flex align-items-center mt-3" role="alert">
                 <div>
-                    This food contains an high amount of sodium. High Sodium cuases Sever dehydration and water
-                    retention.
+                    Thực phẩm này chứa một lượng natri cao. Hàm lượng natri cao gây ra tình trạng mất nước nghiêm trọng, 
+                    tăng huyết áp, tăng nguy cơ mắc bệnh tim mạch và đột quỵ
                 </div>
             </div>
             {%endif%}
@@ -89,8 +90,7 @@
             {%if api.0.sugar_g > 100%}
             <div class="alert alert-danger d-flex align-items-center mt-3" role="alert">
                 <div>
-                    This food contains an high amount of sugar. Sugar causes insulin spikes and is a no.1 cause for
-                    Obesity.
+                    Thực phẩm này chứa lượng đường cao. Đường gây ra sự tăng vọt insulin và là nguyên nhân số một gây bệnh béo phì.
                 </div>
             </div>
             {%endif%}
@@ -102,61 +102,61 @@
                 <div class="row">
 
                     <div class="col-md-6">
-                        <h2 class="mt-3 mb-4">Nutritional Values </h2><span></span>
+                        <h2 class="mt-3 mb-4">Giá trị dinh dưỡng: </h2><span></span>
                         <ul>
-                            <li class="servingsize">Serving Size per 100/Grams <span class="float-end"></span></li>
+                            <li class="servingsize">100 grams thực phẩm trên chứa: <span class="float-end"></span></li>
                             <li>Carbohydrates: <span class="float-end"> {{api.0.carbohydrates_total_g}} </span>
                             </li>
                             <li>Cholesterol: <span class="float-end"> {{api.0.cholesterol_mg}} </span></li>
-                            <li>Saturated fat: <span class="float-end"> {{api.0.fat_saturated_g}} </span></li>
-                            <li>Total Fat: <span class="float-end"> {{api.0.fat_total_g}} </span></li>
-                            <li>Fiber Content: <span class="float-end"> {{api.0.fiber_g}} </span></li>
-                            <li>Potassium <span class="float-end"> {{api.0.potassium_mg}} </span></li>
+                            <li>Chất béo bão hòa: <span class="float-end"> {{api.0.fat_saturated_g}} </span></li>
+                            <li>Tổng chất béo: <span class="float-end"> {{api.0.fat_total_g}} </span></li>
+                            <li>Chất xơ: <span class="float-end"> {{api.0.fiber_g}} </span></li>
+                            <li>Kali: <span class="float-end"> {{api.0.potassium_mg}} </span></li>
                             <li>Protein: <span class="float-end"> {{api.0.protein_g}} <span></li>
-                            <li>Sodium:<span class="float-end"> {{api.0.sodium_mg}} </span></li>
-                            <li>Sugar: <span class="float-end"> {{api.0.sugar_g}} </span></li>
+                            <li>Natri:<span class="float-end"> {{api.0.sodium_mg}} </span></li>
+                            <li>Đường: <span class="float-end"> {{api.0.sugar_g}} </span></li>
                         </ul>
                     </div>
                     <div class="col-md-6 mb-5">
-                        <h4 class="mt-3 mb-4">To burn {{api.0.calories}} calories you will have to</h4>
+                        <h4 class="mt-3 mb-4">Để đốt cháy {{api.0.calories}} calories bạn cần phải</h4>
                         <div class="d-flex align-items-center mb-5">
                             <div class="flex-shrink-0">
-                                <img src="{% static 'site1/images/running.png' %}" alt="Ảnh">
+                                <img class="calo-icon" src="{% static 'site1/images/running.png' %}" alt="Ảnh">
                             </div>
                             <div class="flex-grow-1 ms-3">
-                                <h5> Jog </h5>
-                                <p>you will have to jog for <strong id="Jog">
-                                    {{ jog|floatformat:0 }} </strong> Minutes</p>
+                                <h5> Chạy bộ </h5>
+                                <p>Bạn phải chạy bộ trong <strong id="Jog">
+                                    {{ jog|floatformat:0 }} </strong> phút</p>
                             </div>
                         </div>
                         <div class="d-flex align-items-center mb-5">
                             <div class="flex-shrink-0">
-                                <img src="{% static 'site1/images/yoga.png' %}" alt="Ảnh">
+                                <img class="calo-icon" src="{% static 'site1/images/yoga.png' %}" alt="Ảnh">
                             </div>
                             <div class="flex-grow-1 ms-4">
-                                <h5> Do Power Yoga </h5>
-                                <p>you will have to Power Yoga for <strong id="Yoga">
-                                    {{ yoga|floatformat:0 }} </strong> Minutes</p>
+                                <h5> Tập yoga </h5>
+                                <p>Bạn phải tập yoga trong <strong id="Yoga">
+                                    {{ yoga|floatformat:0 }} </strong> phút</p>
                             </div>
                         </div>
                         <div class="d-flex align-items-center mb-5">
                             <div class="flex-shrink-0">
-                                <img src="{% static 'site1/images/weightlifter.png' %}" alt="Ảnh">
+                                <img class="calo-icon" src="{% static 'site1/images/weightlifter.png' %}" alt="Ảnh">
                             </div>
                             <div class="flex-grow-1 ms-4">
-                                <h5>Get a Gym Workout </h5>
-                                <p>you will have to lift weight for <strong id="Gym">
-                                    {{ gym|floatformat:0 }} </strong> Minutes </p>
+                                <h5>Tập gym </h5>
+                                <p>Bạn phải tập gym trong <strong id="Gym">
+                                    {{ gym|floatformat:0 }} </strong> phút </p>
                             </div>
                         </div>
                         <div class="d-flex align-items-center">
                             <div class="flex-shrink-0">
-                                <img src="{% static 'site1/images/walking.png' %}" alt="Ảnh">
+                                <img class="calo-icon" src="{% static 'site1/images/walking.png' %}" alt="Ảnh">
                             </div>
                             <div class="flex-grow-1 ms-1">
-                                <h5> Go for a Brisk Walk </h5>
-                                <p>you will have to brisk walk for <strong id="Walk">
-                                    {{ walk|floatformat:0 }} </strong> Minutes</p>
+                                <h5> Đi bộ </h5>
+                                <p>Bạn phải đi bộ trong <strong id="Walk">
+                                    {{ walk|floatformat:0 }} </strong> phút</p>
                             </div>
                         </div>
                     </div>
