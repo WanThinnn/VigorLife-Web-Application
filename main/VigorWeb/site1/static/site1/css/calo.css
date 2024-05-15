@@ -1,0 +1,63 @@
+.ddt_calo .container {
+    height: 700px;
+    width: 100%;
+}
+
+.calo-empty-space {
+    height: 130px; 
+}
+
+.calo-search-bar {
+    width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    z-index: 0;
+}
+
+.calo-search-input {
+    height: 600px;
+    border: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding-left: 40px;
+    font-size: 18px;
+    flex-grow: 1;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+}
+
+.calo-search-button {
+    height: 50px;
+    border: none;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding-left: 20px;
+    padding-right: 30px;
+    font-size: 18px;
+    background-color: #112164;
+    color: white;
+}
+
+.calo-search-button:hover {
+    background-color: #344b92;
+}
+
+@media (max-width: 767px) {
+    .calo-search-bar {
+        max-width: 100%;
+        border-radius: 20px;
+    }
+    .calo-search-input, .calo-search-button {
+        height: 45px;
+        font-size: 16px;
+    }
+}
+
+.ddt_calo .form-control {
+    font-size: 14px;
+    border: none;
+    border-radius: .25rem;
+    transition: border-color .25s ease-in-out, box-shadow .25s ease-in-out;
+}

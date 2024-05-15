@@ -93,14 +93,14 @@
     text-align: left;
 }
 
-.input-group {
+/* .input-group {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     overflow: hidden;
     text-align: center;
-}
+} */
 
 .calo-box .item .input-group .input-group-prepend .label {
     font-size: 18px;
@@ -346,6 +346,7 @@
     color: red;
     padding: 0 .5rem;
     border-radius: 5px;
+    
     font-size: 40px;
     line-height: 1;
     margin-bottom: 3px

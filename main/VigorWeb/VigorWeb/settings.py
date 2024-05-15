@@ -129,7 +129,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-<<<<<<< HEAD
 #social app
 AUTHENTICATION_BACKENDS = [
     'social_core.backends.google.GoogleOAuth2',
@@ -142,7 +141,3 @@ LOGIN_URL='login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = 'login'
-=======
-MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "site1/static/site1/images/")
->>>>>>> be7edeb2e004977e29034d458d7a809a521f2900
