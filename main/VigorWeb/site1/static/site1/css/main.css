@@ -63,7 +63,7 @@
 
 .right {
     position: relative;
-    top: 27px;
+    top: 20px;
     float: right;
     padding: 0 24px;
 }
@@ -473,8 +473,6 @@
     position: relative;
     margin-top: 50px;
     margin-bottom: 100px;
-
-
 }
 
 .about-picture img {

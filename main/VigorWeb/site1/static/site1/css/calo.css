@@ -61,3 +61,29 @@
     border-radius: .25rem;
     transition: border-color .25s ease-in-out, box-shadow .25s ease-in-out;
 }
+
+.ddt_calo .alert {
+    font-size: 1.25rem;
+    padding: 1.5rem;
+}
+
+.ddt_calo .alert-danger {
+    font-size: 1.25rem;
+    padding: 1.5rem;
+}
+
+.ddt_calo .alert-warning {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+}
+
+.calo-icon {
+    max-height: 70px;
+    max-width: 70px;
+}
+
+.ddt_calo .caloriescont {
+    background-color: #ffffff;
+    padding: 30px;
+}
+
