@@ -435,6 +435,7 @@
 }
 
 .section-tittle h2 {
+    width: 800px;
     font-size: 40px;
     display: block;
     font-weight: 900;
@@ -449,7 +450,7 @@
     font-weight: 400;
     line-height: 1.6;
     width: 800px;
-    margin-left: -200px;
+    /* margin-left: -200px; */
 }
 
 
@@ -796,7 +797,7 @@
     height: 700px;
     text-align: center;
     position: relative;
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
 
 }
 .Ducktai .tieu-de{

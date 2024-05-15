@@ -63,6 +63,16 @@
         margin: 0 !important;
     }
 
+    .visit-tailor-area .tailor-details h2 {
+        width: auto;
+    }
+    .sample{
+        margin-bottom: 60px;
+    }
+    .sample h2 {
+        width: auto;
+    }
+
     .sample__content {
         width: auto;
     }
