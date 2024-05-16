@@ -2376,8 +2376,9 @@
                             <!-- Begin: Search Button -->
                             <div class="right">
                                 <div class="ql__navbar__form-search">
-                                    <form action="#" class="ql__navbar__form">
-                                        <input type="text" placeholder="Search Product" style="color: #fff">
+                                    <form class="ql__navbar__form" method = POST action = "{% url 'search' %}" >
+                                        {% csrf_token %}
+                                        <input type="text" placeholder="Search Product" style="color: #fff; font-size: 16px" id ="search" name= "search">
                                         <i class="navbar__icon fa-solid fa-magnifying-glass"></i>
                                     </form>
                                 </div>

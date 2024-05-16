@@ -379,51 +379,6 @@
     text-align: justify;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Lai Quan Thien */
 .new-arrival {
     padding-top: 90px;
@@ -435,7 +390,7 @@
 }
 
 .section-tittle h2 {
-    width: 800px;
+    width: 100%;
     font-size: 40px;
     display: block;
     font-weight: 900;
