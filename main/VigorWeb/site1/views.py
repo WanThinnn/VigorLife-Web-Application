@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from VigorWeb.settings import EMAIL_HOST_USER
 import random
+import json
 from django.db.models import Sum
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -31,8 +32,6 @@ def search(request):
 def home(request):
     return render(request, 'site1/home.html')
 
-def autocomplete(request):
-    return render(request, 'site1/base.html')
 
 def introduction(request):
     return render(request, 'site1/introduction.html')

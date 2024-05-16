@@ -2377,7 +2377,6 @@
                             <div class="right">
                                 <div class="ql__navbar__form-search">
                                     <form class="ql__navbar__form" method = POST action = "{% url 'search' %}" >
-                                        {% csrf_token %}
                                         <input type="text" placeholder="Search Product" style="color: #fff; font-size: 16px" id ="searched" name= "searched">
                                         <i class="navbar__icon fa-solid fa-magnifying-glass"></i>
                                     </form>

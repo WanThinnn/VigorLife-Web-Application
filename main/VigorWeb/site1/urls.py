@@ -20,7 +20,6 @@ urlpatterns = [
 #     path('social-auth/', include('social_django.urls', namespace='social')),
 # ]
     path('', views.home, name='home'),
-    path('', views.autocomplete, name='autocomplete'),
     path('introduction/', views.introduction, name='introduction'),
     # path('blog/',views.heallthinfo,name='blog'),
     path('loseweight/', views.loseweight, name='loseweight'),
@@ -31,6 +30,7 @@ urlpatterns = [
     path('logout/', views.logoutPage, name='logout'),
     path('register/', views.register, name='register'),
     path('verify/', views.verifyOTP, name='verify'),
+    
     
     path('blog/', ListView.as_view(
         queryset=Post.objects.all().order_by('-date'),
