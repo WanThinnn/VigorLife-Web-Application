@@ -20,11 +20,14 @@ from .forms import *
 
 # Create your views here.
 @csrf_exempt
+
 def search(request):
     if request.method == "POST":
-        search = request.POST["search"]
-        keys = Fruit.objects.filter(name__contains = search)
-    return render(request, 'site1/search.html',{"search":search,"keys":keys})
+        searched = request.POST["searched"]
+        keys = Fruit.objects.filter(name__contains = searched)
+        key1 = Food.objects.filter(name__contains = searched)
+    return render(request, 'site1/search.html', {"searched":searched,"keys":  keys,"key1": key1})
+
 def home(request):
     return render(request, 'site1/home.html')
 
