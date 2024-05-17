@@ -23,6 +23,7 @@ urlpatterns = [
     path('introduction/', views.introduction, name='introduction'),
     # path('blog/',views.heallthinfo,name='blog'),
     path('loseweight/', views.loseweight, name='loseweight'),
+    path('autosuggest/', autosuggest, name='autosuggest'),
     path('search/', views.search, name='search'),
     path('calo/', views.calo, name='calo'),
     path('tools/', views.tools, name='tools'),

@@ -29,6 +29,14 @@ def search(request):
         key1 = Food.objects.filter(name__contains = searched)
     return render(request, 'site1/search.html', {"searched":searched,"keys":  keys,"key1": key1})
 
+def autosuggest(request):
+    print(request.GET)
+    query_original = request.GET.get('term')
+    queryset = Fruit.objects.filter(name__icontains=query_original)
+    mylist = []
+    mylist += [x.name for x in queryset]
+    return JsonResponse(mylist,safe=False)
+
 def home(request):
     return render(request, 'site1/home.html')
 

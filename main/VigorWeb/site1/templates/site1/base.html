@@ -2381,6 +2381,19 @@
                                         <i class="navbar__icon fa-solid fa-magnifying-glass"></i>
                                     </form>
                                 </div>
+                                <script
+                                src="https://code.jquery.com/jquery-3.7.1.min.js"
+                                integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+                                crossorigin="anonymous">
+                                </script>
+                                <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+                                <script>
+                                $( function() {
+                                        $( "#searched" ).autocomplete({
+                                        source: "{% url 'autosuggest' %}",
+                                        });
+                                    } );
+                                </script>
             
                                 <div class="ql__navbar__user-container">
                                     <div class="ql__navbar__user">
