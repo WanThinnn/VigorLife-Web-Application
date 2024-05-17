@@ -25,16 +25,18 @@ from .forms import *
 def search(request):
     if request.method == "POST":
         searched = request.POST["searched"]
-        keys = Fruit.objects.filter(name__contains = searched)
-        key1 = Food.objects.filter(name__contains = searched)
+        keys = Fruit.objects.filter(name__icontains = searched)
+        key1 = Food.objects.filter(name__icontains = searched)
     return render(request, 'site1/search.html', {"searched":searched,"keys":  keys,"key1": key1})
 
 def autosuggest(request):
     print(request.GET)
     query_original = request.GET.get('term')
     queryset = Fruit.objects.filter(name__icontains=query_original)
+    queryset1 = Food.objects.filter(name__icontains=query_original)
     mylist = []
     mylist += [x.name for x in queryset]
+    mylist += [x.name for x in queryset1]
     return JsonResponse(mylist,safe=False)
 
 def home(request):
