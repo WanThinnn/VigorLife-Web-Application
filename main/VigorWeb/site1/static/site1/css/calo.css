@@ -1,5 +1,5 @@
 .ddt_calo .container {
-    height: 700px;
+    height: 800px;
     width: 100%;
 }
 
@@ -207,65 +207,6 @@
     .d-flex.align-items-center {
         margin-bottom: 15px;
     }
-}
-
-/* Custom Container Styles */
-.ddt_calo .container {
-    height: 700px;
-    width: 100%;
-}
-
-.calo-empty-space {
-    height: 130px; 
-}
-
-/* Custom Search Bar Styles */
-.calo-search-bar {
-    width: 600px;
-    margin: 0 auto; 
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
-    border-radius: 30px;
-    overflow: hidden;
-    display: flex;
-    z-index: 0;
-}
-
-.calo-search-input {
-    height: 600px;
-    border: none;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    padding-left: 40px;
-    font-size: 18px;
-    flex-grow: 1;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
-}
-
-.calo-search-button:hover {
-    background-color: #344b92;
-}
-
-@media (max-width: 767px) {
-    .calo-search-bar {
-        max-width: 100%;
-        border-radius: 20px;
-    }
-    .calo-search-input, .calo-search-button {
-        height: 45px;
-        font-size: 16px;
-    }
-}
-
-.ddt_calo .form-control {
-    font-size: 1.5rem;
-    border: none;
-    border-radius: .25rem;
-    transition: border-color .25s ease-in-out, box-shadow .25s ease-in-out;
-}
-
-.ddt_calo .alert {
-    font-size: 1.25rem;
-    padding: 1.5rem;
 }
 
 .ddt_calo .alert-danger {
