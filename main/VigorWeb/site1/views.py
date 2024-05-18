@@ -265,43 +265,47 @@ def ListFoods(request):
     return render(request, 'site1/list_foods.html')
 
 def FoodsPage(request, classification, name):
-    # Bạn có thể xử lý classification và name ở đây nếu cần
     food = get_object_or_404(Food, name=name, classification=classification)
     context = {
         'classification': classification,
         'name': name,
         'food': food,
-        # Thêm các dữ liệu cần thiết vào context nếu cần
     }
     return render(request, 'site1/food_in_page.html', context)
 
 
-def News(request):
-    rss_feed_url = "https://vnexpress.net/rss/suc-khoe.rss"
-    feed = feedparser.parse(rss_feed_url)
+def ListNews(request):
+    return render(request, 'site1/list_news.html')
+
+def News(request, type):
+    rss_feed_url = ''
+    if type == 'suc-khoe':
+        rss_feed_url = "https://vnexpress.net/rss/suc-khoe.rss"
+    elif type == 'the-thao':
+        rss_feed_url = "https://vnexpress.net/rss/the-thao.rss"
+
     items_rss = []
-    for item in feed.entries:
-        title = item.get("title")
-        pub_date = item.get("published")
-        link = item.get("link")
-        
-        description = item.get("summary")
-        description_soup = BeautifulSoup(description, 'html.parser')
-        description_text = description_soup.get_text()
-        img_tag = description_soup.find("img")
-        img_src = './static/site1/images/news_img.jpg'
-        if img_tag:
-            img_src = img_tag["src"]
-        
-        item = {
-            "title": title,
-            "pub_date":pub_date,
-            "link":link,
-            "description_text":description_text,
-            "image":img_src,
-            
-        }
-        items_rss.append(item)
-        
-        
-    return render(request, 'site1/news.html', {"items_rss":items_rss})
+    if rss_feed_url:
+        feed = feedparser.parse(rss_feed_url)
+        for item in feed.entries:
+            title = item.get("title")
+            pub_date = item.get("published")
+            link = item.get("link")
+            description = item.get("summary")
+            description_soup = BeautifulSoup(description, 'html.parser')
+            description_text = description_soup.get_text()
+            img_tag = description_soup.find("img")
+            img_src = './static/site1/images/news_img.jpg'
+            if img_tag:
+                img_src = img_tag["src"]
+
+            item = {
+                "title": title,
+                "pub_date": pub_date,
+                "link": link,
+                "description_text": description_text,
+                "image": img_src,
+            }
+            items_rss.append(item)
+
+    return render(request, 'site1/news.html', {"items_rss": items_rss, "type": type})

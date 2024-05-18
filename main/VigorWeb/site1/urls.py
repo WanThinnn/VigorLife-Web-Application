@@ -50,7 +50,8 @@ urlpatterns = [
     path('foods/<str:classification>/', FoodListView.as_view(), name='foods'),
     path('foods/<str:classification>/<str:name>', views.FoodsPage, name='foodspage'),
     
-    path('news/', views.News, name='news'), 
+    path('news2/<str:type>/', views.News, name='news'), 
+    path('news/', views.ListNews, name='list-news'), 
     path('social-auth/', include('social_django.urls', namespace='social')),
     
 ]
