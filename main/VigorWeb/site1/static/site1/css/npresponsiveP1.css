@@ -32,7 +32,6 @@
         margin-left: 3em;
     }
     .imgz .anhz {
-        width: 22%;
         height: 460px;
         margin-bottom: 50px;
     }
@@ -69,6 +68,7 @@
         width: 17%;
         height: 480px;
         margin-bottom: 60px;
+        display: none;
     }
     .ddt__border-btn {
         border: 1px solid #ffffff;
