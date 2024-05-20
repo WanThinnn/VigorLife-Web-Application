@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.conf import settings
-
+from datetime import datetime
 # Create your models here.
 
 
@@ -110,6 +110,7 @@ class NewsItem(models.Model):
     link = models.URLField(unique=True)
     description_text = models.TextField()
     image = models.URLField()
+    type = models.CharField(max_length=50, null=True)  # Thêm trường type
 
     def __str__(self):
         return self.title

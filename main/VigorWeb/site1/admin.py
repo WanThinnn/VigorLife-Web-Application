@@ -65,9 +65,9 @@ class FoodAdmin(admin.ModelAdmin):
 
 
 class NewsItemAdmin(admin.ModelAdmin):
-    list_display = ['title', 'pub_date', 'link', 'description_text', 'image']
-    list_filter = ['pub_date']
-    search_fields = ['title', 'pub_date']
+    list_display = ['title', 'pub_date', 'link', 'description_text', 'image', 'type']
+    list_filter = ['pub_date','type']
+    search_fields = ['title', 'pub_date','type']
 
 
 admin.site.register(Post, PostAdmin)

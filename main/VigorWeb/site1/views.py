@@ -335,15 +335,14 @@ def ListNews(request):
 #     return render(request, 'site1/news.html', {"items_rss": items_rss, "type": type})
 
 
-# views.py
-
-
 def News(request, type):
     rss_feed_url = ''
     if type == 'suc-khoe':
         rss_feed_url = "https://vnexpress.net/rss/suc-khoe.rss"
     elif type == 'the-thao':
         rss_feed_url = "https://vnexpress.net/rss/the-thao.rss"
+    elif type == 'khoa-hoc':
+        rss_feed_url = "https://vnexpress.net/rss/khoa-hoc.rss"
 
     items_rss = []
     if rss_feed_url:
@@ -360,6 +359,15 @@ def News(request, type):
             if img_tag:
                 img_src = img_tag["src"]
 
+            # Convert pub_date to Django compatible format
+            if pub_date:
+                try:
+                    parsed_date = datetime.strptime(pub_date, "%a, %d %b %Y %H:%M:%S %z")
+                    pub_date = parsed_date.strftime("%Y-%m-%d %H:%M:%S%z")
+                except ValueError as e:
+                    # Handle the exception or set pub_date to None
+                    pub_date = None
+
             # Check if the item already exists in the database
             if not NewsItem.objects.filter(link=link).exists():
                 # Save the new item to the database
@@ -368,7 +376,8 @@ def News(request, type):
                     pub_date=pub_date,
                     link=link,
                     description_text=description_text,
-                    image=img_src
+                    image=img_src,
+                    type=type
                 )
                 news_item.save()
 
