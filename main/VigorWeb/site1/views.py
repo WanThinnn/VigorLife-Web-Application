@@ -30,7 +30,8 @@ def search(request):
         searched = request.POST["searched"]
         keys = Fruit.objects.filter(name__icontains=searched)
         key1 = Food.objects.filter(name__icontains=searched)
-    return render(request, 'site1/search.html', {"searched": searched, "keys":  keys, "key1": key1})
+        key2 = NewsItem.objects.filter(title__icontains=searched)
+    return render(request, 'site1/search.html', {"searched": searched, "keys":  keys, "key1": key1, "key2": key2})
 
 
 def autosuggest(request):

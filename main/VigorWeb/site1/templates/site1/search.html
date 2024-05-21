@@ -4,7 +4,7 @@
 <section class="slider-area">
     <div class="slider-area-photo"></div>
 </section>
-<h2 style="text-align: center; font-size: 30px; margin-top:50px"> KẾT QUẢ TÌM KIẾM CHO {{searched}} </h2> <br />
+
 <div class="fruit-list">
     {% for fruit in keys %}
             {% if forloop.counter0|divisibleby:3 %}
@@ -26,6 +26,7 @@
             {% endif %}
     {% endfor %}
 </div>
+
 <div class="fruit-list">
     {% for food in key1 %}
             {% if forloop.counter0|divisibleby:3 %}
@@ -47,4 +48,29 @@
             {% endif %}
     {% endfor %}
 </div>
+
+<div class="flex-grow-1 mb-5 mt-5">
+    <div class="container" style="max-width:1000px">
+      <div class="row">
+        {% for item in key2 %}
+          <div class="col-md-4" style="margin-top: 10px; margin-bottom: 15px;">
+            <div class="card mb-4" style="height: 46rem;">
+              <a href="{{ item.link }}" target="_blank">
+                <img src="{{ item.image }}" class="card-img-top custom-image" alt="{{ item.title }}" style="object-fit: cover; height: 20rem;" />
+              </a>
+              <div class="card-body custom-box">
+                <a href="{{ item.link }}" target="_blank" class="text-dark">
+                  <h5 class="card-title" style="font-size: 20px;">{{ item.title }}</h5>
+                </a>
+                <p class="card-text" style="font-size:16px">{{ item.description_text }}</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted" style="font-size:12px">{{ item.pub_date }}</small>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 {% endblock heallthinfo-content %}
