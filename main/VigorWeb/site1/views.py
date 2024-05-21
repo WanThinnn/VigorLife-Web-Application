@@ -38,9 +38,11 @@ def autosuggest(request):
     query_original = request.GET.get('term')
     queryset = Fruit.objects.filter(name__icontains=query_original)
     queryset1 = Food.objects.filter(name__icontains=query_original)
+    queryset2 = NewsItem.objects.filter(title__icontains=query_original)
     mylist = []
     mylist += [x.name for x in queryset]
     mylist += [x.name for x in queryset1]
+    mylist += [x.title for x in queryset2]
     return JsonResponse(mylist, safe=False)
 
 
