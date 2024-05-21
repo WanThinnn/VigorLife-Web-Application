@@ -4,7 +4,9 @@
 <section class="slider-area">
     <div class="slider-area-photo"></div>
 </section>
-
+{% if keys %}
+<h2 style="text-align: center; font-size: 30px; margin-top:70px"> THÔNG TIN TỪ CÁC LOẠI TRÁI CÂY VỀ {{searched}} </h2> <br />
+{% endif %}
 <div class="fruit-list">
     {% for fruit in keys %}
             {% if forloop.counter0|divisibleby:3 %}
@@ -26,7 +28,9 @@
             {% endif %}
     {% endfor %}
 </div>
-
+{% if key1 %}
+<h2 style="text-align: center; font-size: 30px; margin-top:70px"> THÔNG TIN TỪ CÁC LOẠI THỰC PHẨM VỀ {{searched}} </h2> <br />
+{% endif %}
 <div class="fruit-list">
     {% for food in key1 %}
             {% if forloop.counter0|divisibleby:3 %}
@@ -48,7 +52,9 @@
             {% endif %}
     {% endfor %}
 </div>
-
+{% if key2 %}
+<h2 style="text-align: center; font-size: 30px; margin-top:70px"> THÔNG TIN TỪ CÁC TRANG BÁO CHO {{searched}} </h2> <br />
+{% endif %}
 <div class="flex-grow-1 mb-5 mt-5">
     <div class="container" style="max-width:1000px">
       <div class="row">
