@@ -12,6 +12,20 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+from .AES_GCM import decrypt_data
+
+
+with open('key.txt', 'r') as file:
+    # Đọc dòng đầu tiên và lưu vào biến first_line
+    first_line = file.readline().strip()
+
+key = first_line.encode('utf-8')
+sec_key = decrypt_data(key, 'dWl0QHZudSNoY20lt1fgJlmRbEddbcXjWy1cj-_q2m3tNrkEA7M8XMHe0zbuBRwP').decode('utf-8')
+access_key = decrypt_data(key, 'dWl0QHZudSNoY20lsS6eFi6FZiBBb_fVP1B56_jN02YcyBw6Th-Y_HzyQ77eeWJ6WT6eZxjgshN0lfdLvHubxJHOTII=').decode('utf-8')
+OAUTH2_KEY = decrypt_data(key, 'dWl0QHZudSNoY20lziiYVlj2GU1cF6mQIVBup9zPvwccxR4kD1OwuRvJad7QfmNsDU7PQvD2MjT3LLzNDyZRiec7POet5t0MbCi-8x0XoFyzKak35foaDblgl2dmyOt37WOLow==').decode('utf-8')
+OAUTH2_SECRET = decrypt_data(key, 'dWl0QHZudSNoY20lsVPqNDucAhpbEtXxe1FEucz382Io7hUaEAqV4RieOLaOZRCrW4SpBleCgt58FcxP3q7K').decode('utf-8')
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -135,9 +149,30 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
+<<<<<<< HEAD
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '841132686664-2agbn63nemst4l54nd79c0o23aj607mh.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+=======
+# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '841132686664-2agbn63nemst4l54nd79c0o23aj607mh.apps.googleusercontent.com'
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = OAUTH2_KEY
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = OAUTH2_SECRET
+>>>>>>> 1496a1af8b63c32399f5031c6e4a4f866d968e22
 LOGIN_URL='login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = 'login'
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+
+AWS_ACCESS_KEY_ID = sec_key
+AWS_SECRET_ACCESS_KEY = access_key
+AWS_STORAGE_BUCKET_NAME = 'vigorweb-storages'
+AWS_QUERYSTRING_AUTH = False
+AWS_S3_REGION_NAME = 'ap-southeast-1'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
