@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+from .AES_GCM import encrypt_data, decrypt_data, get_key, get_iv
+
+
+key = b'thientaiquanphuongthinh204@#$uit'
+sec_key = decrypt_data(key, 'dWl0QHZudSNoY20lt1fgJlmRbEddbcXjWy1cj-_q2m3tNrkEA7M8XMHe0zbuBRwP').decode('utf-8')
+access_key = decrypt_data(key, 'dWl0QHZudSNoY20lsS6eFi6FZiBBb_fVP1B56_jN02YcyBw6Th-Y_HzyQ77eeWJ6WT6eZxjgshN0lfdLvHubxJHOTII=').decode('utf-8')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -141,3 +147,19 @@ LOGIN_URL='login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = 'login'
+
+# key = input("Enter your AES GCM key: ").encode('utf-8')
+# sec_key = decrypt_data(key, 'dWl0QHZudSNoY20lt1fgJlmRbEddbcXjWy1cj-_q2m3tNrkEA7M8XMHe0zbuBRwP')
+# access_key = decrypt_data(key,'dWl0QHZudSNoY20lsS6eFi6FZiBBb_fVP1B56_jN02YcyBw6Th-Y_HzyQ77eeWJ6WT6eZxjgshN0lfdLvHubxJHOTII=')
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+
+AWS_ACCESS_KEY_ID = sec_key
+AWS_SECRET_ACCESS_KEY = access_key
+AWS_STORAGE_BUCKET_NAME = 'vigorweb-storages'
+AWS_QUERYSTRING_AUTH = False
+AWS_S3_REGION_NAME = 'ap-southeast-1'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
