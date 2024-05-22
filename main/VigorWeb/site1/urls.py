@@ -8,34 +8,10 @@ from django.conf.urls.static import static
 from .views import *
 
 urlpatterns = [
-<<<<<<< HEAD
-    path('',views.home,name='home'),
-    path('introduction/',views.introduction,name='introduction'),
     path('heallthinfo/',views.heallthinfo,name='heallthinfo'),
-    path('loseweight/',views.loseweight,name='loseweight'),
-    path('tools/',views.tools,name='tools'),
-    path('login/',views.loginPage,name='login'),
-    path('logout/',views.logoutPage,name='logout'),
-    path('register/',views.register,name='register'),
-    path('verify/',views.verifyOTP,name='verify'),
-    path('social-auth/', include('social_django.urls', namespace='social')),
-]
-=======
-#     path('',views.home,name='home'),
-#     path('introduction/',views.introduction,name='introduction'),
-#     path('heallthinfo/',views.heallthinfo,name='heallthinfo'),
-#     path('loseweight/',views.loseweight,name='loseweight'),
-#     path('tools/',views.tools,name='tools'),
-#     path('login/',views.loginPage,name='login'),
-#     path('logout/',views.logoutPage,name='logout'),
-#     path('register/',views.register,name='register'),
-#     path('verify/',views.verifyOTP,name='verify'),
-#     path('social-auth/', include('social_django.urls', namespace='social')),
-# ]
     path('', views.home, name='home'),
     path('', views.autocomplete, name='autocomplete'),
     path('introduction/', views.introduction, name='introduction'),
-    # path('blog/',views.heallthinfo,name='blog'),
     path('loseweight/', views.loseweight, name='loseweight'),
     path('calo/', views.calo, name='calo'),
     path('tools/', views.tools, name='tools'),
@@ -70,4 +46,3 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
->>>>>>> e6f90f9af0033f93847c32ffbd1af7ff20c7268b
