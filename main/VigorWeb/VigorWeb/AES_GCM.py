@@ -24,13 +24,13 @@ def get_iv():
     return iv
 
 # key, iv = get_key_iv()
-# # Dữ liệu cần mã hóa
-# plaintext = b'G27qEAIU+Nhq32v+FlZRnhom5xDpSUNW7d1yfC0O'
+# Dữ liệu cần mã hóa
+# plaintext = b'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'
 
 # # Mã hóa dữ liệu
-# encrypted_data = encrypt_data(key, iv, plaintext)
+# encrypted_data = encrypt_data(b'thientaiquanphuongthinh204@#$uit', b'uit@vnu#hcm%', plaintext)
 # print("Encrypted data:", encrypted_data)
 
 # # Giải mã dữ liệu
-# decrypted_data = decrypt_data(key, encrypted_data)
+# decrypted_data = decrypt_data(b'thientaiquanphuongthinh204@#$uit', encrypted_data)
 # print("Decrypted data:", decrypted_data.decode('utf-8'))
