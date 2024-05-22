@@ -1,5 +1,5 @@
 .ddt_calo .container {
-    height: 700px;
+    height: 800px;
     width: 100%;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .ddt_calo .form-control {
-    font-size: 14px;
+    font-size: 1.5rem;
     border: none;
     border-radius: .25rem;
     transition: border-color .25s ease-in-out, box-shadow .25s ease-in-out;
@@ -83,7 +83,183 @@
 }
 
 .ddt_calo .caloriescont {
-    background-color: #ffffff;
+    background-color: rgba(51, 0, 255, .03);
     padding: 30px;
+    max-width: 800px;
+    margin: auto;
 }
 
+.ddt_calo .shadow {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.ddt_calo .col-md-6 .mt-3 {
+    font-size: 1.5rem;
+}
+
+.ddt_calo .caloriescont .col-md-6 {
+    margin-left: 0;
+}
+
+
+/* Thêm */
+/* Alert Styles */
+.alert {
+    font-size: 1rem;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Calories Container Styles */
+.caloriescont {
+    background-color: #ffffff;
+    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    border-radius: 10px;
+}
+
+.caloriescont ul {
+    padding: 0;
+}
+
+.caloriescont ul li {
+    list-style: none;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #efefef;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.caloriescont h3, .caloriescont h4, .caloriescont h5 {
+    color: #112164;
+    font-weight: bold;
+}
+
+.caloriescont h3 {
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+/* Serving Size Styles */
+.servingsize {
+    background-color: #112164;
+    padding: 10px;
+    color: #ffffff;
+}
+
+/* Flexbox Alignment for Calorie Burning Activities */
+.d-flex.align-items-center img {
+    max-height: 70px;
+    max-width: 70px;
+}
+
+.d-flex.align-items-center {
+    margin-bottom: 20px;
+}
+
+.d-flex.align-items-center h5 {
+    margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .logo {
+        width: 10em;
+        height: auto;
+    }
+
+    .inputstyle {
+        padding: 15px !important;
+        font-size: 0.875rem;
+    }
+
+    .whoop {
+        width: 100%;
+        font-size: 1rem !important;
+    }
+
+    .caloriescont {
+        padding: 20px;
+    }
+
+    .caloriescont ul li {
+        width: 100%;
+    }
+
+    .d-flex.align-items-center img {
+        max-height: 50px;
+        max-width: 50px;
+    }
+
+    .d-flex.align-items-center {
+        margin-bottom: 15px;
+    }
+}
+
+.ddt_calo .alert-danger {
+    font-size: 1.25rem;
+    padding: 1.5rem;
+}
+
+.ddt_calo .alert-warning {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+}
+
+.calo-icon {
+    max-height: 70px;
+    max-width: 70px;
+}
+
+.ddt_calo .caloriescont {
+    background-color: rgba(51, 0, 255, .03);
+    padding: 30px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.ddt_calo .shadow {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2) !important;
+}
+
+.ddt_calo .col-md-6 .mt-3 {
+    font-size: 2rem;
+}
+
+.ddt_calo .caloriescont .col-md-6 {
+    margin-left: 0;
+}
+
+.ddt_calo .float-end {
+    float: right !important;
+}
+
+.ddt_calo .calo-result-detail {
+    font-size: 1.5rem;
+}
+
+.ddt_calo .row{
+    margin-top: -15px;
+    margin-bottom: -15px;
+}
+
+.ddt_calo .exercise-result-detail {
+    font-size: 1.2rem;
+}
+
+.ddt_calo .col-md-10 {
+    flex: none;
+}

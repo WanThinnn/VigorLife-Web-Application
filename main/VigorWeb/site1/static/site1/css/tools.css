@@ -353,10 +353,10 @@
 }
 
 /* Bổ sung */
-div[class^=col-] {
+/* div[class^=col-] {
     padding-left: .25rem;
     padding-right: .25rem;
-}
+} */
 
 @media (min-width: 992px) {
     .col-lg-6 {
@@ -384,18 +384,18 @@ div[class^=col-] {
     margin-top: 1rem;
 }
 
-.row {
+.Form .row {
     margin-left: -.25rem;
     margin-right: -.25rem;
 }
 
-.row {
+.Form .row {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-right: -15px;
-    margin-left: -15px;
+    /* margin-left: -15px; */
 }
 
 .text-center {

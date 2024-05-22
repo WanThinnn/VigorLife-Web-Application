@@ -29,7 +29,6 @@
         <link rel="stylesheet" href="{% static 'site1/css/qlResIndex_body.css' %}">
         <link rel="stylesheet" href="{% static 'site1/css/qlResIntro.css' %}">
         <link href="{% static 'site1/css/npresponsiveP2.css' %}" rel='stylesheet'>
-        <link href="{% static 'site1/css/npresponsiveP1.css' %}" rel='stylesheet'>
         <link href="{% static 'site1/css/forms.css' %}" rel='stylesheet'>
 
         <link rel="stylesheet" href="{% static 'site1/font/themify-icons-font/themify-icons/themify-icons.css' %}">
@@ -2376,11 +2375,24 @@
                             <!-- Begin: Search Button -->
                             <div class="right">
                                 <div class="ql__navbar__form-search">
-                                    <form action="#" class="ql__navbar__form">
-                                        <input type="text" placeholder="Search Product" style="color: #fff">
+                                    <form class="ql__navbar__form" method = POST action = "{% url 'search' %}" >
+                                        <input type="text" placeholder="Search Product" style="color: #fff; font-size: 16px" id ="searched" name= "searched">
                                         <i class="navbar__icon fa-solid fa-magnifying-glass"></i>
                                     </form>
                                 </div>
+                                <script
+                                src="https://code.jquery.com/jquery-3.7.1.min.js"
+                                integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+                                crossorigin="anonymous">
+                                </script>
+                                <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+                                <script>
+                                $( function() {
+                                        $( "#searched" ).autocomplete({
+                                        source: "{% url 'autosuggest' %}",
+                                        });
+                                    } );
+                                </script>
             
                                 <div class="ql__navbar__user-container">
                                     <div class="ql__navbar__user">
@@ -2487,6 +2499,8 @@
     {%block login%}{%endblock login%}
 
     {% block detailsfoods-content %}{% endblock detailsfoods-content %}
+
+    {% block listnews-content %}{% endblock listnews-content %}
     <section class="background-nqt">
         <div class="NQT_container">
             <div class="NQT_row">
@@ -2641,6 +2655,7 @@
     
      <!--Javacripts-->
      <script src="{% static 'site1/js/tools.js' %}"></script> <!--Tool-->
+     <script src="{% static 'site1/js/calo.js' %}"></script> <!--Calo-->
 
     </body>
 </html>

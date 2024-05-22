@@ -1,4 +1,6 @@
-from django.shortcuts import render,redirect
+from .models import NewsItem
+from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
 from django.contrib.auth.forms import UserCreationForm
@@ -7,6 +9,7 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from VigorWeb.settings import EMAIL_HOST_USER
 import random
+import json
 from django.db.models import Sum
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -19,16 +22,38 @@ from bs4 import BeautifulSoup
 from .forms import *
 
 # Create your views here.
+
+
 @csrf_exempt
+def search(request):
+    if request.method == "POST":
+        searched = request.POST["searched"]
+        keys = Fruit.objects.filter(name__icontains=searched)
+        key1 = Food.objects.filter(name__icontains=searched)
+        key2 = NewsItem.objects.filter(title__icontains=searched)
+    return render(request, 'site1/search.html', {"searched": searched, "keys":  keys, "key1": key1, "key2": key2})
+
+
+def autosuggest(request):
+    print(request.GET)
+    query_original = request.GET.get('term')
+    queryset = Fruit.objects.filter(name__icontains=query_original)
+    queryset1 = Food.objects.filter(name__icontains=query_original)
+    queryset2 = NewsItem.objects.filter(title__icontains=query_original)
+    mylist = []
+    mylist += [x.name for x in queryset]
+    mylist += [x.name for x in queryset1]
+    mylist += [x.title for x in queryset2]
+    return JsonResponse(mylist, safe=False)
+
 
 def home(request):
     return render(request, 'site1/home.html')
 
-def autocomplete(request):
-    return render(request, 'site1/base.html')
 
 def introduction(request):
     return render(request, 'site1/introduction.html')
+
 
 def heallthinfo(request):
     return render(request, 'site1/heallthinfo.html')
@@ -39,6 +64,7 @@ class PostListView(ListView):
     template_name = 'site1/blog.html'
     context_object_name = 'Posts'
     paginate_by = 10
+
 
 class PostDetailView(DetailView):
     model = Post
@@ -55,6 +81,7 @@ def post(request, pk, title):
             return HttpResponseRedirect(request.path)
     return render(request, "site1/post.html", {"post": post, "form": form})
 
+
 def reply_cmt(request, pk, title):
     post = get_object_or_404(Post, pk=pk, title=title)
     form = RelyCommentForm()
@@ -62,11 +89,13 @@ def reply_cmt(request, pk, title):
         author_id = request.POST.get('author')
         comment_id = request.POST.get('comment')
         comment = get_object_or_404(Comment, pk=comment_id, author=author_id)
-        form = RelyCommentForm(request.POST, author=request.user, comment=comment)
+        form = RelyCommentForm(
+            request.POST, author=request.user, comment=comment)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(request.path)
     return render(request, "site1/post.html", {"post": post, "form": form})
+
 
 def write_blog(request):
     if request.method == 'POST':
@@ -74,18 +103,23 @@ def write_blog(request):
         image_form = ImageUploadForm(request.POST, request.FILES)
         if blog_form.is_valid() and image_form.is_valid():
             post = blog_form.save()
-            images = request.FILES.getlist('images')  # Lấy danh sách hình ảnh từ form tải lên
-            titles = request.POST.getlist('title')    # Lấy danh sách tiêu đề từ form
+            # Lấy danh sách hình ảnh từ form tải lên
+            images = request.FILES.getlist('images')
+            # Lấy danh sách tiêu đề từ form
+            titles = request.POST.getlist('title')
             for image, title in zip(images, titles):
-                Image.objects.create(image=image, post=post, title=title)  # Lưu hình ảnh vào cơ sở dữ liệu
+                # Lưu hình ảnh vào cơ sở dữ liệu
+                Image.objects.create(image=image, post=post, title=title)
             return redirect('post', pk=post.pk, title=post.title)
     else:
         blog_form = BlogForm(author=request.user)
         image_form = ImageUploadForm()
     return render(request, 'site1/write_blog.html', {'blog_form': blog_form, 'image_form': image_form})
 
+
 def loseweight(request):
     return render(request, 'site1/loseweight_exercise.html')
+
 
 def calo(request):
     import json
@@ -98,7 +132,7 @@ def calo(request):
         try:
             api = json.loads(api_request.content)
             print(api_request.content)
-            
+
             if isinstance(api, list) and len(api) > 0:
                 calo = api[0].get('calories', 0)
                 jog = calo / 378 * 60
@@ -126,13 +160,15 @@ def calo(request):
     else:
         return render(request, 'site1/calo.html', {'query': 'Enter a valid query'})
 
+
 def tools(request):
     return render(request, 'site1/tools.html')
+
 
 def verifyOTP(request):
     if request.method == 'POST':
         userOTP = request.POST.get('otp')
-        email=request.POST.get('email')
+        email = request.POST.get('email')
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         username = request.POST.get('username')
@@ -140,17 +176,19 @@ def verifyOTP(request):
         password2 = request.POST.get('password2')
 
         if password1 == password2:
-            form = User(username=username, email=email, first_name=first_name, last_name=last_name, password=password1)
+            form = User(username=username, email=email, first_name=first_name,
+                        last_name=last_name, password=password1)
             form.save()
 
-        print ("OTP: ", userOTP)
+        print("OTP: ", userOTP)
 
-    return JsonResponse({'data' : 'Hello'}, status=200)
+    return JsonResponse({'data': 'Hello'}, status=200)
+
 
 def register(request):
     form = UserCreationForm()
     if request.method == "POST":
-        email=request.POST.get('email')
+        email = request.POST.get('email')
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         user_name = request.POST.get('username')
@@ -158,38 +196,40 @@ def register(request):
         password2 = request.POST.get('password2')
         form = UserCreationForm(request.POST)
         if form.is_valid():
-           # form.save()
-           otp = random.randint(100000,999999)
-           send_mail("User Data: ", f"Your OTP is: {otp}", EMAIL_HOST_USER, [email], fail_silently=True)
-           messages.success(request, 'OTP has been sent to your email')
-           return render(request, 'site1/verify.html', {'otp': otp, 'first_name': first_name, 'last_name': last_name, 'email': email, 'username': user_name, 'password1': password1, 'password2': password2})
+            # form.save()
+            otp = random.randint(100000, 999999)
+            send_mail("User Data: ", f"Your OTP is: {otp}", EMAIL_HOST_USER, [
+                      email], fail_silently=True)
+            messages.success(request, 'OTP has been sent to your email')
+            return render(request, 'site1/verify.html', {'otp': otp, 'first_name': first_name, 'last_name': last_name, 'email': email, 'username': user_name, 'password1': password1, 'password2': password2})
         else:
             print("Form error: ", form.errors)
             messages.error(request, form.errors)
     context = {'form': form}
-    return render(request, 'site1/register.html',context)
-  
+    return render(request, 'site1/register.html', context)
+
+
 def loginPage(request):
     if request.user.is_authenticated:
         return redirect('home')
-    
+
     if request.method == "POST":
         username = request.POST.get('username')
-        password = request.POST.get('password') 
+        password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
             return redirect('home')
         else:
             messages.info(request, 'Username or Password is incorrect')
-    
+
     context = {}
     return render(request, 'site1/login.html', context)
+
 
 def logoutPage(request):
     logout(request)
     return redirect('login')
-
 
 
 # def fruit(request, name, calo):
@@ -213,8 +253,10 @@ class FruitListView(ListView):
         context['classification'] = self.kwargs.get('classification')
         return context
 
+
 def ListFruit(request):
     return render(request, 'site1/list_fruits.html')
+
 
 def FruitsPage(request, classification, name):
     # Bạn có thể xử lý classification và name ở đây nếu cần
@@ -226,7 +268,6 @@ def FruitsPage(request, classification, name):
         # Thêm các dữ liệu cần thiết vào context nếu cần
     }
     return render(request, 'site1/fruit_in_page.html', context)
-
 
 
 class FoodListView(ListView):
@@ -245,47 +286,111 @@ class FoodListView(ListView):
         context['classification'] = self.kwargs.get('classification')
         return context
 
+
 def ListFoods(request):
     return render(request, 'site1/list_foods.html')
 
+
 def FoodsPage(request, classification, name):
-    # Bạn có thể xử lý classification và name ở đây nếu cần
     food = get_object_or_404(Food, name=name, classification=classification)
     context = {
         'classification': classification,
         'name': name,
         'food': food,
-        # Thêm các dữ liệu cần thiết vào context nếu cần
     }
     return render(request, 'site1/food_in_page.html', context)
 
 
-def News(request):
-    rss_feed_url = "https://vnexpress.net/rss/suc-khoe.rss"
-    feed = feedparser.parse(rss_feed_url)
+def ListNews(request):
+    return render(request, 'site1/list_news.html')
+
+# def News(request, type):
+#     rss_feed_url = ''
+#     if type == 'suc-khoe':
+#         rss_feed_url = "https://vnexpress.net/rss/suc-khoe.rss"
+#     elif type == 'the-thao':
+#         rss_feed_url = "https://vnexpress.net/rss/the-thao.rss"
+
+#     items_rss = []
+#     if rss_feed_url:
+#         feed = feedparser.parse(rss_feed_url)
+#         for item in feed.entries:
+#             title = item.get("title")
+#             pub_date = item.get("published")
+#             link = item.get("link")
+#             description = item.get("summary")
+#             description_soup = BeautifulSoup(description, 'html.parser')
+#             description_text = description_soup.get_text()
+#             img_tag = description_soup.find("img")
+#             img_src = './static/site1/images/news_img.jpg'
+#             if img_tag:
+#                 img_src = img_tag["src"]
+
+#             item = {
+#                 "title": title,
+#                 "pub_date": pub_date,
+#                 "link": link,
+#                 "description_text": description_text,
+#                 "image": img_src,
+#             }
+#             items_rss.append(item)
+
+#     return render(request, 'site1/news.html', {"items_rss": items_rss, "type": type})
+
+
+def News(request, type):
+    rss_feed_url = ''
+    if type == 'suc-khoe':
+        rss_feed_url = "https://vnexpress.net/rss/suc-khoe.rss"
+    elif type == 'the-thao':
+        rss_feed_url = "https://vnexpress.net/rss/the-thao.rss"
+    elif type == 'khoa-hoc':
+        rss_feed_url = "https://vnexpress.net/rss/khoa-hoc.rss"
+
     items_rss = []
-    for item in feed.entries:
-        title = item.get("title")
-        pub_date = item.get("published")
-        link = item.get("link")
-        
-        description = item.get("summary")
-        description_soup = BeautifulSoup(description, 'html.parser')
-        description_text = description_soup.get_text()
-        img_tag = description_soup.find("img")
-        img_src = './static/site1/images/news_img.jpg'
-        if img_tag:
-            img_src = img_tag["src"]
-        
-        item = {
-            "title": title,
-            "pub_date":pub_date,
-            "link":link,
-            "description_text":description_text,
-            "image":img_src,
-            
-        }
-        items_rss.append(item)
-        
-        
-    return render(request, 'site1/news.html', {"items_rss":items_rss})
+    if rss_feed_url:
+        feed = feedparser.parse(rss_feed_url)
+        for item in feed.entries:
+            title = item.get("title")
+            pub_date = item.get("published")
+            link = item.get("link")
+            description = item.get("summary")
+            description_soup = BeautifulSoup(description, 'html.parser')
+            description_text = description_soup.get_text()
+            img_tag = description_soup.find("img")
+            img_src = './static/site1/images/news_img.jpg'
+            if img_tag:
+                img_src = img_tag["src"]
+
+            # Convert pub_date to Django compatible format
+            if pub_date:
+                try:
+                    parsed_date = datetime.strptime(pub_date, "%a, %d %b %Y %H:%M:%S %z")
+                    pub_date = parsed_date.strftime("%Y-%m-%d %H:%M:%S%z")
+                except ValueError as e:
+                    # Handle the exception or set pub_date to None
+                    pub_date = None
+
+            # Check if the item already exists in the database
+            if not NewsItem.objects.filter(link=link).exists():
+                # Save the new item to the database
+                news_item = NewsItem(
+                    title=title,
+                    pub_date=pub_date,
+                    link=link,
+                    description_text=description_text,
+                    image=img_src,
+                    type=type
+                )
+                news_item.save()
+
+            item_data = {
+                "title": title,
+                "pub_date": pub_date,
+                "link": link,
+                "description_text": description_text,
+                "image": img_src,
+            }
+            items_rss.append(item_data)
+
+    return render(request, 'site1/news.html', {"items_rss": items_rss, "type": type})

@@ -11,6 +11,10 @@
         font-size: 20px;
         margin-top: 1em;
     }
+    .picture-title-2
+    {
+        display: none;
+    }
 }
 
 /* Small tablet to big tablet from 768x to 1023px */
@@ -28,14 +32,16 @@
         margin-left: 3em;
     }
     .imgz .anhz {
-        width: 22%;
         height: 460px;
         margin-bottom: 50px;
     }
     .ins-2 {
         margin-left: -3em;
     }
-
+    .picture-title-2
+    {
+        display: none;
+    }
 }
 
 /* Small phones to small tablets */
@@ -62,6 +68,7 @@
         width: 17%;
         height: 480px;
         margin-bottom: 60px;
+        display: none;
     }
     .ddt__border-btn {
         border: 1px solid #ffffff;
@@ -106,6 +113,10 @@
     .background-nqt {
         margin-top: 180px;
     }
+    .picture-title-2
+    {
+        display: none;
+    }
 }
 
 /* Small phones from 0 to 480px; */
@@ -130,10 +141,6 @@
     .ql__navbar {
         width: 100%;
     }
-    .ddt_tailor-details
-    {
-        width: 200%;
-    }
     .background-nqt {
         margin-top: 300px;
     }
@@ -156,5 +163,9 @@
     .fa-brands.fa-instagram.fa-5x
     {
         margin-bottom: 50px;
+    }
+    .picture-title-2
+    {
+        display: none;
     }
 }

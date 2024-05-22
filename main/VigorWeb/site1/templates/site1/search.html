@@ -1,0 +1,82 @@
+{% extends 'site1/base.html' %}
+{% load static %}
+{% block heallthinfo-content %}
+<section class="slider-area">
+    <div class="slider-area-photo"></div>
+</section>
+{% if keys %}
+<h2 style="text-align: center; font-size: 30px; margin-top:70px"> THÔNG TIN TỪ CÁC LOẠI TRÁI CÂY VỀ {{searched}} </h2> <br />
+{% endif %}
+<div class="fruit-list">
+    {% for fruit in keys %}
+            {% if forloop.counter0|divisibleby:3 %}
+                <div class="np__row">
+            {% endif %}
+            <figure>
+                <a href="{% url 'fruitspage' fruit.classification fruit.name %}" class="imagez">
+                    <img src="{{ fruit.image.url }}" alt="{{ fruit.name }}" class="animalimg" />
+                </a>
+                <a href="{% url 'fruitspage' fruit.classification fruit.name %}" class="linkz">
+                    <figcaption>
+                        <label class="np__prc" href="{% url 'fruitspage' fruit.classification fruit.name %}">{{ fruit.name }}</label><br />
+                        <p style="color: rgb(189, 144, 60)" class="np__prc">{{ fruit.calories }} calo/100g</p>
+                    </figcaption>
+                </a>
+            </figure>
+            {% if forloop.counter|divisibleby:3 or forloop.last %}
+                </div>
+            {% endif %}
+    {% endfor %}
+</div>
+{% if key1 %}
+<h2 style="text-align: center; font-size: 30px; margin-top:70px"> THÔNG TIN TỪ CÁC LOẠI THỰC PHẨM VỀ {{searched}} </h2> <br />
+{% endif %}
+<div class="fruit-list">
+    {% for food in key1 %}
+            {% if forloop.counter0|divisibleby:3 %}
+                <div class="np__row">
+            {% endif %}
+            <figure>
+                <a href="{% url 'foodspage' food.classification food.name %}" class="imagez">
+                    <img src="{{ food.image.url }}" alt="{{ food.name }}" class="animalimg" />
+                </a>
+                <a href="{% url 'foodspage' food.classification food.name %}" class="linkz">
+                    <figcaption>
+                        <label class="np__prc">{{ food.name }}</label><br />
+                        <p style="color: rgb(189, 144, 60)" class="np__prc">{{ food.calories }} calo/100g</p>
+                    </figcaption>
+                </a>
+            </figure>
+            {% if forloop.counter|divisibleby:3 or forloop.last %}
+                </div>
+            {% endif %}
+    {% endfor %}
+</div>
+{% if key2 %}
+<h2 style="text-align: center; font-size: 30px; margin-top:70px"> THÔNG TIN TỪ CÁC TRANG BÁO CHO {{searched}} </h2> <br />
+{% endif %}
+<div class="flex-grow-1 mb-5 mt-5">
+    <div class="container" style="max-width:1000px">
+      <div class="row">
+        {% for item in key2 %}
+          <div class="col-md-4" style="margin-top: 10px; margin-bottom: 15px;">
+            <div class="card mb-4" style="height: 46rem;">
+              <a href="{{ item.link }}" target="_blank">
+                <img src="{{ item.image }}" class="card-img-top custom-image" alt="{{ item.title }}" style="object-fit: cover; height: 20rem;" />
+              </a>
+              <div class="card-body custom-box">
+                <a href="{{ item.link }}" target="_blank" class="text-dark">
+                  <h5 class="card-title" style="font-size: 20px;">{{ item.title }}</h5>
+                </a>
+                <p class="card-text" style="font-size:16px">{{ item.description_text }}</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted" style="font-size:12px">{{ item.pub_date }}</small>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock heallthinfo-content %}

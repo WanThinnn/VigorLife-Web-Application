@@ -11,7 +11,7 @@
         <div class="slider-row">
             <div class="col-xl-6 col-lg-8 col-md-8">
                 <div class="slider-row-caption">
-                    <h1>Tính Calories</h1>
+                    <h1>Calories</h1>
                     <nav aria-label="slider-nav">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{% url 'home' %}" tabindex="0">Trang Chủ</a></li>
@@ -50,8 +50,8 @@
 <section class="calo-empty-space"></section>
 
 
-<section class="ddt_calo">
-<div class="container">
+<section class="ddt_calo justify-content-center">
+<div class="container justify-content-center">
     {% comment %} {{api}} {% endcomment %}
     <div class="row justify-content-center">
             <form method="POST" id="caloForm">
@@ -97,35 +97,35 @@
 
         </div>
 
-        <div class="row justify-content-center mt-5 mb-5">
+        <div class="row justify-content-center mt-5 mb-5 calo-results">
             <div class="col-md-10 caloriescont shadow rounded">
                 <div class="row">
 
                     <div class="col-md-6">
-                        <h2 class="mt-3 mb-4">Giá trị dinh dưỡng: </h2><span></span>
+                        <h2 class="mt-3 mb-4" style="font-weight: bold;">GIÁ TRỊ DINH DƯỠNG</h2><span></span>
                         <ul>
-                            <li class="servingsize">100 grams thực phẩm trên chứa: <span class="float-end"></span></li>
-                            <li>Carbohydrates: <span class="float-end"> {{api.0.carbohydrates_total_g}} </span>
+                            <li class="servingsize calo-result-detail">Trong 100 grams thực phẩm trên chứa: <span class="float-end"></span></li>
+                            <li class="calo-result-detail">Carbohydrates (g): <span class="float-end"> {{api.0.carbohydrates_total_g}} </span>
                             </li>
-                            <li>Cholesterol: <span class="float-end"> {{api.0.cholesterol_mg}} </span></li>
-                            <li>Chất béo bão hòa: <span class="float-end"> {{api.0.fat_saturated_g}} </span></li>
-                            <li>Tổng chất béo: <span class="float-end"> {{api.0.fat_total_g}} </span></li>
-                            <li>Chất xơ: <span class="float-end"> {{api.0.fiber_g}} </span></li>
-                            <li>Kali: <span class="float-end"> {{api.0.potassium_mg}} </span></li>
-                            <li>Protein: <span class="float-end"> {{api.0.protein_g}} <span></li>
-                            <li>Natri:<span class="float-end"> {{api.0.sodium_mg}} </span></li>
-                            <li>Đường: <span class="float-end"> {{api.0.sugar_g}} </span></li>
+                            <li class="calo-result-detail">Cholesterol (mg): <span class="float-end"> {{api.0.cholesterol_mg}} </span></li>
+                            <li class="calo-result-detail">Chất béo bão hòa (g): <span class="float-end"> {{api.0.fat_saturated_g}} </span></li>
+                            <li class="calo-result-detail">Tổng chất béo (g): <span class="float-end"> {{api.0.fat_total_g}} </span></li>
+                            <li class="calo-result-detail">Chất xơ (g): <span class="float-end"> {{api.0.fiber_g}} </span></li>
+                            <li class="calo-result-detail">Kali (mg): <span class="float-end"> {{api.0.potassium_mg}} </span></li>
+                            <li class="calo-result-detail">Protein (g): <span class="float-end"> {{api.0.protein_g}} <span></li>
+                            <li class="calo-result-detail">Natri (mg):<span class="float-end"> {{api.0.sodium_mg}} </span></li>
+                            <li class="calo-result-detail">Đường (g): <span class="float-end"> {{api.0.sugar_g}} </span></li>
                         </ul>
                     </div>
                     <div class="col-md-6 mb-5">
-                        <h4 class="mt-3 mb-4">Để đốt cháy {{api.0.calories}} calories bạn cần phải</h4>
+                        <h4 class="mt-3 mb-4">Để đốt cháy {{api.0.calories}} calories bạn cần phải:</h4>
                         <div class="d-flex align-items-center mb-5">
                             <div class="flex-shrink-0">
                                 <img class="calo-icon" src="{% static 'site1/images/running.png' %}" alt="Ảnh">
                             </div>
                             <div class="flex-grow-1 ms-3">
-                                <h5> Chạy bộ </h5>
-                                <p>Bạn phải chạy bộ trong <strong id="Jog">
+                                <h5 class="calo-result-detail"> Chạy bộ </h5>
+                                <p class="exercise-result-detail">Bạn phải chạy bộ trong <strong id="Jog">
                                     {{ jog|floatformat:0 }} </strong> phút</p>
                             </div>
                         </div>
@@ -134,8 +134,8 @@
                                 <img class="calo-icon" src="{% static 'site1/images/yoga.png' %}" alt="Ảnh">
                             </div>
                             <div class="flex-grow-1 ms-4">
-                                <h5> Tập yoga </h5>
-                                <p>Bạn phải tập yoga trong <strong id="Yoga">
+                                <h5 class="calo-result-detail"> Tập yoga </h5>
+                                <p class="exercise-result-detail">Bạn phải tập yoga trong <strong id="Yoga">
                                     {{ yoga|floatformat:0 }} </strong> phút</p>
                             </div>
                         </div>
@@ -144,8 +144,8 @@
                                 <img class="calo-icon" src="{% static 'site1/images/weightlifter.png' %}" alt="Ảnh">
                             </div>
                             <div class="flex-grow-1 ms-4">
-                                <h5>Tập gym </h5>
-                                <p>Bạn phải tập gym trong <strong id="Gym">
+                                <h5 class="calo-result-detail"> Tập gym </h5>
+                                <p class="exercise-result-detail">Bạn phải tập gym trong <strong id="Gym">
                                     {{ gym|floatformat:0 }} </strong> phút </p>
                             </div>
                         </div>
@@ -154,8 +154,8 @@
                                 <img class="calo-icon" src="{% static 'site1/images/walking.png' %}" alt="Ảnh">
                             </div>
                             <div class="flex-grow-1 ms-1">
-                                <h5> Đi bộ </h5>
-                                <p>Bạn phải đi bộ trong <strong id="Walk">
+                                <h5 class="calo-result-detail"> Đi bộ </h5>
+                                <p class="exercise-result-detail">Bạn phải đi bộ trong <strong id="Walk">
                                     {{ walk|floatformat:0 }} </strong> phút</p>
                             </div>
                         </div>
@@ -165,9 +165,33 @@
             {%endif%}
             {%endif%}
         </div>
+
+        <div>
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+
     </div>
 </div>
 </section>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
 
+        var calonumber = document.getElementById("caloNumber");
+        var colorCalo;
+    
+        if (parseFloat("{{api.0.calories}}") > 200) {
+            colorCalo = "red";
+        } else if (parseFloat("{{api.0.calories}}") > 40 && parseFloat("{{api.0.calories}}") <= 200) {
+            colorCalo = "green";
+        } else if (parseFloat("{{api.0.calories}}") <= 40) {
+            colorCalo = "gray";
+        }
+        
+        calonumber.style.color = colorCalo;
+        
+        event.preventDefault(); // Ngăn chặn gửi form mặc định của trình duyệt
+    });
+    
+</script>
 {% endblock calo-content %}
