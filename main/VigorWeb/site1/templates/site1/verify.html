@@ -1,3 +1,4 @@
+{%load static%}
 <!DOCTYPE html>
 
 <html>
@@ -9,10 +10,83 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <meta charset="utf-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <link rel="icon" type="image/x-icon" href="{% static "site1\logo\vigor_logo_2.png" %}"  sizes="32x32" >
+
+        
+        <link href="{% static 'site1/css/base.css' %}" rel="stylesheet">
+        <link href="{% static 'site1/css/main.css' %}" rel="stylesheet">
+        <link href="{% static 'site1/css/introduction.css' %}" rel="stylesheet">
+        <link href="{% static 'site1/css/healthinfo.css' %}" rel="stylesheet">
+        <link href="{% static 'site1/css/loseweight_exercises.css' %}" rel="stylesheet"> 
+        <link href="{% static 'site1/css/tools.css' %}" rel="stylesheet">
+        <link href="{% static 'site1/css/calo.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'site1/css/qlResIndex.css' %}">
+        <link rel="stylesheet" href="{% static 'site1/css/qlResIndex_body.css' %}">
+        <link rel="stylesheet" href="{% static 'site1/css/qlResIntro.css' %}">
+        <link href="{% static 'site1/css/npresponsiveP2.css' %}" rel='stylesheet'>
+        <link href="{% static 'site1/css/forms.css' %}" rel='stylesheet'>
+
+        <link rel="stylesheet" href="{% static 'site1/font/themify-icons-font/themify-icons/themify-icons.css' %}">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+        <script src="{% static 'site1/js/forms.js' %}"></script>
+        <script src="{% static 'site1/js/blog.js' %}"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>       
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+    
+        {% comment %} <title>Trang chủ</title> {% endcomment %}
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/assests/font/themify-icons-font/themify-icons/themify-icons.css">
     </head>
     <body>
-        <input type="text" name="otp" id="otp" placeholder="Enter OTP">
+        <section class="slider-area">
+            <div class="slider-area-photo"></div>
+            <div class="container">
+                <div class="slider-row">
+                    <div class="col-xl-6 col-lg-8 col-md-8">
+                        <div class="slider-row-caption">
+                            <h1>Verify OTP</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-us-section" style="background-color:#FFF">
+            <div class="about-container">
+                <div class="about-us-section-row">
+                    <div class="about-us-section-tittle">
+                        <h2>Nhập OTP của bạn</h2>
+                        <div class="input-group mb-3">
+                            <input type="text" name="otp" id="otp" placeholder="Enter OTP" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <input class="btn btn-primary" type="submit" value="Xác nhận">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
+        
+
         <script>
             $('#otp').change(function(){
                 let otp = $('#otp').val();
@@ -33,7 +107,8 @@
                         data: postData,
                         success: function(data){
                             console.log("OTP Verifiedddd")
-                            //window.location.href = "/"
+
+                            window.location.href = ""
                         }
                     })
                 }

@@ -50,6 +50,8 @@ def autosuggest(request):
 def home(request):
     return render(request, 'site1/home.html')
 
+def verify(request):
+    return render(request, 'site1/verify.html')
 
 def introduction(request):
     return render(request, 'site1/introduction.html')
@@ -196,7 +198,7 @@ def register(request):
         password2 = request.POST.get('password2')
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            # form.save()
+            #form.save()
             otp = random.randint(100000, 999999)
             send_mail("User Data: ", f"Your OTP is: {otp}", EMAIL_HOST_USER, [
                       email], fail_silently=True)
@@ -205,6 +207,8 @@ def register(request):
         else:
             print("Form error: ", form.errors)
             messages.error(request, form.errors)
+    else:
+        form = RegistrationForm()
     context = {'form': form}
     return render(request, 'site1/register.html', context)
 
