@@ -92,8 +92,9 @@ class Food(models.Model):
         ('medium_calories', 'Calo Vừa Phải'),
     ]
     name = models.CharField(max_length=100)
-    description = models.TextField()
+    description = models.TextField(max_length=500, null=True, blank=True)
     calories = models.IntegerField()
+    unit = models.CharField(max_length=50, null=True)
     classification = models.CharField(
         max_length=50, choices=CLASSIFICATION_CHOICES)
     # Hình ảnh của trái cây
