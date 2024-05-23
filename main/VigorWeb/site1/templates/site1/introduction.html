@@ -1,7 +1,10 @@
 {% extends 'site1/base.html' %}
 {%load static%}
 {%block introduction-content%}
-
+<head>
+    <link href="{% static 'site1/css/introduction.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'site1/css/qlResIntro.css' %}">
+</head>
 <section class="slider-area">
     <div class="slider-area-photo"></div>
     <div class="container">
