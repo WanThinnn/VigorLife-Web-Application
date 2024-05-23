@@ -94,11 +94,11 @@ class Food(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     calories = models.IntegerField()
+    unit = models.CharField(max_length=50, null=True)
     classification = models.CharField(
         max_length=50, choices=CLASSIFICATION_CHOICES)
     # Hình ảnh của trái cây
     image = models.ImageField(upload_to='foods_images/')
-    unit = models.CharField(max_length=50, null=True)
 
     def __str__(self):
         return self.name
