@@ -78,6 +78,10 @@
     .picture-title {
         display: none;
     }
+
+    .lqt__row {
+        display: none;
+    }
 }
  
 /* Small phones to small tablets */
@@ -145,6 +149,10 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+    }
+
+    .lqt__row {
+        display: none;
     }
 
     .picture-title {
@@ -232,6 +240,12 @@
         justify-content: space-around;
         align-items: center;
     }
+
+    .lqt__row {
+        display: none;
+    }
+
+    .about
 
     .picture-title {
         display: none;

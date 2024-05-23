@@ -4,6 +4,10 @@
         display: none;
     }
 }
+
+
+
+
  
 /* Small tablet to big tablet from 768x to 1023px */
 @media only screen and (max-width:1023px){
@@ -11,9 +15,6 @@
         padding: 5px 12px;
     }
 
-    #nav .subnav a {
-        padding: 5px 12px;
-    }
     #header {
         overflow: hidden;
     }
@@ -84,11 +85,84 @@
     .ddt__product-item {
         margin-top: 20px;
     }
+
+    .btn {
+        padding: 15px 16px;
+    }
+
+    #nav .subnav a {
+        padding: 5px 12px;
+    }
+
+    .right {
+        
+    }
+
+    .ql__navbar__form-search, .ql__navbar__user-container {
+        display: none;
+    }
+
+    .mobile__menu-btn {
+        display: block;
+        position: relative;
+        top: -4px;
+    }
+
+    #nav .subnav {
+        width: auto;
+        box-shadow: none;
+    }
     
+    .ql1234 {
+        width: auto !important;
+    }
+    .sample {
+        margin-bottom: 200px;
+    }
 }
  
 /* Small phones to small tablets */
 @media only screen and (max-width: 767px){
+    #header {
+        overflow: hidden;
+    }
+
+    #header .mobile-menu-btn {
+        display: block;
+    }
+
+    #header .search-btn {
+        display: none;
+    }
+
+    #nav {
+        display: block;
+    }
+
+    #nav li a {
+        padding: 1px 24px;
+    }
+
+    #nav > li {
+        display: block;
+    }
+
+    #nav > li:first-child {
+        display: inline-block;
+    }
+
+    #nav .subnav {
+        position: initial;
+        background-color: #333;
+    }
+
+    #nav .subnav a {
+        color: #fff;
+        padding: 5px 41px;
+    }
+
+
+
     #nav .subnav a {
         padding: 5px 12px;
     }
@@ -196,6 +270,33 @@
     .Ducktai {
         margin-bottom: 500px;
     }
+
+    .btn {
+        padding: 15px 16px;
+    }
+
+    #nav .subnav a {
+        padding: 5px 12px;
+    }
+
+    .right {
+        
+    }
+
+    .ql__navbar__form-search, .ql__navbar__user-container {
+        display: none;
+    }
+
+    .mobile__menu-btn {
+        display: block;
+        position: relative;
+        top: -4px;
+    }
+
+    #nav .subnav {
+        width: auto;
+        box-shadow: none;
+    }
 }
  
 /* Small phones from 0 to 480px; */
@@ -280,5 +381,32 @@
     }
     .Ducktai {
         margin-bottom: 500px;
+    }
+
+    .btn {
+        padding: 15px 16px;
+    }
+
+    #nav .subnav a {
+        padding: 5px 12px;
+    }
+
+    .right {
+        
+    }
+
+    .ql__navbar__form-search, .ql__navbar__user-container {
+        display: none;
+    }
+
+    .mobile__menu-btn {
+        display: block;
+        position: relative;
+        top: -4px;
+    }
+
+    #nav .subnav {
+        width: auto;
+        box-shadow: none;
     }
 }
