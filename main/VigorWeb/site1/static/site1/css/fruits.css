@@ -64,7 +64,8 @@
     height: 743px;
 }
 .fruit-list{
-    height: 600px;
+    height: 120%;
+    margin-bottom: 10rem;
 }
 
 /* .np__btn {
