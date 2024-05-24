@@ -2358,7 +2358,7 @@
                                 </svg>
                             </a>
                             <ul id="nav">
-                                <li><a class="chu_the_a" href="#">Trang chủ</a></li>
+                                <li><a class="chu_the_a" href="{% url 'home' %}">Trang chủ</a></li>
                                 <li><a class="chu_the_a" href="{% url 'introduction' %}">Chúng tôi</a></li>
                                 <li>
                                     <a class="chu_the_a" href="{% url 'tools' %}">
@@ -2366,10 +2366,10 @@
                                         <i class="nav-arrowdown ti-angle-down"></i>
                                     </a>
                                     <ul class="subnav">
-                                        <li><a href="#">BMI</a></li>
-                                        <li><a href="#">BMR</a></li>
-                                        <li><a href="#">TDEE</a></li>
-                                        <li><a href="#">CALORY</a></li>
+                                        <li><a href="{% url 'tools'%}">BMI</a></li>
+                                        <li><a href="{% url 'tools'%}">BMR</a></li>
+                                        <li><a href="{% url 'tools'%}">TDEE</a></li>
+                                        <li><a href="{% url 'calo'%}">CALORY</a></li>
                                     </ul>
                                 </li>
                                 <li><a class="chu_the_a" href="{% url 'blog' %}">Blog</a></li>
