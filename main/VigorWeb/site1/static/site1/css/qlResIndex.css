@@ -1,63 +1,40 @@
-/* Big tablet to 1200px; */
-@media only screen  and (max-width:1200px){
+/* PC */
+@media (min-width: 64em) {
     .ql__slider-content {
         display: none;
     }
 }
 
+/* Tablet && Mobile */
+@media (max-width: 63.9375em) {
+    .ql__slider-content {
+        display: none;
+    }
+    .btn {
+        padding: 15px 16px;
+    }
 
-
-
- 
-/* Small tablet to big tablet from 768x to 1023px */
-@media only screen and (max-width:1023px){
     #nav .subnav a {
         padding: 5px 12px;
     }
 
-    #header {
-        overflow: hidden;
+    .right {
+        
     }
 
-    #header .mobile-menu-btn {
-        display: block;
-    }
-
-
-    #header .search-btn {
+    .ql__navbar__form-search, .ql__navbar__user-container {
         display: none;
     }
 
-    #nav {
+    .mobile__menu-btn {
         display: block;
-    }
-
-    #nav li a {
-        padding: 1px 24px;
-    }
-
-    #nav > li {
-        display: block;
-    }
-
-    #nav > li:first-child {
-        display: inline-block;
+        position: relative;
+        top: -4px;
     }
 
     #nav .subnav {
-        position: initial;
-        background-color: #333;
-    }
-
-    #nav .subnav a {
-        color: #fff;
-        padding: 5px 41px;
-    }
-    .ql__navbar__list {
-        display: block;
-    }
-    .ql__slider-content {
-        display: none;
+        width: auto;
+        box-shadow: none;
     }
     .ql1234 {
         width: auto !important;
@@ -85,228 +62,126 @@
     .ddt__product-item {
         margin-top: 20px;
     }
-
-    .btn {
-        padding: 15px 16px;
+    .sample {
+        margin-bottom: 200px;
     }
 
-    #nav .subnav a {
-        padding: 5px 12px;
+    .sample p {
+        margin: 16px;
     }
 
-    .right {
-        
+    .Ducktai .tieu-de p {
+        margin: 16px;
+    }
+    .sample { 
+        margin-bottom: 400px;
     }
 
-    .ql__navbar__form-search, .ql__navbar__user-container {
+    .lqt__row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        /* margin-left: -200px; */
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/*  Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .ql__slider-content {
         display: none;
     }
-
-    .mobile__menu-btn {
-        display: block;
-        position: relative;
-        top: -4px;
+    .contact-info {
+        line-height: 2;
     }
-
-    #nav .subnav {
-        width: auto;
-        box-shadow: none;
-    }
-    
     .ql1234 {
         width: auto !important;
+        margin: 0 !important;
+    }
+
+    .visit-tailor-area .tailor-details h2 {
+        width: auto;
+    }
+    .sample{
+        margin-bottom: 60px;
+    }
+    .sample h2 {
+        width: auto;
+    }
+
+    .sample__content {
+        width: auto;
+    }
+
+    .Ducktai {
+        margin-bottom: 500px;
+    }
+
+    .ddt__product-item {
+        margin-top: 20px;
     }
     .sample {
         margin-bottom: 200px;
     }
+
+    .sample p {
+        margin: 16px;
+    }
+
+    .Ducktai .tieu-de p {
+        margin: 16px;
+    }
+    .sample { 
+        margin-bottom: 400px;
+    }
+.ddt__product-container {
+        flex-direction: column;
+    }
+
+    .background-nqt {
+        margin-top: 600px;
+    }
+    .ql1234 {
+        width: auto !important;
+        margin: 0 !important;
+    }
+    .sample__content {
+        width: auto;
+    }
+    .Ducktai {
+        margin-bottom: 500px;
+    }
+    .lqt__row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        /* margin-left: -200px; */
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
 }
- 
-/* Small phones to small tablets */
-@media only screen and (max-width: 767px){
-    #header {
-        overflow: hidden;
-    }
 
-    #header .mobile-menu-btn {
-        display: block;
-    }
-
-    #header .search-btn {
-        display: none;
-    }
-
-    #nav {
-        display: block;
-    }
-
-    #nav li a {
-        padding: 1px 24px;
-    }
-
-    #nav > li {
-        display: block;
-    }
-
-    #nav > li:first-child {
-        display: inline-block;
-    }
-
-    #nav .subnav {
-        position: initial;
-        background-color: #333;
-    }
-
-    #nav .subnav a {
-        color: #fff;
-        padding: 5px 41px;
-    }
-
-
-
-    #nav .subnav a {
-        padding: 5px 12px;
-    }
-    #header {
-        overflow: hidden;
-        height: 68px;
-    }
-
-    #header .mobile-menu-btn {
-        display: block;
-    }
-
-
-    #header .search-btn {
-        display: none;
-    }
-
-    #nav {
-        display: block;
-    }
-
-    #nav li a {
-        padding: 1px 24px;
-    }
-
-    #nav > li {
-        display: block;
-    }
-
-    #nav > li:first-child {
-        display: inline-block;
-    }
-
-    #nav .subnav {
-        position: initial;
-        background-color: #333;
-    }
-
-    #nav .subnav a {
-        color: #fff;
-        padding: 5px 41px;
-    }
-
-    #nav li a {
-        line-height: 58px;
-        font-size: 1.4rem;
-    }
-
-    #nav li {
-        height: 60px;
-    }
-
+/* Mobile */
+@media (max-width: 46.1875em) {
     .ql__slider-content {
         display: none;
     }
-
-    .ql__navbar__item {
-        display: block;
-    }
-
-    .ql__navbar__form-search {
-        display: none;
-    }
-
-    .ql__navbar__user-container {
-        display: none;
-    }
-
-    .ql_css {
-        display: none !important;
-    }
-
-    .para_ql {
-        margin: 0 16px;
-    }
-
-    .col {
-        width: 100%;
-    }
-
-    .ql-s-col-full, 
-    .ql-s-col-width {
+    .s-col-full,
+    .s-full-width {
         width: 100% !important;
     }
 
-    .ql_css {
-        display: none;
+    .s-mt-8 {
+        margin-top: 8px !important;
     }
 
-
-    .ddt__product-container {
-        flex-direction: column;
-    }
-
-    .background-nqt {
-        margin-top: 600px;
-    }
-    .ql1234 {
-        width: auto !important;
-        margin: 0 !important;
-    }
-    .sample__content {
-        width: auto;
-    }
-    .Ducktai {
-        margin-bottom: 500px;
-    }
-
-    .btn {
-        padding: 15px 16px;
-    }
-
-    #nav .subnav a {
-        padding: 5px 12px;
-    }
-
-    .right {
-        
-    }
-
-    .ql__navbar__form-search, .ql__navbar__user-container {
-        display: none;
-    }
-
-    .mobile__menu-btn {
-        display: block;
-        position: relative;
-        top: -4px;
-    }
-
-    #nav .subnav {
-        width: auto;
-        box-shadow: none;
-    }
-}
- 
-/* Small phones from 0 to 480px; */
-@media only screen and (max-width: 480px){
     #header {
         overflow: hidden;
-    }
-
-    .mobile-menu-btn { 
-        display: block;
     }
 
     #header .mobile-menu-btn {
@@ -342,30 +217,22 @@
         color: #fff;
         padding: 5px 41px;
     }
-    #nav .subnav a {
-        padding: 5px 12px;
-    }
-    .ql__slider-content {
-        display: none;
+
+    .sample {
+        margin-bottom: 200px;
     }
 
-    .ql__navbar__form-search {
-        display: none;
+    .sample p {
+        margin: 16px;
     }
 
-    .ql__navbar__user-container {
-        display: none;
+    .Ducktai .tieu-de p {
+        margin: 16px;
     }
-
-    .mobile__menu-btn {
-        display: block;
+    .sample { 
+        margin-bottom: 600px;
     }
-
-    .ql_css {
-        display: none !important;
-    }
-
-    .ddt__product-container {
+.ddt__product-container {
         flex-direction: column;
     }
 
@@ -382,31 +249,17 @@
     .Ducktai {
         margin-bottom: 500px;
     }
-
-    .btn {
-        padding: 15px 16px;
+    .lqt__row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        /* margin-left: -200px; */
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
     }
 
-    #nav .subnav a {
-        padding: 5px 12px;
-    }
-
-    .right {
-        
-    }
-
-    .ql__navbar__form-search, .ql__navbar__user-container {
-        display: none;
-    }
-
-    .mobile__menu-btn {
-        display: block;
-        position: relative;
-        top: -4px;
-    }
-
-    #nav .subnav {
-        width: auto;
-        box-shadow: none;
-    }
 }
+
+
