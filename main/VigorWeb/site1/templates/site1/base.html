@@ -27,6 +27,7 @@
         <link href="{% static 'site1/css/calo.css' %}" rel="stylesheet">
         <link href="{% static 'site1/css/forms.css' %}" rel='stylesheet'>
         <link href="{% static 'site1/css/main.css' %}" rel="stylesheet">
+        <link href="{% static 'site1/css/introduction.css' %}" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'site1/css/qlResIndex.css' %}">
         <link rel="stylesheet" href="{% static 'site1/css/qlResIndex_body.css' %}">
         
@@ -2372,15 +2373,16 @@
                                     </ul>
                                 </li>
                                 <li><a class="chu_the_a" href="{% url 'blog' %}">Blog</a></li>
-                                <li><a class="chu_the_a" href="">Tìm hiểu thêm</a></li>
+                                <li><a class="chu_the_a" href="{% url 'loseweight' %}">Tìm hiểu thêm</a></li>
                                 <li>
-                                    <a class="chu_the_a" href="">
+                                    <a class="chu_the_a" href="{% url 'list-news' %}">
                                         Tin tức
                                         <i class="nav-arrowdown ti-angle-down"></i>
                                     </a>
                                     <ul class="subnav">
-                                        <li><a href="">Tin tức Sức khỏe</a></li>
-                                        <li><a href="">Tin tức Thể thao</a></li>
+                                        <li><a href="{% url 'news' 'suc-khoe'%}">Tin tức Sức khỏe</a></li>
+                                        <li><a href="{% url 'news' 'the-thao'%}">Tin tức Thể thao</a></li>
+                                        <li><a href="{% url 'news' 'khoa-hoc'%}">Tin tức Khoa học</a></li>
                                     </ul>
                                 </li>
                             </ul>

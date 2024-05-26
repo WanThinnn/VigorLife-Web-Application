@@ -1,7 +1,7 @@
 {% extends 'site1/base.html' %}
 {% load static %}
 {% block news-content %}
-
+<link href="{% static 'site1/css/main.css' %}" rel="stylesheet" />
 <section class="slider-area">
   <div class="slider-area-photo"></div>
   <div class="container">
@@ -28,7 +28,7 @@
 
 
 <section class="d-flex flex-column">
-  <div class="sample" style="height:245px">
+  <div class="sample" style="height:80px">
     {% if type == 'suc-khoe' %}
       <h2 class="h2_chung">TIN TỨC VỀ SỨC KHOẺ</h2>
     {% elif type == 'the-thao' %}
