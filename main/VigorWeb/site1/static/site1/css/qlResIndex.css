@@ -86,6 +86,7 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        margin: 0;
     }
 }
 
@@ -141,9 +142,9 @@
         flex-direction: column;
     }
 
-    .background-nqt {
+    /* .background-nqt {
         margin-top: 600px;
-    }
+    } */
     .ql1234 {
         width: auto !important;
         margin: 0 !important;
@@ -163,6 +164,7 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        margin: 0;
     }
 }
 
@@ -236,9 +238,9 @@
         flex-direction: column;
     }
 
-    .background-nqt {
+    /* .background-nqt {
         margin-top: 600px;
-    }
+    } */
     .ql1234 {
         width: auto !important;
         margin: 0 !important;
@@ -258,6 +260,7 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        margin: 0;
     }
 
 }
