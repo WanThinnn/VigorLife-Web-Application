@@ -59,15 +59,16 @@ class FruitAdmin(admin.ModelAdmin):
 
 
 class FoodAdmin(admin.ModelAdmin):
-    list_display = ['name', 'classification', 'calories']
+    list_display = ['name', 'classification', 'calories', 'unit']
     list_filter = ['name']
     search_fields = ['name', 'classification']
 
 
 class NewsItemAdmin(admin.ModelAdmin):
-    list_display = ['title', 'pub_date', 'link', 'description_text', 'image', 'type']
-    list_filter = ['pub_date','type']
-    search_fields = ['title', 'pub_date','type']
+    list_display = ['title', 'pub_date', 'link',
+                    'description_text', 'image', 'type']
+    list_filter = ['pub_date', 'type']
+    search_fields = ['title', 'pub_date', 'type']
 
 
 admin.site.register(Post, PostAdmin)

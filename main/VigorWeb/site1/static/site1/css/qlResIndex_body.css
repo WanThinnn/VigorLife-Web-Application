@@ -89,6 +89,8 @@
 
     .ql_1234 {
         font-size: 36px !important;
+        width: auto !important;
+        margin: auto;
     }
 
     .pera-header, 

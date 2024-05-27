@@ -1,7 +1,10 @@
 {% extends 'site1/base.html' %}
 {%load static%}
 {%block introduction-content%}
-
+<head>
+    <link href="{% static 'site1/css/introduction.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'site1/css/qlResIntro.css' %}">
+</head>
 <section class="slider-area">
     <div class="slider-area-photo"></div>
     <div class="container">
@@ -86,10 +89,10 @@
 
 </section>
 
-<section class="about-project-section" style="height: 1100px;">
+<section class="about-project-section" style="height: 1029px">
     <div class="about-container">
-        <div class="about-us-section-row">
-            <div class="about-us-section-tittle">
+        <div class="about-project-section-row">
+            <div class="about-project-section-tittle">
                 <h2>Sơ Lược Về Đồ Án</h2>
                 <p class="about-p-long-2">
                     Đồ án môn học về website này được thiết kế với mục đích chính là hỗ trợ sức khỏe của người sử
@@ -109,41 +112,6 @@
                 Nhóm Chúng Mình
             </p>
         </div>
-        <!-- <div class="horizontal-line-2">
-        </div> -->
-        <div class="row">
-            <div class="col span-1-of-4 about-picture">
-                <img src="https://images.pexels.com/photos/257816/pexels-photo-257816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                    alt="calo">
-                <p class="picture-title">
-                    Calo Calculator
-                </p>
-            </div>
-
-            <div class="col span-1-of-4 about-picture">
-                <img src="https://images.pexels.com/photos/2080544/pexels-photo-2080544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                    alt="tdee">
-                <p class="picture-title">
-                    TDEE Calculator
-                </p>
-            </div>
-
-            <div class="col span-1-of-4 about-picture">
-                <img src="https://images.pexels.com/photos/53404/scale-diet-fat-health-53404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                    alt="bmr">
-                <p class="picture-title">
-                    BMR Calculator
-                </p>
-            </div>
-
-            <div class="col span-1-of-4 about-picture">
-                <img src="https://images.pexels.com/photos/28080/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                    alt="bmi">
-                <p class="picture-title">
-                    BMI Calculator
-                </p>
-            </div>
-        </div>
     </div>
 </section>
 
@@ -156,7 +124,7 @@
             Theo dõi chúng tôi trên Instagram để xem thêm blog hữu ích về sức khỏe và sắc đẹp.
         </p>
         <div class="btnz">
-            <a href="#" class="np__Discoverybtn">Xem thêm</a>
+            <a href="https://www.instagram.com/" class="np__Discoverybtn">Xem thêm</a>
         </div>
     </div>
     <div class="imgz">

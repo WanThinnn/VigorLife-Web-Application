@@ -1,7 +1,10 @@
 {% extends 'site1/base.html' %}
 {%load static%}
 {%block main-content%}
+<head>
 
+    
+</head>
 <!-- Le Minh Quan -->
 <section class="slider">
     <div class="ql__main">
@@ -27,11 +30,11 @@
 <!-- Lại Quan Thiên -->
 <section class="properties new-arrival fix">
     <div class="container">
-        <div class="lqt__row justify-content-center">
+        <div class="lqt__row justify-content-center" style="margin-left: auto;">
             <div class="col-xl-7 col-lg-8 col-md-10">
                 <div class="section-tittle mb-60 text-center wow fadeInUp">
                     <h2 style="font-size: 36px;" class="ql_1234 h2_chung">CÔNG CỤ</h2>
-                    <p class="ql1234">Bằng cách sử dụng những công cụ này, người dùng có thể đánh giá sức khỏe của mình và đặt ra các 
+                    <p class="ql1234" style="margin-left: -200px;">Bằng cách sử dụng những công cụ này, người dùng có thể đánh giá sức khỏe của mình và đặt ra các 
                         mục tiêu về cân nặng cũng như lối sống lành mạnh. Ngoài ra, bằng cách hiểu về BMR, họ có thể điều 
                         chỉnh chế độ ăn uống và 
                         tập luyện để phù hợp với mục tiêu giảm cân hoặc tăng cân an toàn và hiệu quả.</p>
@@ -156,7 +159,7 @@
         <figure>
             <a href="{% url 'foods' 'low_calories' %}" class="imagez">
                 <!-- <img src="https://hips.hearstapps.com/hmg-prod/images/rabbit-breeds-american-white-1553635287.jpg?crop=0.976xw:0.651xh;0.0242xw,0.291xh&resize=980:*" -->
-                <img src="https://images.pexels.com/photos/235294/pexels-photo-235294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                <img src="https://images.pexels.com/photos/7936674/pexels-photo-7936674.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                     alt="Rabbit" class="animalimg">
                 <a href="{% url 'foods' 'low_calories' %}" class="linkz">
                     <figcaption><label class="np__prc">Món Mặn Ít Năng Lượng</label><br>
@@ -167,7 +170,7 @@
         </figure>
         <figure>
             <a href="{% url 'foods' 'medium_calories' %}" class="imagez">
-                <img src="https://images.pexels.com/photos/2683373/pexels-photo-2683373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                <img src="https://i.pinimg.com/564x/a4/fd/ff/a4fdff8bbad8896426ba7fe1731e9e69.jpg"
                     alt="Cat" class="animalimg">
                 <a href="{% url 'foods' 'medium_calories' %}" class="linkz">
                     <figcaption><label class="np__prc">Món Chay Lành Mạnh</label><br>
@@ -178,11 +181,11 @@
         </figure>
         <figure>
             <a href="{% url 'foods' 'high_calories' %}" class="imagez">
-                <img src="https://images.pexels.com/photos/139751/pexels-photo-139751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                <img src="https://i.pinimg.com/564x/d5/fc/5e/d5fc5ee004f33c2739d8b1f72ef4824b.jpg"
                     alt="Dog" class="animalimg">
                 <a href="{% url 'foods' 'high_calories' %}" class="linkz">
                     <figcaption><label class="np__prc">Món Mặn Giàu Năng Lượng</label><br>
-                        <p style="color: rgb(189, 144, 60);" class="np__prc">Đẹp & Ít calo</p>
+                        <p style="color: rgb(189, 144, 60);" class="np__prc">Bổ sung năng lượng</p>
                     </figcaption>
                 </a>
             </a>
