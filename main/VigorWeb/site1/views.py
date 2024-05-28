@@ -20,6 +20,61 @@ from django.http import HttpResponseRedirect
 import feedparser
 from bs4 import BeautifulSoup
 from .forms import *
+import base64
+import requests
+from django.views import View
+from django.conf import settings
+
+# Function to translate text using Google Translate API
+def translate_text(text, target_language='vi'):
+    api_key = 'AIzaSyAXguVX7Uu2lhlFfIaEVP6Wd6nSIiYbkUg'
+    url = f'https://translation.googleapis.com/language/translate/v2?key={api_key}'
+    data = {
+        'q': text,
+        'source': 'en',
+        'target': target_language,
+        'format': 'text'
+    }
+    response = requests.post(url, data=data)
+    result = response.json()
+    return result['data']['translations'][0]['translatedText']
+
+class ImageUploadView(View):
+    template_name = 'site1/upload.html'
+
+    def post(self, request, *args, **kwargs):
+        if 'image' in request.FILES:
+            image_file = request.FILES['image']
+            image_data = base64.b64encode(image_file.read()).decode('utf-8')
+
+            vision_api_key = 'AIzaSyAXguVX7Uu2lhlFfIaEVP6Wd6nSIiYbkUg'
+            vision_url = f'https://vision.googleapis.com/v1/images:annotate?key={vision_api_key}'
+
+            request_payload = {
+                "requests": [
+                    {
+                        "image": {"content": image_data},
+                        "features": [{"type": "LABEL_DETECTION"}],
+                        "imageContext": {"languageHints": ["vi"]}
+                    }
+                ]
+            }
+
+            response = requests.post(vision_url, json=request_payload)
+            response_data = response.json()
+
+            if 'responses' in response_data and 'labelAnnotations' in response_data['responses'][0]:
+                labels = response_data['responses'][0]['labelAnnotations']
+                translated_labels = [translate_text(label['description']) for label in labels]
+            else:
+                translated_labels = []
+
+            return render(request, self.template_name, {'labels': translated_labels})
+
+        return render(request, self.template_name)
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
 
 # Create your views here.
 

@@ -6,6 +6,7 @@ from django.views.generic import ListView
 from django.conf import settings
 from django.conf.urls.static import static
 from .views import *
+from .views import ImageUploadView
 
 urlpatterns = [
 #     path('',views.home,name='home'),
@@ -53,7 +54,7 @@ urlpatterns = [
     path('news/<str:type>/', views.News, name='news'), 
     path('news/', views.ListNews, name='list-news'), 
     path('social-auth/', include('social_django.urls', namespace='social')),
-
+    path('upload/', ImageUploadView.as_view(), name='upload'),
 ]
 
 
