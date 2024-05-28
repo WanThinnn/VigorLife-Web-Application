@@ -27,8 +27,10 @@
         <link href="{% static 'site1/css/calo.css' %}" rel="stylesheet">
         <link href="{% static 'site1/css/forms.css' %}" rel='stylesheet'>
         <link href="{% static 'site1/css/main.css' %}" rel="stylesheet">
+        <link href="{% static 'site1/css/introduction.css' %}" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'site1/css/qlResIndex.css' %}">
         <link rel="stylesheet" href="{% static 'site1/css/qlResIndex_body.css' %}">
+        <link rel="stylesheet" href="{% static 'site1/css/navbar.css' %'}">
         
         <link href="{% static 'site1/css/npresponsiveP2.css' %}" rel='stylesheet'>
         
@@ -62,7 +64,6 @@
             <div class="ql__main">
                 <div class="ql__header">
                     <div id="header">
-                        <!-- Begin: Nav -->
                         <div class="left">
                             <a href="{% url  'home'%}" class="ql__navbar__logo-img">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 500">
@@ -2366,34 +2367,28 @@
                                         <i class="nav-arrowdown ti-angle-down"></i>
                                     </a>
                                     <ul class="subnav">
-                                        <li><a href="{% url 'tools'%}">BMI</a></li>
+                                        <li><a href="{% url 'tools'%}">BMI</a></li> <!-- 3 cái dẫn đến chung 1 trang cũng kêu làm subnav ? -->
                                         <li><a href="{% url 'tools'%}">BMR</a></li>
-                                        <li><a href="{% url 'tools'%}">TDEE</a></li>
+                                        <li><a href="{% url 'tools'%}">TDEE</a></li> 
                                         <li><a href="{% url 'calo'%}">CALO</a></li>
                                     </ul>
                                 </li>
                                 <li><a class="chu_the_a" href="{% url 'blog' %}">Blog</a></li>
-                                <li><a class="chu_the_a" href="">Tìm hiểu thêm</a></li>
+                                <li><a class="chu_the_a" href="{% url 'loseweight' %}">Tìm hiểu thêm</a></li>
                                 <li>
-                                    <a class="chu_the_a" href="">
+                                    <a class="chu_the_a" href="{% url 'list-news' %}">
                                         Tin tức
                                         <i class="nav-arrowdown ti-angle-down"></i>
                                     </a>
                                     <ul class="subnav">
-                                        <li><a href="#">Tin tức Sức khỏe</a></li>
-                                        <li><a href="#">Tin tức Thể thao</a></li>
+                                        <li><a href="{% url 'news' 'suc-khoe'%}">Tin tức Sức khỏe</a></li>
+                                        <li><a href="{% url 'news' 'the-thao'%}">Tin tức Thể thao</a></li>
+                                        <li><a href="{% url 'news' 'khoa-hoc'%}">Tin tức Khoa học</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
                         
-                        <!-- End: Nav -->
-    
-                        <!-- Begin: Mobile Button -->
-                        
-                        <!-- End: Mobile Button -->
-    
-                        <!-- Begin: Search Button -->
                         <div class="right">
                             <div class="ql__navbar__form-search">
                                 <form class="ql__navbar__form" method = POST action = "{% url 'search' %}" >
@@ -2454,8 +2449,6 @@
                                 <i class="menu-icon ti-menu"></i>
                             </div>
                         </div>
-                        
-                        <!-- End: Search Button -->
                     </div>
                 </div>
     
@@ -2471,7 +2464,6 @@
             var mobileMenu = document.getElementById('mobile-menu');
             var headerHeight = header.clientHeight;
     
-            // Đóng/ mở mobile menu
             mobileMenu.onclick = function() {
                 var isClosed = header.clientHeight === headerHeight;
                 if(isClosed) {
@@ -2483,7 +2475,6 @@
             }
     
     
-            // Tự động đóng khi chọn menu
             var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
             for(var i = 0; i < menuItems.length; i++) {
                 var menuItem = menuItems[i];
@@ -2556,7 +2547,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- -->
                 <div class="pos">
                     <div class="single-cat mb-50">
                         <div class="icon">
@@ -2569,7 +2559,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- -->
                 <div class="pos">
                     <div class="single-cat mb-50">
                         <div class="icon">
@@ -2584,7 +2573,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- -->
 
                 <div class="pos">
                     <div class="single-cat mb-50">
@@ -2598,7 +2586,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- -->
             </div>
 
 
@@ -2621,7 +2608,7 @@
                                              Hãy cùng nhau bắt tay vào hành trình hướng tới một ngày mai khỏe mạnh hơn, hạnh phúc hơn.</p>
                                     </div>
                                 </div>
-                                <!--   -->
+
                                 <div>
                                     <div class="footer-social">
                                         <a href=""><i class="fa fa-facebook-f"></i></a>
@@ -2629,11 +2616,10 @@
                                         <a href="#"><i class="fa fa-youtube-play"></i></a>
                                     </div>
                                 </div>
-                                <!--   -->
                             </div>
 
 
-                            <!--###################################-->
+
                             <div class="pos">
                                 <div class="mb-50">
                                     <div class="mb-30 NQT_a" style="text-align: center; color:white;">
@@ -2693,6 +2679,7 @@
     </section>
     
      <!--Javacripts-->
+     <script src="{% static 'site1/js/navbar.js' %}"></script>
      <script src="{% static 'site1/js/tools.js' %}"></script> <!--Tool-->
      <script src="{% static 'site1/js/calo.js' %}"></script> <!--Calo-->
 
