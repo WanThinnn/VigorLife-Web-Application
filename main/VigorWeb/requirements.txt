@@ -9,3 +9,4 @@ Pillow
 django-storages
 gunicorn
 Pymysql
+cryptography

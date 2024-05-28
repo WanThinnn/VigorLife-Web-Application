@@ -44,7 +44,7 @@
     display: flex;
     text-align: center;
     padding-bottom: 34px;
-    margin-top: -13px;
+    /* margin-top: -13px; */
 }
 .about-us-section-row{
     margin-top: 7rem;

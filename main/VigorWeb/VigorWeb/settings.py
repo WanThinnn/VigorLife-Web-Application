@@ -152,30 +152,19 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
-<<<<<<< HEAD
 # SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '841132686664-2agbn63nemst4l54nd79c0o23aj607mh.apps.googleusercontent.com'
 # SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
-=======
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '841132686664-2agbn63nemst4l54nd79c0o23aj607mh.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
-LOGIN_URL='login'
 
->>>>>>> 981fef5ed552d5e84f97b57c740580eb9ddfef5a
 # SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '841132686664-2agbn63nemst4l54nd79c0o23aj607mh.apps.googleusercontent.com'
 # SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = OAUTH2_KEY
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = OAUTH2_SECRET
-<<<<<<< HEAD
-LOGIN_URL='login'
-=======
-LOGIN_URL = 'login'
 
->>>>>>> 981fef5ed552d5e84f97b57c740580eb9ddfef5a
+
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_URL = 'logout'
-LOGOUT_REDIRECT_URL = 'login'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
