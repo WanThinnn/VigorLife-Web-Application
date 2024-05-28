@@ -4,7 +4,7 @@ pycryptodome
 feedparser
 beautifulsoup4 
 requests 
-social-django-auth-app
+social-auth-app-django
 Pillow
 django-storages
 gunicorn
