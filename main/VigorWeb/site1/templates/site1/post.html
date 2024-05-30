@@ -14,9 +14,9 @@
           <nav aria-label="slider-nav">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <a href="{% url 'home' %}" tabindex="0">Trang Chủ</a>
+                <a href="{% url 'blog' %}" tabindex="0">Blog</a>
               </li>
-              <li class="breadcrumb-item"><a href="#" tabindex="0">Blog</a></li>
+              <li class="breadcrumb-item"><a href="#" tabindex="0">{{ post.title }}</a></li>
             </ol>
           </nav>
         </div>

@@ -1,9 +1,12 @@
 {% extends 'site1/base.html' %}
 {%load static%}
+
+
 {%block introduction-content%}
 <head>
     <link href="{% static 'site1/css/introduction.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'site1/css/qlResIntro.css' %}">
+    <link href="{% static 'site1/css/rpIntroduction.css' %}" rel="stylesheet">
 </head>
 <section class="slider-area">
     <div class="slider-area-photo"></div>
@@ -45,39 +48,51 @@
         </div>
         <div class="about-picture-group-1">
             <div class="about-picture-2">
-                <img src={% static "\site1\img\quanthien.JPG"%}
+                <a href="https://github.com/WanThinnn">
+                <img src={% static "./site1/img/quanthien.JPG"%}
                     alt="">
                 <p class="picture-title-2">
                     Lại Quan Thiên
                 </p>
+                </a>
             </div>
             <div class="about-picture-2">
-                <img src={% static "\site1\img\quanle.JPG"%}
+                <a href="https://www.facebook.com/2uaan1ee">
+
+                <img src={% static "./site1/img/quanle.JPG"%}
                     alt="">
                 <p class="picture-title-2">
                     Lê Minh Quân
                 </p>
+                </a>
             </div>
             <div class="about-picture-2">
-                <img src={% static "\site1\img\ductai.JPG"%}
+                <a href="https://www.facebook.com/dducktai">
+
+                <img src={% static "./site1/img/ductai.JPG"%}
                     alt="">
                 <p class="picture-title-2">
                     Đặng Đức Tài
                 </p>
+                </a>
             </div>
             <div class="about-picture-2">
-                <img src={% static "\site1\img\quangthinh.JPG"%}
+                <a href="https://www.facebook.com/nguyenquang.thinh.986?mibextid=LQQJ4d">
+                <img src={% static "./site1/img/quangthinh.JPG"%}
                     alt="">
                 <p class="picture-title-2">
                     Nguyễn Quang Thịnh
                 </p>
+                </a>
             </div>
             <div class="about-picture-2">
-                <img src={% static "\site1\img\namphuong.JPG"%}
+                <a href="https://www.facebook.com/namphuonggg2501?mibextid=LQQJ4d">
+                <img src={% static "./site1/img/namphuong.JPG"%}
                     alt="">
                 <p class="picture-title-2">
                     Mai Nguyễn Nam Phương
                 </p>
+                </a>
             </div>
         </div>
         <!-- <div class="about-picture-group-2">
@@ -106,11 +121,13 @@
         </div>
 
         <div class="project-photo">
+            <a href="https://github.com/WanThinnn/Web-Application-Project">
             <img class="ql1z" src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                alt="">
-            <p class="picture-title-pro">
+                alt="" href="https://github.com/WanThinnn/Web-Application-Project">
+            <p class="picture-title-pro" >
                 Nhóm Chúng Mình
             </p>
+            </a>
         </div>
     </div>
 </section>

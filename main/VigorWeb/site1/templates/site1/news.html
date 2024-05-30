@@ -12,10 +12,18 @@
           <nav aria-label="slider-nav">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <a href="{% url 'home' %}" tabindex="0">Trang Chủ</a>
+                <a href="{% url 'list-news' %}" tabindex="0">Tin Tức</a>
               </li>
               <li class="breadcrumb-item">
-                <a href="#" tabindex="0">Tin Tức</a>
+                {% if type == 'suc-khoe' %}
+                <a href="#" tabindex="0">Tin Tức Sức Khoẻ</a>
+                {% elif type == 'the-thao' %}
+                <a href="#" tabindex="0">Tin Tức Thể Thao</a>
+                {% elif type == 'khoa-hoc' %}
+                <a href="#" tabindex="0">Tin Tức Khoa Học</a>
+                {% else %}
+                <a href="#" tabindex="0">Chưa Có Thông Tin</a>
+                {% endif %}
               </li>
             </ol>
           </nav>

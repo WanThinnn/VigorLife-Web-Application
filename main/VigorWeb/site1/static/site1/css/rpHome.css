@@ -1,0 +1,45 @@
+
+/* Big tablet to 1200px; */
+@media only screen and (max-width:1200px) {
+  
+}
+
+/* Small tablet to big tablet from 768x to 1023px */
+@media only screen and (max-width:1023px) {
+    .sample__content{
+        width: 60rem;
+        margin: 0 auto !important;
+    }
+    .Ducktai .tieu-de p{
+        width: 60rem;
+        margin: 0 auto;
+    }
+}
+
+
+/* Small phones to small tablets */
+@media only screen and (max-width: 767px) {
+    .sample__content{
+        width: 50rem;
+        margin: 0 auto !important;
+    }
+    .Ducktai .tieu-de p{
+        width: 50rem;
+        margin: 0 auto;
+    }
+    .np__row figure{
+        height: 37rem;
+    }
+}
+
+/* Small phones from 0 to 480px; */
+@media only screen and (max-width: 480px) {
+    .sample__content{
+        width: 50rem;
+        margin: 0 auto !important;
+    }
+    .Ducktai .tieu-de p{
+        width: 50rem;
+        margin: 0 auto;
+    }
+}

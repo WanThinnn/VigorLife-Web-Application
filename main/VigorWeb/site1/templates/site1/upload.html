@@ -9,7 +9,32 @@
     <link rel="stylesheet" href="{% static 'site1/css/upload.css' %}">
 </head>
 <body>
-    <h1 class="upload-title">Nhận diện ảnh</h1>
+    <section class="slider-area">
+        <div class="slider-area-photo"></div>
+        <div class="container">
+            <div class="slider-row">
+                <div class="col-xl-6 col-lg-8 col-md-8">
+                    <div class="slider-row-caption">
+                        <h1 style="font-size:3.5rem;">nhận diện món ăn</h1>
+                        <nav aria-label="slider-nav">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html" tabindex="0">Công Cụ</a></li>
+                                <li class="breadcrumb-item"> <a href="#" tabindex="0">Nhận diện món ăn</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sample" style="height:5rem">
+        <h2 class="h2_chung">CÔNG CỤ NHẬN DIỆN ẢNH MÓN ĂN</h2>
+        <p class="sample__content">
+            Cung cấp những thông tin cập nhật, chính xác và đa dạng về các vấn đề liên quan đến sức khỏe và y tế tại trang <b>vnexpress.net</b>. Đây là nguồn tư liệu quý giá giúp bạn nắm bắt các xu hướng mới, các nghiên cứu khoa học hiện đại và những lời khuyên bổ ích để chăm sóc sức khỏe cho bản thân và gia đình. Việc theo dõi các tin tức này không chỉ giúp bạn phòng ngừa bệnh tật hiệu quả mà còn nâng cao chất lượng cuộc sống hàng ngày.
+        </p>
+    </section>
+    {% comment %} <h1 class="upload-title">Nhận diện ảnh</h1> {% endcomment %}
+    <section>
     <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data" class="upload-form">
         {% csrf_token %}
         <div class="form-container">
@@ -33,8 +58,8 @@
                 <li class="result-item">{{ label }}</li>
             {% endfor %}
         </ul>
-    {% endif %}
-
+    {% endif %} 
+    </section>
     <script>
         function previewImage(event) {
             var reader = new FileReader();

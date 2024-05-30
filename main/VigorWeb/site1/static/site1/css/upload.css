@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
+} */
 
 .upload-title {
     text-align: center;
@@ -85,3 +85,35 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
 }
+
+
+/* Big tablet to 1200px; */
+@media only screen and (max-width:1200px) {
+    .sample {
+        margin-bottom: 200px;
+    }
+
+    .sample__content {
+        width: 600px;
+        margin: 0 auto !important;
+    }
+}
+
+/* Small tablet to big tablet from 768x to 1023px */
+@media only screen and (max-width:1023px) {
+    .sample {
+        margin-bottom: 200px;
+    }
+
+    .sample__content {
+        width: 600px;
+        margin: 0 auto !important;
+    }
+}
+
+
+/* Small phones to small tablets */
+@media only screen and (max-width: 767px) {}
+
+/* Small phones from 0 to 480px; */
+@media only screen and (max-width: 480px) {}

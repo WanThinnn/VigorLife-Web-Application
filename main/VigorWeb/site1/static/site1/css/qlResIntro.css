@@ -87,10 +87,12 @@
         display: none;
     }
     .about-us-section .about-p-long {
-        margin: 16px !important;
+        /* margin: 16px !important; */
+        
     }
     .about-project-section .about-p-long-2 {
-        margin: 16px !important;
+        /* margin: 16px !important; */
+        width: 500px;
     }
     .np__contenta, .h2_chung {
         width: auto !important;
@@ -184,10 +186,10 @@
         width: 500px;
     }
     .about-us-section .about-p-long {
-        margin: 16px !important;
+        /* margin: 16px !important; */
     }
     .about-project-section .about-p-long-2 {
-        margin: 16px !important;
+        /* margin: 16px !important; */
     }
     .np__contenta, .h2_chung {
         width: auto !important;

@@ -87,3 +87,10 @@ html {
     padding: 2px;
     margin: -20px;
 }
+/* p{
+    text-align: justify;
+} */
+
+.sample__content{
+    text-align: justify !important;
+}

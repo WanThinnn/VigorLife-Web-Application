@@ -71,7 +71,7 @@
     }
 
     .Ducktai .tieu-de p {
-        margin: 16px;
+        /* margin: 16px; */
     }
     .sample { 
         margin-bottom: 400px;
@@ -133,7 +133,7 @@
     }
 
     .Ducktai .tieu-de p {
-        margin: 16px;
+        /* margin: 16px; */
     }
     .sample { 
         margin-bottom: 400px;
@@ -232,7 +232,7 @@
         margin: 16px;
     }
     .sample { 
-        margin-bottom: 600px;
+        margin-bottom: 200px;
     }
 .ddt__product-container {
         flex-direction: column;
@@ -249,7 +249,7 @@
         width: auto;
     }
     .Ducktai {
-        margin-bottom: 500px;
+        margin-bottom: 700px;
     }
     .lqt__row {
         display: -ms-flexbox;

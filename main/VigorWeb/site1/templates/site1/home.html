@@ -3,7 +3,7 @@
 {%block main-content%}
 <head>
 
-    
+    <link href="{% static 'site1/css/rpHome.css' %}" rel="stylesheet">
 </head>
 <!-- Le Minh Quan -->
 <section class="slider">
@@ -34,10 +34,10 @@
             <div class="col-xl-7 col-lg-8 col-md-10">
                 <div class="section-tittle mb-60 text-center wow fadeInUp">
                     <h2 style="font-size: 36px;" class="ql_1234 h2_chung">CÔNG CỤ</h2>
-                    <p class="ql1234" style="margin-left: -200px;">Bằng cách sử dụng những công cụ này, người dùng có thể đánh giá sức khỏe của mình và đặt ra các 
+                    <p class="ql1234" style="margin-left: -200px; text-align: justify;">
+                        Bằng cách sử dụng những công cụ này, người dùng có thể đánh giá sức khỏe của mình và đặt ra các 
                         mục tiêu về cân nặng cũng như lối sống lành mạnh. Ngoài ra, bằng cách hiểu về BMR, họ có thể điều 
-                        chỉnh chế độ ăn uống và 
-                        tập luyện để phù hợp với mục tiêu giảm cân hoặc tăng cân an toàn và hiệu quả.</p>
+                        chỉnh chế độ ăn uống và tập luyện để phù hợp với mục tiêu giảm cân hoặc tăng cân an toàn và hiệu quả hơn bao giờ hết, đặc biệt là với những an đang cần tăng/giảm cân.</p>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
             <div class="col span-1-of-4 about-picture">
                 <img src="https://images.pexels.com/photos/2080544/pexels-photo-2080544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                     alt="tdee">
-                <p class="picture-title">
+                <p class="picture-title" style="font-size:19px;">
                     TDEE Calculator
                 </p>
             </div>
@@ -86,17 +86,17 @@
         <div class="tailor-details">
             <h2 class="h2_chung chungtoi">VỀ CHÚNG TÔI
             </h2>
-            <p>Chào mừng đến với đội ngũ của chúng tôi! Chúng tôi là một nhóm gồm những lập trình viên đầy nhiệt huyết, 
+            <p style="text-align: justify;">Chào mừng đến với đội ngũ của chúng tôi! Chúng tôi là một nhóm gồm những lập trình viên đầy nhiệt huyết, 
                 cống hiến hết mình để tạo ra một thế giới lành mạnh hơn thông qua công nghệ. 
                 Trang web của chúng tôi kết hợp sức mạnh của mã hóa với trọng tâm là sức khỏe và thể chất, 
                 cung cấp các giải pháp sáng tạo để hỗ trợ các cá nhân trên hành trình hướng tới cuộc sống tốt đẹp hơn.</p>
-            <p class="pera-bottom">Từ việc phát triển các ứng dụng theo dõi hoạt động thể dục đến thiết kế nền tảng 
+            <p class="pera-bottom" style="text-align: justify;">Từ việc phát triển các ứng dụng theo dõi hoạt động thể dục đến thiết kế nền tảng 
                 hướng dẫn dinh dưỡng, chúng tôi cam kết tận dụng các kỹ năng lập trình của mình để trao quyền 
                 cho người dùng kiểm soát sức khỏe và tinh thần của họ. Hãy tham gia cùng chúng tôi khi chúng tôi cách 
                 mạng hóa sự kết hợp giữa mã hóa và chăm sóc sức khỏe, 
                 giúp tất cả mọi người có thể tiếp cận cuộc sống lành mạnh hơn.</p>
-            <a href="/introduction.html" class="lqt__btn">
-            THÊM</a>
+            <a href="{% url 'introduction' %}" class="lqt__btn">
+            XEM THÊM</a>
         </div>
     </div>
 </section>
@@ -220,7 +220,7 @@
 <section class="Ducktai">
     <div class="tieu-de">
         <h2 class="h2_chung">BLOG</h2>
-        <p>
+        <p style="text-align: justify;">
             Sứ mệnh của chúng tôi là trao quyền và truyền cảm hứng cho cộng đồng để ưu tiên cho hạnh phúc của họ,
              thúc đẩy những thay đổi tích cực dẫn đến cuộc sống hạnh phúc hơn, khỏe mạnh hơn. 
             Hãy tham gia cùng chúng tôi khi chúng ta cùng nhau bắt tay vào cuộc hành trình biến đổi này.
