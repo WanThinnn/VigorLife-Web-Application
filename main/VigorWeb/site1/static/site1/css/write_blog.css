@@ -84,7 +84,7 @@
 
 /* Submit button on hover */
 .form-container button[type=submit]:hover {
-    background-color: #FD8F5F;
+    background-color: #344b92;
     transition-delay: 0.1s; /* Thêm delay ở đây */
 }
 /* Error message */
@@ -106,7 +106,7 @@
 }
 
 .blog_body{
-    width: 600px;
+    width: 100%;
 }
 
 

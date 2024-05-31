@@ -61,7 +61,7 @@
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #28a745;
+    background-color: #112164;
     color: white;
     border: none;
     border-radius: 5px;
@@ -70,7 +70,7 @@
 }
 
 .submit-button:hover {
-    background-color: #218838;
+    background-color: #344b92;
 }
 
 .image-preview {

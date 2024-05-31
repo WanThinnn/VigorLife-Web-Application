@@ -42,6 +42,12 @@ class Image(models.Model):
     def __str__(self):
         return f"Image for {self.post.date} - {self.post.title}"
 
+class MemberImage(models.Model):
+    title = models.CharField(max_length=100, null=True)
+    image = models.ImageField(null=True, upload_to='member_images/')
+    def __str__(self):
+        return f"Image of {self.title}"
+
 
 class Comment(models.Model):
     post = models.ForeignKey(

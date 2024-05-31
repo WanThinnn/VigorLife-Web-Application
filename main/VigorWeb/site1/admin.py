@@ -70,6 +70,10 @@ class NewsItemAdmin(admin.ModelAdmin):
     list_filter = ['pub_date', 'type']
     search_fields = ['title', 'pub_date', 'type']
 
+class MemberImageAdmin(admin.ModelAdmin):
+    list_display = ['title']
+    list_filter = ['title']
+    search_fields = ['title']
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Comment, CommentAdmin)
@@ -78,3 +82,4 @@ admin.site.register(Image, ImageAdmin)
 admin.site.register(Fruit, FruitAdmin)
 admin.site.register(Food, FoodAdmin)
 admin.site.register(NewsItem, NewsItemAdmin)
+admin.site.register(MemberImage, MemberImageAdmin)

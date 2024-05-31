@@ -1,77 +1,80 @@
 {% extends 'site1/base.html' %}
 {% load static %}
 {% block upload %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Analyze Image</title>
-    <link rel="stylesheet" href="{% static 'site1/css/upload.css' %}">
-</head>
-<body>
-    <section class="slider-area">
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Nhận Diện Ảnh</title>
+      <link rel="stylesheet" href="{% static 'site1/css/upload.css' %}" />
+    </head>
+    <body>
+      <section class="slider-area">
         <div class="slider-area-photo"></div>
         <div class="container">
-            <div class="slider-row">
-                <div class="col-xl-6 col-lg-8 col-md-8">
-                    <div class="slider-row-caption">
-                        <h1 style="font-size:3.0rem;">nhận diện món ăn</h1>
-                        <nav aria-label="slider-nav">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html" tabindex="0">Công Cụ</a></li>
-                                <li class="breadcrumb-item"> <a href="#" tabindex="0">Nhận diện món ăn</a></li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
+          <div class="slider-row">
+            <div class="col-xl-6 col-lg-8 col-md-8">
+              <div class="slider-row-caption">
+                <h1 style="font-size:3.0rem;">nhận diện ảnh</h1>
+                <nav aria-label="slider-nav">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a href="index.html" tabindex="0">Công Cụ</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                      <a href="#" tabindex="0">Nhận diện món ăn</a>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
-    <section class="sample" style="height:5rem">
+      </section>
+      <section class="sample" style="height:5rem">
         <h2 class="h2_chung">CÔNG CỤ NHẬN DIỆN ẢNH MÓN ĂN</h2>
-        <p class="sample__content">
-            Google Cloud Vision là một công cụ mạnh mẽ của Google dùng để nhận diện và phân tích hình ảnh. Sử dụng công nghệ học máy tiên tiến, Google Cloud Vision có thể xác định các đối tượng, khuôn mặt, văn bản và cảnh quan trong hình ảnh. Công cụ này hỗ trợ nhận diện nhãn hiệu, logo, phát hiện các thuộc tính hình ảnh như màu sắc và trích xuất văn bản từ hình ảnh một cách chính xác. Ngoài ra, Google Cloud Vision còn có khả năng phát hiện cảm xúc trên khuôn mặt, nhận dạng văn bản in và viết tay, cũng như phát hiện nội dung không an toàn. Với tính năng API dễ dàng tích hợp, Google Cloud Vision mang lại nhiều ứng dụng trong nhiều lĩnh vực như thương mại điện tử, truyền thông xã hội, và quản lý tài sản số.
-        </p>
-    </section>
-    {% comment %} <h1 class="upload-title">Nhận diện ảnh</h1> {% endcomment %}
-    <section style="margin: 100px;">
-    <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data" class="upload-form">
-        {% csrf_token %}
-        <div class="form-container">
+        <p class="sample__content">Google Cloud Vision là một công cụ mạnh mẽ của Google dùng để nhận diện và phân tích hình ảnh. Sử dụng công nghệ học máy tiên tiến, Google Cloud Vision có thể xác định các đối tượng, khuôn mặt, văn bản và cảnh quan trong hình ảnh. Công cụ này hỗ trợ nhận diện nhãn hiệu, logo, phát hiện các thuộc tính hình ảnh như màu sắc và trích xuất văn bản từ hình ảnh một cách chính xác. Ngoài ra, Google Cloud Vision còn có khả năng phát hiện cảm xúc trên khuôn mặt, nhận dạng văn bản in và viết tay, cũng như phát hiện nội dung không an toàn. Với tính năng API dễ dàng tích hợp, Google Cloud Vision mang lại nhiều ứng dụng trong nhiều lĩnh vực như thương mại điện tử, truyền thông xã hội, và quản lý tài sản số.</p>
+      </section>
+
+      {% comment %} <h1 class="upload-title">Nhận diện ảnh</h1> {% endcomment %}
+      <section style="margin: 230px;">
+        <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data" class="upload-form">
+          {% csrf_token %}
+          <div class="form-container">
             <div class="file-input-wrapper">
-                <label for="file-upload" class="file-label">Chọn ảnh</label>
-                <input type="file" id="file-upload" name="image" accept="image/*" class="file-input" onchange="previewImage(event)">
+              <label for="file-upload" class="file-label">Chọn ảnh</label>
+              <input type="file" id="file-upload" name="image" accept="image/*" class="file-input" onchange="previewImage(event)" />
             </div>
             <button type="submit" class="submit-button">Nhận diện</button>
+          </div>
+        </form>
+
+        <!-- Section to display the uploaded image -->
+        <div id="image-preview" class="image-preview">
+          <img id="preview" class="preview-image" src="#" alt="Image preview" style="display: none;" />
         </div>
-    </form>
 
-    <!-- Section to display the uploaded image -->
-    <div id="image-preview" class="image-preview">
-        <img id="preview" class="preview-image" src="#" alt="Image preview" style="display: none;">
-    </div>
-
-    {% if labels %}
-        <h3 class="result-title">Nội dung trong ảnh là:</h3>
-        <h3 class="result-title">Xem lượng calories của món ăn <a href="{% url 'calo' %}" class="link-title">tại đây</a></h3>
-        <ul class="result-list">
+        {% if labels %}
+          <h3 class="result-title">Nội dung trong ảnh là:</h3>
+          <h3 class="result-title">Xem lượng calories của món ăn <a href="{% url 'calo' %}" class="link-title">tại đây</a></h3>
+          <ul class="result-list">
             {% for label in labels %}
-                <li class="result-item">{{ label }}</li>
+              <li class="result-item">{{ label }}</li>
             {% endfor %}
-        </ul>
-    {% endif %} 
-    </section>
-    <script>
+          </ul>
+        {% endif %}
+      </section>
+      <script>
         function previewImage(event) {
-            var reader = new FileReader();
-            reader.onload = function(){
-                var output = document.getElementById('preview');
-                output.src = reader.result;
-                output.style.display = 'block';
-            }
-            reader.readAsDataURL(event.target.files[0]);
+          var reader = new FileReader()
+          reader.onload = function () {
+            var output = document.getElementById('preview')
+            output.src = reader.result
+            output.style.display = 'block'
+          }
+          reader.readAsDataURL(event.target.files[0])
         }
-    </script>
-</body>
-</html>
-{% endblock upload %}
+      </script>
+    </body>
+  </html>
+{% endblock %}
