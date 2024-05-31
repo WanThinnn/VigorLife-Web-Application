@@ -3,18 +3,20 @@
 {% block account %}
 
 <!-- pip install requests -->
-
-
+<head>
+<title>Trang Cá Nhân</title>
+</head>
 <section class="slider-area">
     <div class="slider-area-photo"></div>
     <div class="container">
         <div class="slider-row">
             <div class="col-xl-6 col-lg-8 col-md-8">
                 <div class="slider-row-caption">
-                    <h1>tài khoản</h1>
+                    <h1 style="font-size: 3.5rem;">Quản Lý Tài Khoản</h1>
                     <nav aria-label="slider-nav">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="" tabindex="0">Trang cá nhân</a></li>
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}" tabindex="0">Trang Chủ</a></li>
+                            <li class="breadcrumb-item"><a href="" tabindex="0">Tài Khoản</a></li>
                             
                         </ol>
                     </nav>
@@ -30,9 +32,9 @@
         <div class="about-us-section-row">
             <div class="about-us-section-tittle">
                 <h2>Tài khoản của bạn</h2>
-                <p class="about-p-long">
+                <p class="about-p-long" style="width: 600px;">
                     Xin chào {{user.username}}! Đây là trang cá nhân của bạn. Bạn có thể xem thông tin cá nhân, 
-                    thay đổi mật khẩu của mình.
+                    thay đổi mật khẩu của mình. Chúc bạn vui vẻ!
                 </p>
             </div>
         </div>
@@ -66,8 +68,13 @@
                             <input type="text" class="form-control" placeholder="Họ" value="{{ user.last_name }}" readonly>
                         </div>
                         
+                        {% load auth_backends %}
                         <div class="text-right mt-3">
-                            <a href="" class="btn btn-primary">Đổi Mật Khẩu</a>
+                            {% if not user|is_google_backend %}
+                            <a href="{% url 'changepass' %}" class="btn btn-primary">Đổi Mật Khẩu</a>
+                            {% else %}
+                            <a href="" class="btn btn-primary">Google User không thể đổi mật khẩu tại đây!</a>
+                            {% endif %}
                         </div>
                         
                     

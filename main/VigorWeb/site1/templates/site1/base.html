@@ -2497,36 +2497,37 @@
                                     });
                                 } );
                             </script>
-                            
-    
+                            {% load auth_backends %}
+                            {% if user.is_authenticated %}
                             <div class="ql__navbar__user-container">
                                 <div class="ql__navbar__user">
                                     <i class="fa-regular fa-user"></i>
-                                    {% if user.is_authenticated %}
-                                    <a href="#" class="ql__navbar__user-acc">{{user.username}}</a>
-                                    {% else %}
-                                    <a href="{% url 'login' %}" class="ql__navbar__user-acc">Đăng Nhập</a>
-                                    {% endif %}
+                                    
+                                    <a href="{%url 'account'%}" class="ql__navbar__user-acc">{{user.username}}</a>
+                                   
                                 </div>
                                 <ul class="ql__navbar__user-list">
                                     <li class="ql__navbar__user-item">
                                         <a href="{%url 'account'%}" class="ql__navbar__user-item-link">
-                                            <i class="navbar__icon quanle_icon fa-solid fa-bars-progress"></i>
+                                            <i class="navbar__icon quanle_icon fa-solid fa-user"></i>
                                             Trang cá nhân
                                         </a>
                                     </li>
                                     <li class="ql__navbar__user-item">
-                                        <a href="" class="ql__navbar__user-item-link">
-                                            <i class="navbar__icon quanle_icon fa-solid fa-key"></i>
-                                            Quên mật khẩu
+                                        <a href="{% url 'write_blog' %}" class="ql__navbar__user-item-link">
+                                            <i class="navbar__icon quanle_icon fa-solid fa-blog"></i>
+                                            Đăng Bài
                                         </a>
                                     </li>
-                                    {% comment %} <li class="ql__navbar__user-item">
-                                        <a href="" class="ql__navbar__user-item-link">
-                                            <i class="navbar__icon quanle_icon fa-solid fa-cart-shopping"></i>
-                                            Thông tin thêm
+                                    {% if not user|is_google_backend %}
+                                    <li class="ql__navbar__user-item">
+                                        <a href="{% url 'changepass' %}" class="ql__navbar__user-item-link">
+                                            <i class="navbar__icon quanle_icon fa-solid fa-key"></i>
+                                            Đổi Mật Khẩu
                                         </a>
-                                    </li> {% endcomment %}
+                                    </li>
+                                    {% endif %}
+                                  
                                     <li class="ql__navbar__user-item">
                                         <a href="{% url 'logout'%}" class="ql__navbar__user-item-link">
                                             <i class="navbar__icon quanle_icon fa-solid fa-right-from-bracket"></i>
@@ -2535,6 +2536,34 @@
                                     </li>
                                 </ul>
                             </div>
+                            {% else %}
+                           
+                            <div class="ql__navbar__user-container">
+                                <div class="ql__navbar__user">
+                                    <i class="fa-regular fa-user"></i>
+                                    
+                                    <a href="{% url 'login' %}" class="ql__navbar__user-acc">Đăng Nhập</a>
+                                   
+                                </div>
+                                <ul class="ql__navbar__user-list">
+                                    <li class="ql__navbar__user-item">
+                                        <a href="{%url 'register'%}" class="ql__navbar__user-item-link">
+                                            <i class="navbar__icon quanle_icon fa-solid fa-sign-in"></i>
+                                            Đăng Ký
+                                        </a>
+                                    </li>
+                                 
+                                    <li class="ql__navbar__user-item">
+                                        <a href="{% url 'forgot' %}" class="ql__navbar__user-item-link">
+                                            <i class="navbar__icon quanle_icon fa-solid fa-key"></i>
+                                            Quên Mật Khẩu
+                                        </a>
+                                    </li>
+
+                
+                                </ul>
+                            </div>
+                            {% endif %}
     
                             <div id="mobile-menu" class="mobile__menu-btn">
                                 <i class="menu-icon ti-menu"></i>

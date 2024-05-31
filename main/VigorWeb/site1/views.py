@@ -115,7 +115,10 @@ def introduction(request):
 def heallthinfo(request):
     return render(request, 'site1/heallthinfo.html')
 
-
+def forgotpass(request):
+     return render(request, 'site1/forgot.html')
+def changepass(request):
+     return render(request, 'site1/changepass.html')
 class PostListView(ListView):
     queryset = Post.objects.all().order_by('-date')
     template_name = 'site1/blog.html'
@@ -255,8 +258,7 @@ def register(request):
         if form.is_valid():
             #form.save()
             otp = random.randint(100000, 999999)
-            send_mail("User Data: ", f"Your OTP is: {otp}", EMAIL_HOST_USER, [
-                      email], fail_silently=True)
+            send_mail("User Data: ", f"Your OTP is: {otp}", EMAIL_HOST_USER, [email], fail_silently=True)
             messages.success(request, 'OTP has been sent to your email')
             return render(request, 'site1/verify.html', {'otp': otp, 'first_name': first_name, 'last_name': last_name, 'email': email, 'username': user_name, 'password1': password1, 'password2': password2})
         else:

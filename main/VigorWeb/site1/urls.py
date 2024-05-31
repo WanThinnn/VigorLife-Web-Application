@@ -34,6 +34,8 @@ urlpatterns = [
     path('verify/', views.verifyOTP, name='verify'),
     path('ver/', views.verify, name='ver'),
     path('account/', views.account, name='account'),
+    path('forgot-password/', views.forgotpass, name='forgot'),
+    path('change-password/', views.changepass, name='changepass'),
     
     path('blog/', ListView.as_view(
         queryset=Post.objects.all().order_by('-date'),

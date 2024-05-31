@@ -4,7 +4,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Món Ăn</title>
+    {% if classification == "low_calories" %}
+    <title>Món Mặn Ít Năng Lượng</title>
+  {% elif classification == "medium_calories"  %}
+    <title>Món Chay Lành Mạnh</title>
+  {% elif classification == "high_calories" %}
+    <title>Món Mặn Giàu Năng Lượng</title>
+  {% else %}
+    <title>Chưa Có Dữ Liệu</title>
+  {% endif %}
     <link href="{% static 'site1/css/fruits.css' %}" rel="stylesheet" />
   </head>
 

@@ -1,6 +1,16 @@
 {% extends 'site1/base.html' %}
 {% load static %}
 {% block news-content %}
+
+{% if type == 'suc-khoe' %}
+                <title>Tin Tức Sức Khoẻ</title>
+                {% elif type == 'the-thao' %}
+                <title>Tin Tức Thể Thao</title>
+                {% elif type == 'khoa-hoc' %}
+                <title>Tin Tức Khoa Học</title>
+                {% else %}
+                <title>Chưa có thông tin</title>
+                {% endif %}
 <link href="{% static 'site1/css/main.css' %}" rel="stylesheet" />
 <section class="slider-area">
   <div class="slider-area-photo"></div>
