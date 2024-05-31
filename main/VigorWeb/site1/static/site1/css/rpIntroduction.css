@@ -3,6 +3,9 @@
    .about-project-section {
       height: 1100px !important;
    }
+   .slider-row-caption{
+      margin-left: 150px !important;
+  }
 }
 
 /* Small tablet to big tablet from 768x to 1023px */
@@ -10,6 +13,15 @@
    .about-project-section {
       height: 1100px !important;
    }
+   .slider-area .slider-row-caption h1{
+      margin-left: 0 !important;
+  }
+  .about-p-long{
+   max-width: 80% !important;
+  }
+  .anh2{
+   display: none !important;
+  }
 }
 
 
@@ -19,7 +31,14 @@
       width: 500px !important;
       margin: 0 auto !important;
    }
+   .slider-row-caption{
+      margin-left: 200px !important;
+  }
+  .anh2{
+   display: none !important;
+  }
 }
+
 
 /* Small phones from 0 to 480px; */
 @media only screen and (max-width: 480px) {
@@ -27,4 +46,12 @@
       width: 500px !important;
       margin: 0 auto !important;
    }
+   .slider-row-caption{
+      margin-left: 200px !important;
+  }
+  .anh2{
+   display: none !important;
+  }
 }
+
+

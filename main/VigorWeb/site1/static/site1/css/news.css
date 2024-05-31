@@ -4,6 +4,7 @@
         width: 42rem;
 
     }
+
 }
 
 /* Small tablet to big tablet from 768x to 1023px */
@@ -12,6 +13,7 @@
         width: 42rem;
         height: 0px;
     }
+ 
 }
 
 /* Small phones to small tablets */
@@ -20,6 +22,7 @@
         width: 42rem;
         height: 0px;
     }
+
 }
 
 /* Small phones from 0 to 480px; */

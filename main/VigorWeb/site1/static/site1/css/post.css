@@ -7,3 +7,19 @@
     text-align: center;
     padding-bottom: 34px;
 }
+
+.comment-form{
+    max-width: 100%;
+}
+
+label{
+    margin-left: 0;
+}
+
+.about-picture-2{
+    margin-bottom: 50px;
+}
+
+.reply-form{
+    width:auto;
+}

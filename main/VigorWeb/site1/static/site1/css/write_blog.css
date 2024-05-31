@@ -113,3 +113,8 @@
 #id_images{
     font-size: 1rem;
 }
+
+
+.container label{
+    margin-left: 0 !important;
+}
