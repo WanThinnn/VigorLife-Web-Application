@@ -258,7 +258,21 @@ def register(request):
         if form.is_valid():
             #form.save()
             otp = random.randint(100000, 999999)
-            send_mail("User Data: ", f"Your OTP is: {otp}", EMAIL_HOST_USER, [email], fail_silently=True)
+            subject = "[Vigor Life] - Đăng ký thành viên"
+            message = f"""
+            Xin chào,
+
+            Chúng tôi nhận được yêu cầu tạo tài khoản mới cho email này của bạn trên trang web vigorlife.id.vn. Để hoàn tất quá trình này, vui lòng nhập mã xác thực sau:
+
+            Mã xác thực của bạn là: {otp}
+
+            Nếu bạn không yêu cầu tạo tài khoản hoặc không nhớ đến yêu cầu này, vui lòng bỏ qua email này. 
+            Nếu bạn cần thêm sự trợ giúp hoặc có bất kỳ câu hỏi nào, vui lòng liên hệ với chúng tôi qua email này. 
+
+            Trân trọng,
+            Vigor Life Team.
+            """
+            send_mail(subject, message, settings.EMAIL_HOST_USER, [email], fail_silently=True)
             messages.success(request, 'OTP has been sent to your email')
             return render(request, 'site1/verify.html', {'otp': otp, 'first_name': first_name, 'last_name': last_name, 'email': email, 'username': user_name, 'password1': password1, 'password2': password2})
         else:
