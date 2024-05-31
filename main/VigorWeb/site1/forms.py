@@ -42,6 +42,7 @@ class RelyCommentForm(forms.ModelForm):
 
 
 class ImageUploadForm(forms.Form):
+    images = forms.ImageField(required=False)
     title = forms.CharField(label="", required=False,
                            widget=forms.TextInput
                            (attrs={
@@ -50,12 +51,12 @@ class ImageUploadForm(forms.Form):
                                'placeholder': 'Tiêu đề ảnh',
                                'required': 'True'
                             }))
-    images = forms.ImageField(required=False)
+    
     fields = ['title']
 
 
 class BlogForm(forms.ModelForm):
-    title = forms.CharField(label="Tiêu đề bài viết", required=False,
+    title = forms.CharField(label="", required=False,
                            widget= forms.TextInput
                            (attrs={
                                'class': 'blog_title',
@@ -63,7 +64,7 @@ class BlogForm(forms.ModelForm):
                                'placeholder':'Tiêu đề...',
                                'required': 'True'
                             }))
-    body = forms.CharField(label="Nội dung bài viết", required=False,
+    body = forms.CharField(label="", required=False,
                            widget= forms.Textarea
                            (attrs={
                                'class': 'blog_body',

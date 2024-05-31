@@ -1,6 +1,7 @@
 {% extends 'site1/base.html' %} {%load static%} {%block write-blog%}
 <link href="{% static 'site1/css/write_blog.css' %}" rel="stylesheet" />
-<title>Hello</title>
+{% comment %} <link href="{% static 'site1/css/post.css' %}" rel='stylesheet'> {% endcomment %}
+<title>Viết Blog</title>
 
 
 
@@ -26,35 +27,28 @@
     </div>
   </div>
 </section>
+
 <div class="container">
+  {% if user.is_authenticated %}
   <h1 class="blog-heading">Viết Blog Mới</h1>
   <form class="form-container" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <h2 class="blog-img">Hình ảnh minh hoạ</h2>
+   
     {{ image_form.as_p }}
-    <input
-      type="hidden"
-      name="image_title"
-      value="{{ image_form.title.value }}"
-    />
+    
+    
     {{ image_form.as_p }}
-    <input
-      type="hidden"
-      name="image_title"
-      value="{{ image_form.title.value }}"
-    />
 
     {{ image_form.as_p }}
-    <input
-      type="hidden"
-      name="image_title"
-      value="{{ image_form.title.value }}"
-    />
-
+ 
     <h2 class="blog-title">Nội dung bài viết</h2>
     {{ blog_form.as_p }}
     <button class="form-submit" type="submit">Đăng Bài</button>
   </form>
+  {% else %}
+<p class="login-to-write-blog" style="text-align: center; font-size:1.5rem;">Vui lòng <a href="{% url 'login' %}">đăng nhập</a> để viết blog.</p>
+{% endif %}
 </div>
 
 {%endblock write-blog%}
