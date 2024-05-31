@@ -349,6 +349,9 @@ class FoodListView(ListView):
 def ListFoods(request):
     return render(request, 'site1/list_foods.html')
 
+def account(request):
+    return render(request, 'site1/account.html')
+
 
 def FoodsPage(request, classification, name):
     food = get_object_or_404(Food, name=name, classification=classification)
@@ -453,3 +456,4 @@ def News(request, type):
             items_rss.append(item_data)
 
     return render(request, 'site1/news.html', {"items_rss": items_rss, "type": type})
+

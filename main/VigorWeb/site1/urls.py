@@ -33,6 +33,7 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('verify/', views.verifyOTP, name='verify'),
     path('ver/', views.verify, name='ver'),
+    path('account/', views.account, name='account'),
     
     path('blog/', ListView.as_view(
         queryset=Post.objects.all().order_by('-date'),

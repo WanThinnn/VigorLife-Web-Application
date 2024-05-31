@@ -1,0 +1,85 @@
+{% extends 'site1/base.html' %}
+{%load static%}
+{% block account %}
+
+<!-- pip install requests -->
+
+
+<section class="slider-area">
+    <div class="slider-area-photo"></div>
+    <div class="container">
+        <div class="slider-row">
+            <div class="col-xl-6 col-lg-8 col-md-8">
+                <div class="slider-row-caption">
+                    <h1>tài khoản</h1>
+                    <nav aria-label="slider-nav">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="" tabindex="0">Trang cá nhân</a></li>
+                            
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="about-us-section">
+    <div class="about-container">
+        <div class="about-us-section-row">
+            <div class="about-us-section-tittle">
+                <h2>Tài khoản của bạn</h2>
+                <p class="about-p-long">
+                    Xin chào {{user.username}}! Đây là trang cá nhân của bạn. Bạn có thể xem thông tin cá nhân, 
+                    thay đổi mật khẩu của mình.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="calo-empty-space"></section>
+
+<div class="container mt-3 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Thông Tin Tài Khoản</h3>
+                    
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            <input type="text" class="form-control" placeholder="Tên Tài Khoản" value="{{ user.username }}" readonly>
+                        </div>
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                            <input type="email" class="form-control" placeholder="Email" value="{{ user.email }}" readonly>
+                        </div>
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            <input type="text" class="form-control" placeholder="Tên" value="{{ user.first_name }}" readonly>
+                        </div>
+                        <div class="mb-3 input-group">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            <input type="text" class="form-control" placeholder="Họ" value="{{ user.last_name }}" readonly>
+                        </div>
+                        
+                        <div class="text-right mt-3">
+                            <a href="" class="btn btn-primary">Đổi Mật Khẩu</a>
+                        </div>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock account %}
