@@ -2,7 +2,7 @@
 @media only screen and (max-width:1200px) {
     .sample__content {
         width: 80rem;
-
+        margin: 0 auto !important;
     }
 
 }
@@ -12,6 +12,7 @@
     .sample__content {
         width: 70rem;
         height: 0px;
+        margin: 0 auto !important;
     }
  
 }
@@ -20,7 +21,7 @@
 @media only screen and (max-width: 767px) {
     .sample__content {
         width: 50rem;
-
+        margin: 0 auto !important;
     }
  
 }
@@ -29,7 +30,7 @@
 @media only screen and (max-width: 480px) {
     .sample__content {
         width: 30rem;
-        margin-bottom: 7rem !important;
+        margin-bottom: 10rem !important;
     }
 
 }
