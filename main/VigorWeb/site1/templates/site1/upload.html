@@ -38,7 +38,7 @@
 
       {% comment %} <h1 class="upload-title">Nhận diện ảnh</h1> {% endcomment %}
       <section style="margin: 230px;">
-        <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data" class="upload-form">
+        <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data" class="upload-form" style="margin-bottom: 5rem;">
           {% csrf_token %}
           <div class="form-container">
             <div class="file-input-wrapper">
@@ -55,8 +55,9 @@
         </div>
 
         {% if labels %}
+        <h3 class="result-title">Xem lượng calories của món ăn <a href="{% url 'calo' %}" class="link-title">tại đây</a></h3>
+
           <h3 class="result-title">Nội dung trong ảnh là:</h3>
-          <h3 class="result-title">Xem lượng calories của món ăn <a href="{% url 'calo' %}" class="link-title">tại đây</a></h3>
           <ul class="result-list">
             {% for label in labels %}
               <li class="result-item">{{ label }}</li>

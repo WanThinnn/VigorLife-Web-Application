@@ -94,3 +94,7 @@ html {
 .sample__content{
     text-align: justify !important;
 }
+
+html, body {
+    overflow-x: hidden !important;
+}

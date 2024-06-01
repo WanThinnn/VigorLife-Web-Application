@@ -10,6 +10,7 @@
         flex-direction: row;
         flex-wrap: wrap;
     }
+
     .description-text {
         font-size: 11px;
     }
@@ -40,6 +41,7 @@
         height: 372px;
 
     }
+
     .description-text {
         font-size: 11px;
     }

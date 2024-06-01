@@ -1,0 +1,56 @@
+p{
+    text-align: justify;
+}
+.ins-2{
+    display: block !important;
+}
+.imgz{
+    margin-top: 10rem;
+}
+
+.imgz .anhz {
+    display: block !important;
+    width: 22% !important;
+}
+
+
+/* Big tablet to 1200px; */
+@media only screen and (max-width:1200px) {
+    .ins-2 {
+        margin-bottom: 9rem;
+        }
+
+}
+
+/* Small tablet to big tablet from 768x to 1023px */
+@media only screen and (max-width:1023px) {
+   
+ .ddt_first .ddt_content{
+    margin-top: 10rem !important;
+ }
+ .ins-2 {
+    margin-bottom: 11rem;
+    }
+
+}
+
+/* Small phones to small tablets */
+@media only screen and (max-width: 767px) {
+    .ddt_first .ddt_content{
+        margin-top: 10rem !important;
+     }
+     .imgz .anhz {
+        display: none !important;
+    }
+    .np__contenta{
+        width: 30rem !important;
+    }
+    .h2_chung{
+        width: 33rem !important;
+    }
+ 
+}
+
+/* Small phones from 0 to 480px; */
+@media only screen and (max-width: 480px) {
+}

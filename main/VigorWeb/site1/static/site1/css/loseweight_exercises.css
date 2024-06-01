@@ -1,9 +1,12 @@
 /*First*/
 .ddt_first {
     scroll-margin-bottom: -20px;
-    margin-bottom: 2px;;
-}
+    margin-bottom: 2px;
 
+}
+.ddt_first_text{
+    text-align: justify !important;
+}
 .ddt_first h1 {
     display: block;
     color: #fff;
@@ -403,3 +406,4 @@
     transform: translateX(230px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
