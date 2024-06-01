@@ -7,6 +7,7 @@
       <meta charset="UTF-8" />
       <title>Nhận Diện Ảnh</title>
       <link rel="stylesheet" href="{% static 'site1/css/upload.css' %}" />
+      <link rel="stylesheet" href="{% static 'site1/css/fix_nhandienanh_ios.css' %}" />
     </head>
     <body>
       <section class="slider-area">
@@ -37,7 +38,7 @@
       </section>
 
       {% comment %} <h1 class="upload-title">Nhận diện ảnh</h1> {% endcomment %}
-      <section style="margin: 230px;">
+      <section class="section-from" style="margin: 230px;">
         <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data" class="upload-form" style="margin-bottom: 5rem;">
           {% csrf_token %}
           <div class="form-container">

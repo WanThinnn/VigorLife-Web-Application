@@ -1,0 +1,51 @@
+/* Big tablet to 1200px; */
+@media only screen and (max-width:1200px) {
+  
+}
+
+/* Small tablet to big tablet from 768x to 1023px */
+@media only screen and (max-width:1023px) {
+  
+ 
+}
+
+/* Small phones to small tablets */
+@media only screen and (max-width: 767px) {
+
+ 
+}
+
+/* Small phones from 0 to 480px; */
+@media only screen and (max-width: 480px) {
+    /* p{
+        text-align: justify !important;
+    } */
+ 
+    .np__content .h2_chung{
+        width: 20rem !important;
+    }
+    .np__contenta{
+        width: 20rem !important;
+    }
+    .slider-row-caption h1{
+        font-size: 4rem !important;
+    }
+  .about-us-section{
+    height: 170rem !important;
+  }
+    .about-us-section-tittle  .about-p-long{
+        margin: 0 auto !important;
+    }
+    .about-project-section-tittle  .about-p-long-2{
+        width: 30rem;
+        margin: 0 auto !important;
+        margin-bottom: 2rem !important;
+    }
+    .ins-2 {
+
+        height: 70rem !important
+    
+ 
+        }
+        
+}

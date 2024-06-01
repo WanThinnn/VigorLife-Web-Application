@@ -1,0 +1,41 @@
+
+
+
+/* Big tablet to 1200px; */
+@media only screen and (max-width:1200px) {
+  
+}
+
+/* Small tablet to big tablet from 768x to 1023px */
+@media only screen and (max-width:1023px) {
+
+
+}
+
+/* Small phones to small tablets */
+@media only screen and (max-width: 767px) {
+    
+  
+}
+
+/* Small phones from 0 to 480px; */
+@media only screen and (max-width: 480px) {
+.np__contenta{
+    width: 130px !important;
+font-size: 11px !important; 
+}
+.ddt_tailor-details .h2_chung{
+    width: 90px !important;
+    font-size: 20px !important;
+}
+.ins-2{
+    height: 30rem !important;
+}
+.ins-2 .np__content .h2_chung{
+    width: 20rem !important;
+    margin-top: 10px !important;
+}
+.ins-2 .np__content .np__contenta{
+    width: 25rem !important;
+}
+}
