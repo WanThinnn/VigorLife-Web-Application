@@ -65,7 +65,7 @@ Trang web phối hợp giữa chăm sóc sức khoẻ và giảm cân
 
 ## V. Một số tính năng nổi bật của web:
 
-**- Các tính năng cơ bản: **
+**- Tính năng: Cơ bản**
 + Đăng ký, đăng nhập, quên mật khẩu, sử dụng mã OTP
 + Công cụ tính toán TDEE, BMR, BMI
 + Công cụ tính toán Calo
@@ -73,7 +73,7 @@ Trang web phối hợp giữa chăm sóc sức khoẻ và giảm cân
 + Tin tức
 + Đăng blog và comment
   
-**- Các tính năng nâng cao: **
+**- Tính năng: Nâng cao**
 + Auto suggestion trong tìm kiếm
 + API nhận diện đồ ăn bằng hình ảnh
 + Lưu cơ sở dữ liệu lên AWS RDS MySQL
