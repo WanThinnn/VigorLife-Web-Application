@@ -42,7 +42,7 @@ Trang web phối hợp giữa chăm sóc sức khoẻ và giảm cân
 + Công cụ tính toán TDEE, BMR, BMI
 + Calo có trong một số loại thực phẩm
 + Calo tiêu hao trong một số hoạt động
-+ Công cụ nhận diện hình ảnh (Google Cloud Vision)
++ Công cụ nhận diện hình ảnh (Google Cloud Vision và Google Cloud Translate)
 
 **- Trang: Giảm Cân**
 + Giảm cân là gì?
