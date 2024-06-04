@@ -72,6 +72,7 @@ Trang web phối hợp giữa chăm sóc sức khoẻ và giảm cân
 + Tìm kiếm
 + Tin tức
 + Đăng blog và comment
+  
 **- Các tính năng nâng cao: **
 + Auto suggestion trong tìm kiếm
 + API nhận diện đồ ăn bằng hình ảnh
