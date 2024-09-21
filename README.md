@@ -12,6 +12,10 @@ Trang web phối hợp giữa chăm sóc sức khoẻ và giảm cân
 4. Đặng Đức Tài
 5. Nguyễn Quang Thịnh
 
+<a href="https://github.com/WanThinnn/Web-Application-Project/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=WanThinnn/Web-Application-Project" />
+</a>
+
 ## III. Một số công nghệ (dự kiến) được sử dụng:
 **1. HTML (HyperText Markup Language):** Ngôn ngữ đánh dấu siêu văn bản được sử dụng để tạo cấu trúc và nội dung của trang web.
 
