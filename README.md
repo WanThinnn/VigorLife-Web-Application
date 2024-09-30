@@ -4,6 +4,8 @@ _Lời ngỏ: Đây là trang web đầu tiên của nhóm chúng mình. Kính m
 ![Sitemaps](https://github.com/WanThinnn/Web-Application-Project/assets/89849825/2d8f2516-5f3b-4e60-80ba-a2c2c3bfc753)
 ## I. Đồ án môn học:
 Trang web phối hợp giữa chăm sóc sức khoẻ và giảm cân
+![đemo-1](https://github.com/user-attachments/assets/91ca8294-b48f-488b-b6ae-394f1cfa8ff9)
+![demo-2](https://github.com/user-attachments/assets/d47608d1-cc2c-4792-84f5-9c1b58cb27f8)
 
 ## II. Thành viên:
 1. Lại Quan Thiên
