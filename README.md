@@ -11,8 +11,7 @@ Trang web phối hợp giữa chăm sóc sức khoẻ và giảm cân
 1. Lại Quan Thiên
 2. Lê Minh Quân
 3. Mai Nguyễn Nam Phương
-4. Đặng Đức Tài
-5. Nguyễn Quang Thịnh
+4. Nguyễn Quang Thịnh
 
 <a href="https://github.com/WanThinnn/Web-Application-Project/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=WanThinnn/Web-Application-Project" />
