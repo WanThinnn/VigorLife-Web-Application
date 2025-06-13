@@ -114,8 +114,8 @@ VigorWeb is a health and weight management web application built with Django. Th
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd Web-Application-Project
+   git clone https://github.com/WanThinnn/VigorLife-Web-Application.git
+   cd VigorLife-Web-Application
    ```
 
 2. **Navigate to the main Django project**
