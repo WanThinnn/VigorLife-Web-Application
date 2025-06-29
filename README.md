@@ -7,13 +7,6 @@ A comprehensive Django web application that combines health monitoring and weigh
 VigorWeb is a health and weight management web application built with Django. The platform provides users with tools to track calories, calculate health metrics, access exercise routines, and explore healthy recipes. The application features modern web technologies and integrates with cloud services for enhanced functionality.
 ![đemo-1](https://github.com/user-attachments/assets/91ca8294-b48f-488b-b6ae-394f1cfa8ff9)
 ![demo-2](https://github.com/user-attachments/assets/d47608d1-cc2c-4792-84f5-9c1b58cb27f8)
-## Team Members
-
-1. Lại Quan Thiên
-2. Lê Minh Quân  
-3. Mai Nguyễn Nam Phương
-4. Nguyễn Quang Thịnh
-5. Đặng Đức Tài
 
 ## Technology Stack
 
@@ -166,6 +159,13 @@ main/VigorWeb/
 ## Contributing
 
 This project was developed as an academic assignment. We welcome feedback and suggestions for improvement. Please feel free to submit issues or pull requests.
+
+## Team Members
+
+1. Lại Quan Thiên
+2. Lê Minh Quân  
+3. Mai Nguyễn Nam Phương
+4. Nguyễn Quang Thịnh
 
 ## License
 
